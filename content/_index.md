@@ -6,6 +6,10 @@ title: "GoCV"
 
 [![GoCV](images/gocvlogo.jpg)](http://gocv.io/)
 
-<iframe src="https://ghbtns.com/github-btn.html?user=hybridgroup&repo=gocv&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+The GoCV package provides Go language bindings for the [OpenCV 3](http://opencv.org/) computer vision library.
 
-GoCV is a Go language package for computer vision using OpenCV 3.3.
+GoCV supports the latest release of OpenCV (v3.3) on Linux, OS X, and (soon) Windows. We hope to make the Go programming language a "first-class" client compatible with the latest developments in the OpenCV ecosystem.
+
+GoCV also supports the [Intel Computer Vision SDK](https://software.intel.com/en-us/cvsdk-devguide) using the Photography Vision Library (PVL).
+
+Just looking for the code? Go to https://github.com/hybridgroup/gocv
