@@ -11,7 +11,7 @@
 	"title": "What Is GoCV",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The GoCV package provides Go language bindings for the OpenCV 3 computer vision library.\nGoCV supports the latest release of OpenCV (v3.3) on Linux, OS X, and (soon) Windows. We hope to make the Go programming language a \u0026ldquo;first-class\u0026rdquo; client compatible with the latest developments in the OpenCV ecosystem.\nGoCV also supports the Intel Computer Vision SDK using the Photography Vision Library (PVL).\n"
 },
 {
 	"uri": "http://gocv.io/introduction/",
@@ -32,14 +32,14 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "To use GoCV, you must first install OpenCV 3.3 on your system. We have instructions for Ubuntu, OS X, and Windows.\n"
 },
 {
 	"uri": "http://gocv.io/introduction/what-is-opencv/",
 	"title": "What Is OpenCV",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "OpenCV (Open Source Computer Vision Library: http://opencv.org) is an open-source BSD-licensed library that includes several hundreds of computer vision algorithms.\n"
 },
 {
 	"uri": "http://gocv.io/getting-started/windows/",
