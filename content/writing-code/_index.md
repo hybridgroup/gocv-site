@@ -6,3 +6,4 @@ chapter: true
 weight: 2
 ---
 
+Here are some examples of how to use GoCV in your Go programs.
