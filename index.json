@@ -60,7 +60,7 @@
 	"title": "GoCV",
 	"tags": [],
 	"description": "",
-	"content": " Welcome to GoCV \nGoCV is a Go language package for computer vision using OpenCV 3.3.\n"
+	"content": " Welcome to GoCV \n GoCV is a Go language package for computer vision using OpenCV 3.3.\n"
 },
 {
 	"uri": "http://gocv.io/tags/",
