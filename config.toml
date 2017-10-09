@@ -9,6 +9,10 @@ theme = "learn"
 
 [[menu.shortcuts]] 
 name = "<i class='fa fa-github'></i> Github repo"
-identifier = "ds"
 url = "https://github.com/hybridgroup/gocv"
 weight = 10
+
+[[menu.shortcuts]] 
+name = "<i class='fa fa-book'></i> Godoc"
+url = "https://godoc.org/github.com/hybridgroup/gocv"
+weight = 20
