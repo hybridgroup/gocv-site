@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>OS X :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>More Examples :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1507565422" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/getting-started/osx/">
+  <body class="" data-url="/writing-code/more-examples/">
     <nav id="sidebar" class="">
 
 
@@ -77,7 +77,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -120,7 +120,7 @@
  
   
     
-      <li data-nav-id="/getting-started/osx/" title="OS X" class="dd-item active">
+      <li data-nav-id="/getting-started/osx/" title="OS X" class="dd-item ">
         <a href="/getting-started/osx/">
         OS X
         
@@ -166,7 +166,7 @@
   
     
     <li data-nav-id="/writing-code/" title="Writing Code" class="dd-item 
-        
+        parent
         
         
         ">
@@ -228,7 +228,7 @@
  
   
     
-      <li data-nav-id="/writing-code/more-examples/" title="More Examples" class="dd-item ">
+      <li data-nav-id="/writing-code/more-examples/" title="More Examples" class="dd-item active">
         <a href="/writing-code/more-examples/">
         More Examples
         
@@ -309,7 +309,7 @@
             
           
           
-            <a href='/'>GoCV</a> > <a href='/getting-started/'>Getting Started</a> > OS X
+            <a href='/'>GoCV</a> > <a href='/writing-code/'>Writing Code</a> > More Examples
           
          
           
@@ -325,11 +325,15 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
-</ul></li>
+<li><a href="#captest">Captest</a></li>
+<li><a href="#capwindow">Capwindow</a></li>
+<li><a href="#faceblur">Faceblur</a></li>
+<li><a href="#facedetect">Facedetect</a></li>
+<li><a href="#mjpeg-streamer">MJPEG-Streamer</a></li>
+<li><a href="#saveimage">Saveimage</a></li>
+<li><a href="#savevideo">Savevideo</a></li>
+<li><a href="#showimage">Showimage</a></li>
+<li><a href="#version">Version</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -344,7 +348,7 @@
         
         <div id="body-inner">
           
-            <h1>OS X</h1>
+            <h1>More Examples</h1>
           
 
         
@@ -352,39 +356,61 @@
 
 
 
-<p>This page has information on how to install and use GoCV on OS X.</p>
+<p>GoCV comes with various useful command line utilities, that are also examples of how to use the package.</p>
 
-<h3 id="installing">Installing</h3>
+<h2 id="captest">Captest</h2>
 
-<p>Install the GoCV package:</p>
+<p>Tests to verify you can capture video from a connected webcam.</p>
 
-<pre><code>    go get github.com/hybridgroup/gocv
-</code></pre>
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go</a></p>
 
-<p>Now, install OpenCV 3.3 using Homebrew:</p>
+<h2 id="capwindow">Capwindow</h2>
 
-<pre><code>    brew install opencv
-</code></pre>
+<p>Capture video from a connected webcam and display the video in a Window.</p>
 
-<h3 id="how-to-build-run-code">How to build/run code</h3>
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go</a></p>
 
-<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.3, the following instructions should work.</p>
+<h2 id="faceblur">Faceblur</h2>
 
-<p>One time per session, you must run the script:</p>
+<p>Captures video from a connected camera, then uses the CascadeClassifier to detect faces, blurs them using a Gaussian blur, then displays the blurred video in a window.</p>
 
-<pre><code>    source ./env.sh
-</code></pre>
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/faceblur/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/faceblur/main.go</a></p>
 
-<p>Now you should be able to build or run any of the command examples:</p>
+<h2 id="facedetect">Facedetect</h2>
 
-<pre><code>    go run ./cmd/version/main.go
-</code></pre>
+<p>Captures video from a connected camera, then uses the CascadeClassifier to detect faces, and draw a rectangle around each of them, before displaying them within a Window</p>
 
-<p>The version program should output the following:</p>
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go</a></p>
 
-<pre><code>    gocv version: 0.1.0
-    opencv lib version: 3.3.0
-</code></pre>
+<h2 id="mjpeg-streamer">MJPEG-Streamer</h2>
+
+<p>Opens a video capture device, then streams MJPEG from it that you can view in any browser.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/mjpeg-streamer/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/mjpeg-streamer/main.go</a></p>
+
+<h2 id="saveimage">Saveimage</h2>
+
+<p>Capture a single frame from a connected webcam, then save it to an image file on disk.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/saveimage/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/saveimage/main.go</a></p>
+
+<h2 id="savevideo">Savevideo</h2>
+
+<p>Capture video from a connected camera, and save 100 frames worth to a video file on disk.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/savevideo/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/savevideo/main.go</a></p>
+
+<h2 id="showimage">Showimage</h2>
+
+<p>Open an image file from disk, then display it in a window.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go</a></p>
+
+<h2 id="version">Version</h2>
+
+<p>Displays the current version of OpenCV that is being used by GoCV.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/version/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/version/main.go</a></p>
 
 
 <footer class=" footline" >
@@ -421,77 +447,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -552,6 +509,75 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -559,10 +585,10 @@
 
 
         
-            <a class="nav nav-prev" href="/getting-started/linux/" title="Linux"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/writing-code/face-detect/" title="Face Detect"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/getting-started/windows/" title="Windows" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/writing-code/hello-video/" title="Hello Video" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

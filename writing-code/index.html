@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>OS X :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>Writing Code :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1507565422" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/getting-started/osx/">
+  <body class="" data-url="/writing-code/">
     <nav id="sidebar" class="">
 
 
@@ -77,7 +77,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -120,7 +120,7 @@
  
   
     
-      <li data-nav-id="/getting-started/osx/" title="OS X" class="dd-item active">
+      <li data-nav-id="/getting-started/osx/" title="OS X" class="dd-item ">
         <a href="/getting-started/osx/">
         OS X
         
@@ -166,8 +166,8 @@
   
     
     <li data-nav-id="/writing-code/" title="Writing Code" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/writing-code/">
@@ -295,8 +295,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-                  
                   <span class="links">
                     
           
@@ -305,13 +303,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>GoCV</a> > <a href='/getting-started/'>Getting Started</a> > OS X
-          
-         
+            <a href='/'>GoCV</a> > Writing Code
           
          
           
@@ -319,79 +311,27 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
 
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>OS X</h1>
           
 
         
 
 
-
-
-<p>This page has information on how to install and use GoCV on OS X.</p>
-
-<h3 id="installing">Installing</h3>
-
-<p>Install the GoCV package:</p>
-
-<pre><code>    go get github.com/hybridgroup/gocv
-</code></pre>
-
-<p>Now, install OpenCV 3.3 using Homebrew:</p>
-
-<pre><code>    brew install opencv
-</code></pre>
-
-<h3 id="how-to-build-run-code">How to build/run code</h3>
-
-<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.3, the following instructions should work.</p>
-
-<p>One time per session, you must run the script:</p>
-
-<pre><code>    source ./env.sh
-</code></pre>
-
-<p>Now you should be able to build or run any of the command examples:</p>
-
-<pre><code>    go run ./cmd/version/main.go
-</code></pre>
-
-<p>The version program should output the following:</p>
-
-<pre><code>    gocv version: 0.1.0
-    opencv lib version: 3.3.0
-</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-
+        
+            </div> 
         
         </div> 
       </div>
@@ -421,77 +361,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -552,6 +423,74 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -559,10 +498,10 @@
 
 
         
-            <a class="nav nav-prev" href="/getting-started/linux/" title="Linux"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/writing-code/more-examples/" title="More Examples"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/getting-started/windows/" title="Windows" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/writing-code/hello-video/" title="Hello Video" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -592,4 +531,3 @@
 
   </body>
 </html>
-

@@ -1,5 +1,12 @@
 [
 {
+	"uri": "http://gocv.io/writing-code/hello-video/",
+	"title": "Hello Video",
+	"tags": [],
+	"description": "",
+	"content": "This example opens a video capture device using device \u0026ldquo;0\u0026rdquo;, reads frames, and shows the video in a GUI window:\npackage main import ( \u0026quot;github.com/hybridgroup/gocv\u0026quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(\u0026quot;Hello\u0026quot;)\timg := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) gocv.WaitKey(1) } }  "
+},
+{
 	"uri": "http://gocv.io/getting-started/linux/",
 	"title": "Linux",
 	"tags": [],
@@ -14,6 +21,20 @@
 	"content": "To use GoCV, you must install OpenCV 3.3 on your system. We have instructions for Ubuntu, OS X, and Windows.\n"
 },
 {
+	"uri": "http://gocv.io/writing-code/face-detect/",
+	"title": "Face Detect",
+	"tags": [],
+	"description": "",
+	"content": "This is a more complete example that opens a video capture device using device \u0026ldquo;0\u0026rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:\npackage main import ( \u0026quot;fmt\u0026quot; \u0026quot;image/color\u0026quot; \u0026quot;github.com/hybridgroup/gocv\u0026quot; ) func main() { deviceID := 0 // open webcam webcam, err := gocv.VideoCaptureDevice(int(deviceID)) if err != nil { fmt.Printf(\u0026quot;error opening video capture device: %v\\n\u0026quot;, deviceID) return }\tdefer webcam.Close() // open display window window := gocv.NewWindow(\u0026quot;Face Detect\u0026quot;) defer window.Close() // prepare image matrix img := gocv.NewMat() defer img.Close() // color for the rect when faces detected blue := color.RGBA{0, 0, 255, 0} // load classifier to recognize faces classifier := gocv.NewCascadeClassifier() defer classifier.Close() classifier.Load(\u0026quot;data/haarcascade_frontalface_default.xml\u0026quot;) fmt.Printf(\u0026quot;start reading camera device: %v\\n\u0026quot;, deviceID) for { if ok := webcam.Read(img); !ok { fmt.Printf(\u0026quot;cannot read device %d\\n\u0026quot;, deviceID) return } if img.Empty() { continue } // detect faces rects := classifier.DetectMultiScale(img) fmt.Printf(\u0026quot;found %d faces\\n\u0026quot;, len(rects)) // draw a rectangle around each face on the original image for _, r := range rects { gocv.Rectangle(img, r, blue, 3) } // show the image in the window, and wait 1 millisecond window.IMShow(img) gocv.WaitKey(1) } }  "
+},
+{
+	"uri": "http://gocv.io/writing-code/",
+	"title": "Writing Code",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://gocv.io/getting-started/osx/",
 	"title": "OS X",
 	"tags": [],
@@ -26,6 +47,13 @@
 	"tags": [],
 	"description": "",
 	"content": " This page will have information on how to install and use GoCV on Microsoft Windows 10.\nInstalling Using "
+},
+{
+	"uri": "http://gocv.io/writing-code/more-examples/",
+	"title": "More Examples",
+	"tags": [],
+	"description": "",
+	"content": " GoCV comes with various useful command line utilities, that are also examples of how to use the package.\nCaptest Tests to verify you can capture video from a connected webcam.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go\nCapwindow Capture video from a connected webcam and display the video in a Window.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go\nFaceblur Captures video from a connected camera, then uses the CascadeClassifier to detect faces, blurs them using a Gaussian blur, then displays the blurred video in a window.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/faceblur/main.go\nFacedetect Captures video from a connected camera, then uses the CascadeClassifier to detect faces, and draw a rectangle around each of them, before displaying them within a Window\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go\nMJPEG-Streamer Opens a video capture device, then streams MJPEG from it that you can view in any browser.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/mjpeg-streamer/main.go\nSaveimage Capture a single frame from a connected webcam, then save it to an image file on disk.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/saveimage/main.go\nSavevideo Capture video from a connected camera, and save 100 frames worth to a video file on disk.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/savevideo/main.go\nShowimage Open an image file from disk, then display it in a window.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go\nVersion Displays the current version of OpenCV that is being used by GoCV.\nhttps://github.com/hybridgroup/gocv/blob/master/cmd/version/main.go\n"
 },
 {
 	"uri": "http://gocv.io/categories/",

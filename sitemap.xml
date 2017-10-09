@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://gocv.io/writing-code/hello-video/</loc>
+    <lastmod>2017-10-09T18:00:37+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gocv.io/getting-started/linux/</loc>
     <lastmod>2017-10-09T11:41:45+02:00</lastmod>
   </url>
@@ -10,6 +15,16 @@
   <url>
     <loc>http://gocv.io/getting-started/</loc>
     <lastmod>2017-10-09T11:40:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/writing-code/face-detect/</loc>
+    <lastmod>2017-10-09T18:02:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/writing-code/</loc>
+    <lastmod>2017-10-09T17:59:58+02:00</lastmod>
   </url>
   
   <url>
@@ -23,13 +38,18 @@
   </url>
   
   <url>
+    <loc>http://gocv.io/writing-code/more-examples/</loc>
+    <lastmod>2017-10-09T18:04:54+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gocv.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gocv.io/</loc>
-    <lastmod>2017-10-09T11:41:45+02:00</lastmod>
+    <lastmod>2017-10-09T18:00:37+02:00</lastmod>
   </url>
   
   <url>
