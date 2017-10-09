@@ -3,6 +3,12 @@ languageCode = "en-us"
 title = "GoCV - Golang Computer Vision Using OpenCV 3"
 theme = "learn"
 
-# For search functionnality
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
+[params]
+  # Disable search function. It will hide search bar
+  disableSearch = true
+
+[[menu.shortcuts]] 
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/hybridgroup/gocv"
+weight = 10
