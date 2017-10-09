@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.29" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>GoCV :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    
+    
+    <link href="/css/nucleus.css?1507549999" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1507549999" rel="stylesheet">
+    <link href="/css/hybrid.css?1507549999" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1507549999" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1507549999" rel="stylesheet">
+    <link href="/css/auto-complete.css?1507549999" rel="stylesheet">
+    <link href="/css/theme.css?1507549999" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1507549999" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1507549999"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <html>
+<a href="http://gocv.io">
+<img src="https://raw.githubusercontent.com/hybridgroup/gocv/master/images/gocvlogo.jpg">
+<h1>GoCV</h1></a>
+</html>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1507549999"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1507549999"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/gocv.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1507549999"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/">
+          Introduction
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction/what-is-gocv/" title="What Is GoCV" class="dd-item ">
+        <a href="/introduction/what-is-gocv/">
+        What Is GoCV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction/what-is-opencv/" title="What Is OpenCV" class="dd-item ">
+        <a href="/introduction/what-is-opencv/">
+        What Is OpenCV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting-started/linux/" title="Linux" class="dd-item ">
+        <a href="/getting-started/linux/">
+        Linux
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting-started/osx/" title="OS X" class="dd-item ">
+        <a href="/getting-started/osx/">
+        OS X
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting-started/windows/" title="Windows" class="dd-item ">
+        <a href="/getting-started/windows/">
+        Windows
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
+</span>
+
+ 
+
+
+<h1 id="welcome-to-gocv">Welcome to GoCV</h1>
+
+<p><a href="http://gocv.io/"><img src="images/gocvlogo.jpg" alt="GoCV" /></a></p>
+
+<p>GoCV is a Go language package for computer vision using OpenCV 3.3.</p>
+	
+  
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+        
+            <a class="nav nav-next" href="/introduction/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1507549999"></script>
+    <script src="/js/perfect-scrollbar.min.js?1507549999"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1507549999"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1507549999"></script>
+    <script src="/js/featherlight.min.js?1507549999"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1507549999"></script>
+    <script src="/js/highlight.pack.js?1507549999"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1507549999"></script>
+    <script src="/js/learn.js?1507549999"></script>
+    <script src="/js/hugo-learn.js?1507549999"></script>
+
+    <link href="/mermaid/mermaid.css?1507549999" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1507549999"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

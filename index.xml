@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GoCV on GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <link>http://gocv.io/</link>
+    <description>Recent content in GoCV on GoCV - Golang Computer Vision Using OpenCV 3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Oct 2017 11:41:45 +0200</lastBuildDate>
+    
+	<atom:link href="http://gocv.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux</title>
+      <link>http://gocv.io/getting-started/linux/</link>
+      <pubDate>Mon, 09 Oct 2017 11:41:45 +0200</pubDate>
+      
+      <guid>http://gocv.io/getting-started/linux/</guid>
+      <description> This page has information on how to install and use GoCV on Linux.
+Installing Using </description>
+    </item>
+    
+    <item>
+      <title>What Is GoCV</title>
+      <link>http://gocv.io/introduction/what-is-gocv/</link>
+      <pubDate>Mon, 09 Oct 2017 11:31:05 +0200</pubDate>
+      
+      <guid>http://gocv.io/introduction/what-is-gocv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS X</title>
+      <link>http://gocv.io/getting-started/osx/</link>
+      <pubDate>Mon, 09 Oct 2017 11:41:50 +0200</pubDate>
+      
+      <guid>http://gocv.io/getting-started/osx/</guid>
+      <description> This page has information on how to install and use GoCV on OS X.
+Installing Using </description>
+    </item>
+    
+    <item>
+      <title>What Is OpenCV</title>
+      <link>http://gocv.io/introduction/what-is-opencv/</link>
+      <pubDate>Mon, 09 Oct 2017 11:31:17 +0200</pubDate>
+      
+      <guid>http://gocv.io/introduction/what-is-opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://gocv.io/getting-started/windows/</link>
+      <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
+      
+      <guid>http://gocv.io/getting-started/windows/</guid>
+      <description> This page will have information on how to install and use GoCV on Microsoft Windows 10.
+Installing Using </description>
+    </item>
+    
+  </channel>
+</rss>

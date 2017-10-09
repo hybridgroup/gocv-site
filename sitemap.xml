@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://gocv.io/getting-started/linux/</loc>
+    <lastmod>2017-10-09T11:41:45+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/introduction/what-is-gocv/</loc>
+    <lastmod>2017-10-09T11:31:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/introduction/</loc>
+    <lastmod>2017-10-09T11:30:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/getting-started/osx/</loc>
+    <lastmod>2017-10-09T11:41:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/getting-started/</loc>
+    <lastmod>2017-10-09T11:40:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/introduction/what-is-opencv/</loc>
+    <lastmod>2017-10-09T11:31:17+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/getting-started/windows/</loc>
+    <lastmod>2017-10-09T11:41:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/</loc>
+    <lastmod>2017-10-09T11:41:45+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
