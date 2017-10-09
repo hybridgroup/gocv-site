@@ -5,10 +5,10 @@ draft: false
 weight: 1
 ---
 
-# Getting Started with GoCV on Linux
+This page has information on how to install and use GoCV on Linux.
 
-## Installing
+### Installing
 
-## Using
+### Using
 
 

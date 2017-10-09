@@ -5,8 +5,8 @@ draft: false
 weight: 2
 ---
 
-# Getting Started with GoCV on OS X
+This page has information on how to install and use GoCV on OS X.
 
-## Installing
+### Installing
 
-## Using
+### Using

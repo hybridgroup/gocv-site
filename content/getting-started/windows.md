@@ -5,8 +5,8 @@ draft: false
 weight: 3
 ---
 
-# Getting Started with GoCV on Windows
+This page will have information on how to install and use GoCV on Microsoft Windows 10.
 
-## Installing
+### Installing
 
-## Using
+### Using
