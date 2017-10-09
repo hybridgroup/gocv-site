@@ -6,3 +6,4 @@ chapter: true
 weight: 2
 ---
 
+To use GoCV, you must first install OpenCV 3.3 on your system. We have instructions for Ubuntu, OS X, and Windows.
