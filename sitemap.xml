@@ -13,18 +13,13 @@
   </url>
   
   <url>
-    <loc>http://gocv.io/getting-started/</loc>
-    <lastmod>2017-10-09T11:40:54+02:00</lastmod>
+    <loc>http://gocv.io/computer-vision/</loc>
+    <lastmod>2017-10-09T20:22:39+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://gocv.io/writing-code/face-detect/</loc>
     <lastmod>2017-10-09T18:02:15+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gocv.io/writing-code/</loc>
-    <lastmod>2017-10-09T17:59:58+02:00</lastmod>
   </url>
   
   <url>
@@ -35,6 +30,16 @@
   <url>
     <loc>http://gocv.io/getting-started/windows/</loc>
     <lastmod>2017-10-09T11:41:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/getting-started/</loc>
+    <lastmod>2017-10-09T11:40:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gocv.io/writing-code/</loc>
+    <lastmod>2017-10-09T17:59:58+02:00</lastmod>
   </url>
   
   <url>
