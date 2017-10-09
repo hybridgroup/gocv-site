@@ -1,0 +1,8 @@
+baseURL = "http://gocv.io/"
+languageCode = "en-us"
+title = "GoCV - Golang Computer Vision Using OpenCV 3"
+theme = "learn"
+
+# For search functionnality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
