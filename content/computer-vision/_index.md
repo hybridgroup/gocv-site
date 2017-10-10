@@ -9,7 +9,7 @@ weight: 2
 
 Computer Vision (CV) is the ability of computers to process visual information, and perform tasks normally associated with those performed by humans.
 
-CV typically consists of processing video images, and using the data to extract information in order to perform useful tasks.
+CV software typically processes video images, then uses the data to extract information in order to do something useful.
 
 ## What can you do with CV?
 
