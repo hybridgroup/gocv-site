@@ -13,17 +13,17 @@
     <title>OS X :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1507623875" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1507623875" rel="stylesheet">
-    <link href="/css/hybrid.css?1507623875" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1507623875" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1507623875" rel="stylesheet">
-    <link href="/css/auto-complete.css?1507623875" rel="stylesheet">
-    <link href="/css/theme.css?1507623875" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1507623875" rel="stylesheet">
+    <link href="/css/nucleus.css?1507717155" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1507717155" rel="stylesheet">
+    <link href="/css/hybrid.css?1507717155" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1507717155" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1507717155" rel="stylesheet">
+    <link href="/css/auto-complete.css?1507717155" rel="stylesheet">
+    <link href="/css/theme.css?1507717155" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1507717155" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1507623875"></script>
+    <script src="/js/jquery-2.x.min.js?1507717155"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -379,7 +379,7 @@
 
 <p>Install the GoCV package:</p>
 
-<pre><code>    go get github.com/hybridgroup/gocv
+<pre><code>    go get -u -d github.com/hybridgroup/gocv
 </code></pre>
 
 <p>Now, install OpenCV 3.3 using Homebrew:</p>
@@ -390,6 +390,11 @@
 <h3 id="how-to-build-run-code">How to build/run code</h3>
 
 <p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.3, the following instructions should work.</p>
+
+<p>First, you need to change the current directory to the location of the GoCV repo:</p>
+
+<pre><code>    cd $GOPATH/src/github.com/hybridgroup.com/gocv
+</code></pre>
 
 <p>One time per session, you must run the script:</p>
 
@@ -406,6 +411,8 @@
 <pre><code>    gocv version: 0.1.0
     opencv lib version: 3.3.0
 </code></pre>
+
+<p>You might want to copy the <code>env.sh</code> script into your own projects, to make it easier to setup these vars when building your own code.</p>
 
 
 <footer class=" footline" >
@@ -611,20 +618,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1507623875"></script>
-    <script src="/js/perfect-scrollbar.min.js?1507623875"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1507623875"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1507623875"></script>
-    <script src="/js/featherlight.min.js?1507623875"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1507623875"></script>
-    <script src="/js/highlight.pack.js?1507623875"></script>
+    <script src="/js/clipboard.min.js?1507717155"></script>
+    <script src="/js/perfect-scrollbar.min.js?1507717155"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1507717155"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1507717155"></script>
+    <script src="/js/featherlight.min.js?1507717155"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1507717155"></script>
+    <script src="/js/highlight.pack.js?1507717155"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1507623875"></script>
-    <script src="/js/learn.js?1507623875"></script>
-    <script src="/js/hugo-learn.js?1507623875"></script>
+    <script src="/js/modernizr.custom.71422.js?1507717155"></script>
+    <script src="/js/learn.js?1507717155"></script>
+    <script src="/js/hugo-learn.js?1507717155"></script>
 
-    <link href="/mermaid/mermaid.css?1507623875" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1507623875"></script>
+    <link href="/mermaid/mermaid.css?1507717155" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1507717155"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
