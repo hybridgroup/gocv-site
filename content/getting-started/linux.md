@@ -13,7 +13,7 @@ You can use `make` to install OpenCV 3.3 with the handy `Makefile` included with
 
 Install the GoCV package:
 
-        go get github.com/hybridgroup/gocv
+        go get -u -d github.com/hybridgroup/gocv
 
 Change directories into the newly installed package directory:
 
@@ -61,3 +61,5 @@ The version program should output the following:
 
 		gocv version: 0.1.0
 		opencv lib version: 3.3.0
+
+You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.

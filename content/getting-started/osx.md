@@ -11,7 +11,7 @@ This page has information on how to install and use GoCV on OS X.
 
 Install the GoCV package:
 
-        go get github.com/hybridgroup/gocv
+        go get -u -d github.com/hybridgroup/gocv
 
 Now, install OpenCV 3.3 using Homebrew:
 
@@ -20,6 +20,10 @@ Now, install OpenCV 3.3 using Homebrew:
 ### How to build/run code
 
 In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.3, the following instructions should work.
+
+First, you need to change the current directory to the location of the GoCV repo:
+
+		cd $GOPATH/src/github.com/hybridgroup.com/gocv
 
 One time per session, you must run the script:
 
@@ -33,3 +37,5 @@ The version program should output the following:
 
 		gocv version: 0.1.0
 		opencv lib version: 3.3.0
+
+You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.
