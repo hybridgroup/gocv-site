@@ -6,6 +6,7 @@ theme = "learn"
 [params]
   # Disable search function. It will hide search bar
   disableSearch = true
+  editURL = "https://github.com/hybridgroup/gocv-site/edit/master/content/"
 
 [[menu.shortcuts]] 
 name = "<i class='fa fa-github'></i> Github repo"
