@@ -13,17 +13,17 @@
     <title>Windows :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1507809349" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1507809349" rel="stylesheet">
-    <link href="/css/hybrid.css?1507809349" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1507809349" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1507809349" rel="stylesheet">
-    <link href="/css/auto-complete.css?1507809349" rel="stylesheet">
-    <link href="/css/theme.css?1507809349" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1507809349" rel="stylesheet">
+    <link href="/css/nucleus.css?1507896869" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1507896869" rel="stylesheet">
+    <link href="/css/hybrid.css?1507896869" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1507896869" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1507896869" rel="stylesheet">
+    <link href="/css/auto-complete.css?1507896869" rel="stylesheet">
+    <link href="/css/theme.css?1507896869" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1507896869" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1507809349"></script>
+    <script src="/js/jquery-2.x.min.js?1507896869"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -359,8 +359,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#using">Using</a></li>
+<li><a href="#installing">Installing</a>
+<ul>
+<li><a href="#mingw-w64">MinGW-W64</a></li>
+<li><a href="#cmake">CMake</a></li>
+<li><a href="#download-opencv-3-3-and-opencv-contrib-modules">Download OpenCV 3.3 and OpenCV Contrib Modules</a></li>
+</ul></li>
+<li><a href="#how-to-build-run-code">How to build/run code</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -384,11 +389,94 @@
 
 
 
-<p>This page will have information on how to install and use GoCV on Microsoft Windows 10.</p>
+<p>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.</p>
 
 <h3 id="installing">Installing</h3>
 
-<h3 id="using">Using</h3>
+<p>In order to build and install OpenCV 3.3 on Windows, you must first download and install MinGW-W64 and CMake, as follows.</p>
+
+<h4 id="mingw-w64">MinGW-W64</h4>
+
+<p>Download and run the MinGW-W64 compiler installer from <a href="https://sourceforge.net/projects/mingw-w64/?source=typ_redirect">https://sourceforge.net/projects/mingw-w64/?source=typ_redirect</a>. Choose the options for &ldquo;posix&rdquo; threads, and for &ldquo;seh&rdquo; exceptions handling, then install to the default location <code>c:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2</code>.</p>
+
+<p>Add the <code>C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bin</code> path to your System Path.</p>
+
+<h4 id="cmake">CMake</h4>
+
+<p>Download and install CMake <a href="https://cmake.org/download/">https://cmake.org/download/</a> to the default location. CMake installer will add CMake to your system path.</p>
+
+<h4 id="download-opencv-3-3-and-opencv-contrib-modules">Download OpenCV 3.3 and OpenCV Contrib Modules</h4>
+
+<p>Download the source code for OpenCV&rsquo;s master branch from <a href="https://github.com/opencv/opencv">https://github.com/opencv/opencv</a> and extract it to the directory <code>C:\opencv\opencv-3.3.0</code></p>
+
+<p>Download the source code for OpenCV Contrib master branch from <a href="https://github.com/opencv/opencv_contrib">https://github.com/opencv/opencv_contrib</a> and extract it to the directory <code>C:\opencv\opencv_contrib-3.3.0</code></p>
+
+<p>Create the directory <code>C:\opencv\build</code> as the build directory.</p>
+
+<p>Now launch the <code>cmake-gui</code> program, and set the &ldquo;Where is the source code&rdquo; to <code>C:\opencv\opencv-3.3.0</code>, and the &ldquo;Where to build the binaries&rdquo; to <code>C:\opencv3\build</code>.</p>
+
+<p>Click on &ldquo;Configure&rdquo; and select &ldquo;MinGW MakeFile&rdquo; from the window, then click on the  &ldquo;Next&rdquo; button.</p>
+
+<p>Click on the &ldquo;Configure&rdquo; button and wait for the configuration step.</p>
+
+<p>Now, scroll down the list and change the following settings as follows:</p>
+
+<ul>
+<li><code>BUILD_DOCS</code> should be unchecked (aka disabled).</li>
+<li><code>BUILD_TESTS</code> should be unchecked (aka disabled).</li>
+<li><code>BUILD_PERF_TESTS</code> should be unchecked (aka disabled).</li>
+<li><code>ENABLE_PRECOMPILED_HEADERS</code> should be unchecked.</li>
+<li><code>ENABLE_CXX11</code> should be checked.</li>
+<li><code>OPENCV_EXTRA_MODULES_PATH</code> should be set to <code>C:\opencv\opencv_contrib-3.3.0\modules</code></li>
+</ul>
+
+<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
+
+<p>Some new configuration options will have appeared. Scroll down the list and change the following settings as follows:</p>
+
+<ul>
+<li><code>BUILD_opencv_saliency</code> should be unchecked (aka disabled). OpenCV Contrib&rsquo;s &ldquo;Saliency&rdquo; module is unable to build on Windows with this toolchain at this time.</li>
+</ul>
+
+<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
+
+<p>Once it is complete, click on the &ldquo;Generate&rdquo; button, and wait for it to generate your make files.</p>
+
+<p>Now run the following commands:</p>
+
+<pre><code>    cd C:\opencv\build
+    mingw32-make
+</code></pre>
+
+<p>The build should start. It will probably take a very long time. When it is finished run:</p>
+
+<pre><code>    mingw32-make install
+</code></pre>
+
+<p>Last, add <code>C:\opencv\build\install\x64\mingw\bin</code> to your System Path.</p>
+
+<p>You should now have OpenCV 3.3 installed on your Windows 10 machine.</p>
+
+<h3 id="how-to-build-run-code">How to build/run code</h3>
+
+<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</p>
+
+<p>One time per session, you must run these commands:</p>
+
+<pre><code>    set CGO_CPPFLAGS=-IC:\opencv\build\install\include
+    set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core330 -lopencv_videoio330 -lopencv_imgproc330 -lopencv_highgui330 -lopencv_imgcodecs330 -lopencv_objdetect330 -lopencv_calib3d330
+</code></pre>
+
+<p>Now you should be able to build or run any of the command examples:</p>
+
+<pre><code>    go run .\cmd\version\main.go
+</code></pre>
+
+<p>The version program should output the following:</p>
+
+<pre><code>    gocv version: 0.1.3
+    opencv lib version: 3.3.0-dev
+</code></pre>
 
 
 <footer class=" footline" >
@@ -594,20 +682,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1507809349"></script>
-    <script src="/js/perfect-scrollbar.min.js?1507809349"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1507809349"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1507809349"></script>
-    <script src="/js/featherlight.min.js?1507809349"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1507809349"></script>
-    <script src="/js/highlight.pack.js?1507809349"></script>
+    <script src="/js/clipboard.min.js?1507896869"></script>
+    <script src="/js/perfect-scrollbar.min.js?1507896869"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1507896869"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1507896869"></script>
+    <script src="/js/featherlight.min.js?1507896869"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1507896869"></script>
+    <script src="/js/highlight.pack.js?1507896869"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1507809349"></script>
-    <script src="/js/learn.js?1507809349"></script>
-    <script src="/js/hugo-learn.js?1507809349"></script>
+    <script src="/js/modernizr.custom.71422.js?1507896869"></script>
+    <script src="/js/learn.js?1507896869"></script>
+    <script src="/js/hugo-learn.js?1507896869"></script>
 
-    <link href="/mermaid/mermaid.css?1507809349" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1507809349"></script>
+    <link href="/mermaid/mermaid.css?1507896869" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1507896869"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

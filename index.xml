@@ -59,8 +59,10 @@ Installing Install the GoCV package:
       <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
       
       <guid>http://gocv.io/getting-started/windows/</guid>
-      <description> This page will have information on how to install and use GoCV on Microsoft Windows 10.
-Installing Using </description>
+      <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
+Installing In order to build and install OpenCV 3.3 on Windows, you must first download and install MinGW-W64 and CMake, as follows.
+MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect. Choose the options for &amp;ldquo;posix&amp;rdquo; threads, and for &amp;ldquo;seh&amp;rdquo; exceptions handling, then install to the default location c:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2.
+Add the C:\Program Files\mingw-w64\x86_64-7.</description>
     </item>
     
     <item>
