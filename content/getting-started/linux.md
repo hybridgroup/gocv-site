@@ -13,11 +13,11 @@ You can use `make` to install OpenCV 3.3 with the handy `Makefile` included with
 
 Install the GoCV package:
 
-        go get -u -d github.com/hybridgroup/gocv
+        go get -u -d gocv.io/x/gocv
 
 Change directories into the newly installed package directory:
 
-        cd $GOPATH/src/github.com/hybridgroup/gocv
+        cd $GOPATH/src/gocv.io/x/gocv
 
 Now you can run the needed installation steps listed below.
 

@@ -11,7 +11,7 @@ This example opens a video capture device using device "0", reads frames, and sh
 package main
 
 import (
-	"github.com/hybridgroup/gocv"
+	"gocv.io/x/gocv"
 )
 
 func main() {

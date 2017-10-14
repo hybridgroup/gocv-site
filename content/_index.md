@@ -3,7 +3,7 @@ title: "Home"
 ---
 # The gopher can see you now.
 
-[![GoCV](images/gocvlogo.jpg)](http://gocv.io/)
+[![GoCV](images/gocvlogo.jpg)](https://gocv.io/)
 
 GoCV gives programmers who use the [Go programming language](https://golang.org/) access to the [OpenCV 3.0+](http://opencv.org/) computer vision library.
 

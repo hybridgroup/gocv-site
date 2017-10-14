@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"image/color"
 
-	"github.com/hybridgroup/gocv"
+	"gocv.io/x/gocv"
 )
 
 func main() {

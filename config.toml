@@ -1,4 +1,4 @@
-baseURL = "http://gocv.io/"
+baseURL = "https://gocv.io/"
 languageCode = "en-us"
 title = "GoCV - Golang Computer Vision Using OpenCV 3"
 theme = "learn"
@@ -15,5 +15,5 @@ weight = 10
 
 [[menu.shortcuts]] 
 name = "<i class='fa fa-book'></i> Godoc"
-url = "https://godoc.org/github.com/hybridgroup/gocv"
+url = "https://godoc.org/gocv.io/x/gocv"
 weight = 20

@@ -11,7 +11,7 @@ This page has information on how to install and use GoCV on Microsoft Windows 10
 
 Install the GoCV package:
 
-        go get -u -d github.com/hybridgroup/gocv
+        go get -u -d gocv.io/x/gocv
 
 In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.
 
