@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Writing Code on GoCV - Golang Computer Vision Using OpenCV 3</title>
-    <link>http://gocv.io/writing-code/</link>
+    <link>https://gocv.io/writing-code/</link>
     <description>Recent content in Writing Code on GoCV - Golang Computer Vision Using OpenCV 3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Oct 2017 17:59:58 +0200</lastBuildDate>
     
-	<atom:link href="http://gocv.io/writing-code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gocv.io/writing-code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello Video</title>
-      <link>http://gocv.io/writing-code/hello-video/</link>
+      <link>https://gocv.io/writing-code/hello-video/</link>
       <pubDate>Mon, 09 Oct 2017 18:00:37 +0200</pubDate>
       
-      <guid>http://gocv.io/writing-code/hello-video/</guid>
+      <guid>https://gocv.io/writing-code/hello-video/</guid>
       <description>This example opens a video capture device using device &amp;ldquo;0&amp;rdquo;, reads frames, and shows the video in a GUI window:
-package main import ( &amp;quot;github.com/hybridgroup/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;)	img := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) gocv.WaitKey(1) } }  </description>
+package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;)	img := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) gocv.WaitKey(1) } }  </description>
     </item>
     
     <item>
       <title>Face Detect</title>
-      <link>http://gocv.io/writing-code/face-detect/</link>
+      <link>https://gocv.io/writing-code/face-detect/</link>
       <pubDate>Mon, 09 Oct 2017 18:02:15 +0200</pubDate>
       
-      <guid>http://gocv.io/writing-code/face-detect/</guid>
+      <guid>https://gocv.io/writing-code/face-detect/</guid>
       <description>This is a more complete example that opens a video capture device using device &amp;ldquo;0&amp;rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;github.</description>
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;gocv.</description>
     </item>
     
     <item>
       <title>More Examples</title>
-      <link>http://gocv.io/writing-code/more-examples/</link>
+      <link>https://gocv.io/writing-code/more-examples/</link>
       <pubDate>Mon, 09 Oct 2017 18:04:54 +0200</pubDate>
       
-      <guid>http://gocv.io/writing-code/more-examples/</guid>
+      <guid>https://gocv.io/writing-code/more-examples/</guid>
       <description>GoCV comes with various useful command line utilities, that are also examples of how to use the package.
 Captest Tests to verify you can capture video from a connected webcam.
 https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go

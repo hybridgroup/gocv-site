@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Getting Started on GoCV - Golang Computer Vision Using OpenCV 3</title>
-    <link>http://gocv.io/getting-started/</link>
+    <link>https://gocv.io/getting-started/</link>
     <description>Recent content in Getting Started on GoCV - Golang Computer Vision Using OpenCV 3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Oct 2017 11:40:54 +0200</lastBuildDate>
     
-	<atom:link href="http://gocv.io/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gocv.io/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux</title>
-      <link>http://gocv.io/getting-started/linux/</link>
+      <link>https://gocv.io/getting-started/linux/</link>
       <pubDate>Mon, 09 Oct 2017 11:41:45 +0200</pubDate>
       
-      <guid>http://gocv.io/getting-started/linux/</guid>
+      <guid>https://gocv.io/getting-started/linux/</guid>
       <description>This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
 You can use make to install OpenCV 3.3 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
     </item>
     
     <item>
       <title>OS X</title>
-      <link>http://gocv.io/getting-started/osx/</link>
+      <link>https://gocv.io/getting-started/osx/</link>
       <pubDate>Mon, 09 Oct 2017 11:41:50 +0200</pubDate>
       
-      <guid>http://gocv.io/getting-started/osx/</guid>
+      <guid>https://gocv.io/getting-started/osx/</guid>
       <description>This page has information on how to install and use GoCV on OS X.
 Installing Install the GoCV package:
- go get -u -d github.com/hybridgroup/gocv  Now, install OpenCV 3.3 using Homebrew:
+ go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.3 using Homebrew:
  brew install opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.</description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>http://gocv.io/getting-started/windows/</link>
+      <link>https://gocv.io/getting-started/windows/</link>
       <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
       
-      <guid>http://gocv.io/getting-started/windows/</guid>
+      <guid>https://gocv.io/getting-started/windows/</guid>
       <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
 Installing Install the GoCV package:
- go get -u -d github.com/hybridgroup/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.
+ go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.
 MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect. Choose the options for &amp;ldquo;posix&amp;rdquo; threads, and for &amp;ldquo;seh&amp;rdquo; exceptions handling, then install to the default location c:\Program Files\mingw-w64\x86_64-7.</description>
     </item>
     
