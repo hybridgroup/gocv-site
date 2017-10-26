@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.30" />
+    <meta name="generator" content="Hugo 0.30.2" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>Windows :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1508372859" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1508372859" rel="stylesheet">
-    <link href="/css/hybrid.css?1508372859" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1508372859" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1508372859" rel="stylesheet">
-    <link href="/css/auto-complete.css?1508372859" rel="stylesheet">
-    <link href="/css/theme.css?1508372859" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1508372859" rel="stylesheet">
+    <link href="/css/nucleus.css?1509018373" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1509018373" rel="stylesheet">
+    <link href="/css/hybrid.css?1509018373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1509018373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1509018373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1509018373" rel="stylesheet">
+    <link href="/css/theme.css?1509018373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1509018373" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1508372859"></script>
+    <script src="/js/jquery-2.x.min.js?1509018373"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -412,13 +412,13 @@
 
 <h4 id="download-opencv-3-3-and-opencv-contrib-modules">Download OpenCV 3.3 and OpenCV Contrib Modules</h4>
 
-<p>Download the source code for OpenCV&rsquo;s master branch from <a href="https://github.com/opencv/opencv">https://github.com/opencv/opencv</a> and extract it to the directory <code>C:\opencv\opencv-3.3.0</code></p>
+<p>Download the source code for the latest OpenCV release from <a href="https://github.com/opencv/opencv/archive/3.3.1.zip">https://github.com/opencv/opencv/archive/3.3.1.zip</a> and extract it to the directory <code>C:\opencv\opencv-3.3.1</code></p>
 
-<p>Download the source code for OpenCV Contrib master branch from <a href="https://github.com/opencv/opencv_contrib">https://github.com/opencv/opencv_contrib</a> and extract it to the directory <code>C:\opencv\opencv_contrib-3.3.0</code></p>
+<p>Download the source code for the latest OpenCV Contrib release from <a href="https://github.com/opencv/opencv_contrib/archive/3.3.1.zip">https://github.com/opencv/opencv_contrib/archive/3.3.1.zip</a> and extract it to the directory <code>C:\opencv\opencv_contrib-3.3.1</code></p>
 
 <p>Create the directory <code>C:\opencv\build</code> as the build directory.</p>
 
-<p>Now launch the <code>cmake-gui</code> program, and set the &ldquo;Where is the source code&rdquo; to <code>C:\opencv\opencv-3.3.0</code>, and the &ldquo;Where to build the binaries&rdquo; to <code>C:\opencv\build</code>.</p>
+<p>Now launch the <code>cmake-gui</code> program, and set the &ldquo;Where is the source code&rdquo; to <code>C:\opencv\opencv-3.3.1</code>, and the &ldquo;Where to build the binaries&rdquo; to <code>C:\opencv\build</code>.</p>
 
 <p>Click on &ldquo;Configure&rdquo; and select &ldquo;MinGW MakeFile&rdquo; from the window, then click on the  &ldquo;Next&rdquo; button.</p>
 
@@ -432,7 +432,7 @@
 <li><code>BUILD_PERF_TESTS</code> should be unchecked (aka disabled).</li>
 <li><code>ENABLE_PRECOMPILED_HEADERS</code> should be unchecked.</li>
 <li><code>ENABLE_CXX11</code> should be checked.</li>
-<li><code>OPENCV_EXTRA_MODULES_PATH</code> should be set to <code>C:\opencv\opencv_contrib-3.3.0\modules</code></li>
+<li><code>OPENCV_EXTRA_MODULES_PATH</code> should be set to <code>C:\opencv\opencv_contrib-3.3.1\modules</code></li>
 </ul>
 
 <p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
@@ -469,7 +469,7 @@
 <p>One time per session, you must run these commands:</p>
 
 <pre><code>    set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-    set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core330 -lopencv_videoio330 -lopencv_imgproc330 -lopencv_highgui330 -lopencv_imgcodecs330 -lopencv_objdetect330 -lopencv_calib3d330
+    set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core330 -lopencv_videoio330 -lopencv_imgproc331 -lopencv_highgui331 -lopencv_imgcodecs331 -lopencv_objdetect331 -lopencv_calib3d331 -lopencv_video331
 </code></pre>
 
 <p>Now you should be able to build or run any of the command examples:</p>
@@ -479,8 +479,8 @@
 
 <p>The version program should output the following:</p>
 
-<pre><code>    gocv version: 0.1.3
-    opencv lib version: 3.3.0-dev
+<pre><code>    gocv version: 0.3.1
+    opencv lib version: 3.3.1
 </code></pre>
 
 
@@ -687,20 +687,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1508372859"></script>
-    <script src="/js/perfect-scrollbar.min.js?1508372859"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1508372859"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1508372859"></script>
-    <script src="/js/featherlight.min.js?1508372859"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1508372859"></script>
-    <script src="/js/highlight.pack.js?1508372859"></script>
+    <script src="/js/clipboard.min.js?1509018373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1509018373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1509018373"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1509018373"></script>
+    <script src="/js/featherlight.min.js?1509018373"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1509018373"></script>
+    <script src="/js/highlight.pack.js?1509018373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1508372859"></script>
-    <script src="/js/learn.js?1508372859"></script>
-    <script src="/js/hugo-learn.js?1508372859"></script>
+    <script src="/js/modernizr.custom.71422.js?1509018373"></script>
+    <script src="/js/learn.js?1509018373"></script>
+    <script src="/js/hugo-learn.js?1509018373"></script>
 
-    <link href="/mermaid/mermaid.css?1508372859" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1508372859"></script>
+    <link href="/mermaid/mermaid.css?1509018373" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1509018373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
