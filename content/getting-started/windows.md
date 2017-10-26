@@ -27,13 +27,13 @@ Download and install CMake [https://cmake.org/download/](https://cmake.org/downl
 
 #### Download OpenCV 3.3 and OpenCV Contrib Modules
 
-Download the source code for OpenCV's master branch from [https://github.com/opencv/opencv](https://github.com/opencv/opencv) and extract it to the directory `C:\opencv\opencv-3.3.0`
+Download the source code for the latest OpenCV release from [https://github.com/opencv/opencv/archive/3.3.1.zip](https://github.com/opencv/opencv/archive/3.3.1.zip) and extract it to the directory `C:\opencv\opencv-3.3.1`
 
-Download the source code for OpenCV Contrib master branch from [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib) and extract it to the directory `C:\opencv\opencv_contrib-3.3.0`
+Download the source code for the latest OpenCV Contrib release from [https://github.com/opencv/opencv_contrib/archive/3.3.1.zip](https://github.com/opencv/opencv_contrib/archive/3.3.1.zip) and extract it to the directory `C:\opencv\opencv_contrib-3.3.1`
 
 Create the directory `C:\opencv\build` as the build directory.
 
-Now launch the `cmake-gui` program, and set the "Where is the source code" to `C:\opencv\opencv-3.3.0`, and the "Where to build the binaries" to `C:\opencv\build`.
+Now launch the `cmake-gui` program, and set the "Where is the source code" to `C:\opencv\opencv-3.3.1`, and the "Where to build the binaries" to `C:\opencv\build`.
 
 Click on "Configure" and select "MinGW MakeFile" from the window, then click on the  "Next" button.
 
@@ -46,7 +46,7 @@ Now, scroll down the list and change the following settings as follows:
 - `BUILD_PERF_TESTS` should be unchecked (aka disabled).
 - `ENABLE_PRECOMPILED_HEADERS` should be unchecked.
 - `ENABLE_CXX11` should be checked.
-- `OPENCV_EXTRA_MODULES_PATH` should be set to `C:\opencv\opencv_contrib-3.3.0\modules`
+- `OPENCV_EXTRA_MODULES_PATH` should be set to `C:\opencv\opencv_contrib-3.3.1\modules`
 
 Click on the "Configure" button again, and wait for the configuration step.
 
@@ -78,7 +78,7 @@ In order to build/run Go code that uses this package, you will need to specify t
 One time per session, you must run these commands:
 
 		set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-		set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core330 -lopencv_videoio330 -lopencv_imgproc330 -lopencv_highgui330 -lopencv_imgcodecs330 -lopencv_objdetect330 -lopencv_calib3d330
+		set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core330 -lopencv_videoio330 -lopencv_imgproc331 -lopencv_highgui331 -lopencv_imgcodecs331 -lopencv_objdetect331 -lopencv_calib3d331 -lopencv_video331
 
 Now you should be able to build or run any of the command examples:
 
@@ -86,5 +86,5 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-		gocv version: 0.1.3
-		opencv lib version: 3.3.0-dev
+		gocv version: 0.3.1
+		opencv lib version: 3.3.1
