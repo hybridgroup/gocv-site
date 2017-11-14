@@ -18,6 +18,12 @@ Capture video from a connected webcam and display the video in a Window.
 
 https://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go
 
+## Counter
+
+Capture video from a pre-recorded file, and then count the number of detected objects that cross a user-definable vertical or horizontal line.
+
+https://github.com/hybridgroup/gocv/blob/master/cmd/counter/main.go
+
 ## Faceblur
 
 Captures video from a connected camera, then uses the CascadeClassifier to detect faces, blurs them using a Gaussian blur, then displays the blurred video in a window.
@@ -35,6 +41,12 @@ https://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go
 Opens a video capture device, then streams MJPEG from it that you can view in any browser.
 
 https://github.com/hybridgroup/gocv/blob/master/cmd/mjpeg-streamer/main.go
+
+## Motion-detect
+
+Opens a video capture device, then processes it looking for motion, human or otherwise.
+
+https://github.com/hybridgroup/gocv/blob/master/cmd/motion-detect/main.go
 
 ## Saveimage
 
