@@ -76,7 +76,7 @@ Captest Tests to verify you can capture video from a connected webcam.
 https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go
 Capwindow Capture video from a connected webcam and display the video in a Window.
 https://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go
-Faceblur Captures video from a connected camera, then uses the CascadeClassifier to detect faces, blurs them using a Gaussian blur, then displays the blurred video in a window.</description>
+Counter Capture video from a pre-recorded file, and then count the number of detected objects that cross a user-definable vertical or horizontal line.</description>
     </item>
     
   </channel>
