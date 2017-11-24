@@ -22,7 +22,7 @@ func main() {
 	for {
 		webcam.Read(img)
 		window.IMShow(img)
-		gocv.WaitKey(1)
+		window.WaitKey(1)
 	}
 }
 ```
