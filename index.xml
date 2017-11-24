@@ -18,7 +18,7 @@
       
       <guid>https://gocv.io/writing-code/hello-video/</guid>
       <description>This example opens a video capture device using device &amp;ldquo;0&amp;rdquo;, reads frames, and shows the video in a GUI window:
-package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;)	img := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) gocv.WaitKey(1) } }  </description>
+package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;)	img := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) window.WaitKey(1) } }  </description>
     </item>
     
     <item>
