@@ -1,8 +1,7 @@
 ---
 title: "Introducing the GoCV Blog"
-date: 2017-12-14T12:00:00+02:00
 draft: false
-weight: 1
+weight: 2
 ---
 
 Perhaps you have been wondering "where is the blog for this project?". Well, wonder no more, here it is!

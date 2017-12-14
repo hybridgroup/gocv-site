@@ -1,6 +1,5 @@
 ---
 title: "Putting Eyes on the IoT: Advanced Computer Vision Using Golang - The Video"
-date: 2017-12-14T16:00:00+02:00
 draft: false
 weight: 1
 ---
