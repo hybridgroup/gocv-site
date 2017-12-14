@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <link>https://gocv.io/blog/</link>
+    <description>Recent content in Blog on GoCV - Golang Computer Vision Using OpenCV 3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://gocv.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Putting Eyes on the IoT: Advanced Computer Vision Using Golang - The Video</title>
+      <link>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</guid>
+      <description>The video from the talk about GoCV during the Intel Global IoT Devfest has just been posted online.
+Check it at at:
+https://www.youtube.com/watch?v=eR8T8rvlNuk
+Even if you are a newcomer to Go programming or computer vision, the talk is intended so you can get something useful out of it.
+Also, provides useful information about not just OpenCV but also the Intel Computer Vision SDK, which has not had a lot of tutorial content yet overall, let along in Golang.</description>
+    </item>
+    
+    <item>
+      <title>Introducing the GoCV Blog</title>
+      <link>https://gocv.io/blog/2017-12-14-gocv-the-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2017-12-14-gocv-the-blog/</guid>
+      <description>Perhaps you have been wondering &amp;ldquo;where is the blog for this project?&amp;rdquo;. Well, wonder no more, here it is!
+We have a Twitter account too We also now have an &amp;ldquo;official&amp;rdquo; Twitter account at @GoCVio please follow us.
+What we will cover Updates to GoCV or to OpenCV itself, cool things built with GoCV, events we attend, and the like.
+We want to hear from you! Are you using GoCV for something?</description>
+    </item>
+    
+  </channel>
+</rss>
