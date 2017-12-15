@@ -11,12 +11,12 @@
     
     
     <item>
-      <title>Putting Eyes on the IoT: Advanced Computer Vision Using Golang - The Video</title>
+      <title>Putting Eyes on the IoT - The Video</title>
       <link>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</guid>
-      <description>The video from the talk about GoCV during the Intel Global IoT Devfest has just been posted online.
+      <description>The video from &amp;ldquo;Putting Eyes on the IoT: Advanced Computer Vision Using Golang&amp;rdquo;, the talk about GoCV during the Intel Global IoT Devfest, has just been posted online.
 Check it at at:
 https://www.youtube.com/watch?v=eR8T8rvlNuk
 Even if you are a newcomer to Go programming or computer vision, the talk is intended so you can get something useful out of it.
