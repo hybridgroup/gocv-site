@@ -20,5 +20,5 @@ weight = 20
 
 [[menu.shortcuts]] 
 name = "<i class='fa fa-twitter'></i> Twitter"
-url = "https://twitter/GoCVio"
+url = "https://twitter.com/GoCVio"
 weight = 30
