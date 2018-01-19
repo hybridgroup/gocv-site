@@ -63,3 +63,7 @@ The version program should output the following:
 		opencv lib version: 3.3.1
 
 You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.
+
+If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.sh` must have been executed as described above):
+
+        go install gocv.io/x/gocv

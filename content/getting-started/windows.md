@@ -88,3 +88,7 @@ The version program should output the following:
 
 		gocv version: 0.7.0
 		opencv lib version: 3.3.1
+
+If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.sh` must have been executed as described above):
+
+        go install gocv.io/x/gocv
