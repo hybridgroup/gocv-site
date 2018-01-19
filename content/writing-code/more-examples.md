@@ -6,6 +6,10 @@ draft: false
 
 GoCV comes with various useful command line utilities, that are also examples of how to use the package.
 
+## Caffe Classifier
+
+Capture video from a connected webcam, then use the Caffe deep learning framework to classify whatever is in front of the camera.
+
 ## Captest
 
 Tests to verify you can capture video from a connected webcam.
@@ -65,6 +69,10 @@ https://github.com/hybridgroup/gocv/blob/master/cmd/savevideo/main.go
 Open an image file from disk, then display it in a window.
 
 https://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go
+
+## TF Classifier
+
+Capture video from a connected webcam, then use the Tensorflow machine learning framework to classify whatever is in front of the camera.
 
 ## Version
 
