@@ -59,8 +59,8 @@ Now you should be able to build or run any of the examples:
 
 The version program should output the following:
 
-		gocv version: 0.7.0
-		opencv lib version: 3.3.1
+		gocv version: 0.8.0
+		opencv lib version: 3.4.0
 
 You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.
 

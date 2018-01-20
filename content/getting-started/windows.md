@@ -78,7 +78,7 @@ In order to build/run Go code that uses this package, you will need to specify t
 One time per session, you must run these commands:
 
 		set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-		set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core331 -lopencv_videoio331 -lopencv_imgproc331 -lopencv_highgui331 -lopencv_imgcodecs331 -lopencv_objdetect331 -lopencv_features2d331 -lopencv_video331 -lopencv_face331 -lopencv_xfeatures2d331
+		set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core340 -lopencv_face340 -lopencv_videoio340 -lopencv_imgproc340 -lopencv_highgui340 -lopencv_imgcodecs340 -lopencv_objdetect340 -lopencv_features2d340 -lopencv_video340 -lopencv_dnn340 -lopencv_xfeatures2d340
 
 Now you should be able to build or run any of the command examples:
 
@@ -86,9 +86,9 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-		gocv version: 0.7.0
-		opencv lib version: 3.3.1
+		gocv version: 0.8.0
+		opencv lib version: 3.4.0
 
-If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.sh` must have been executed as described above):
+If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`CGO_CPPFLAGS` and `CGO_LDFLAGS` must have been set as described above):
 
         go install gocv.io/x/gocv
