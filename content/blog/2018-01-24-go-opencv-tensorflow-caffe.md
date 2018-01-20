@@ -108,9 +108,9 @@ for {
 
 There are other cool capabilities of the Intel CV SDK such as hardware acceleration that are automatically supported when you use GoCV with it.
 
-### And That's Not All
+### And There's More
 
-We've also had many excellent contributions this release, with improvements to core, more imgproc filters, more feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!
+We've also had many excellent contributions this release, with updates to OpenCV 3.4, improvements to core, more imgproc filters, new feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!
 
 ### Keep Sight of What We're Doing
 
