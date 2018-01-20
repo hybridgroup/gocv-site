@@ -1,7 +1,7 @@
 ---
 title: "Introducing the GoCV Blog"
 draft: false
-weight: 2
+weight: 3
 ---
 
 Perhaps you have been wondering "where is the blog for this project?". Well, wonder no more, here it is!

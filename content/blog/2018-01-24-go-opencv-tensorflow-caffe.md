@@ -1,12 +1,12 @@
 ---
 title: "Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV"
 draft: false
-weight: 2
+weight: 1
 ---
 
 We are pleased to present to you the new GoCV ([https://gocv.io](https://gocv.io)) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
 
-The new version adds support for the [OpenCV Deep Neural Network (DNN) module](https://docs.opencv.org/3.4.0/d6/d0f/group__dnn.html), which means you can now use Caffe ([http://caffe.berkeleyvision.org/](http://caffe.berkeleyvision.org/)) and Tensorflow ([https://www.tensorflow.org/](https://www.tensorflow.org/)) models from your GoCV code. GoCV also now has complete support for the latest [Intel Computer Vision SDK with Photography Vision Library (PVL)](https://software.intel.com/en-us/cvsdk-devguide-advanced-face-capabilities-in-intels-opencv) including face recognition.
+The new version adds support for the [OpenCV Deep Neural Network (DNN) module](https://docs.opencv.org/3.4.0/d6/d0f/group__dnn.html), which means you can now use Caffe ([http://caffe.berkeleyvision.org/](http://caffe.berkeleyvision.org/)) and Tensorflow ([https://www.tensorflow.org/](https://www.tensorflow.org/)) models from your GoCV code. GoCV also now has complete support for the latest [Intel Computer Vision SDK Beta R3](https://software.intel.com/en-us/cvsdk-devguide-advanced-face-capabilities-in-intels-opencv) including face recognition.
 
 There is lots more, check out the full changelog at [https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#080](https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#080) for complete details, or read on for the highlights.
 
@@ -30,7 +30,7 @@ func main() {
     net := gocv.ReadNetFromTensorflow("/path/to/tensorflow_inception_graph.pb")
 
     for {
-        // read image form camera
+        // read image from camera
         webcam.Read(img)
 
         // convert to a 224x244 image blob that can be processed by Tensorflow
@@ -57,11 +57,12 @@ func main() {
 }
 ```
 
-For a complete example using GoCV with Tensorflow take a look at [https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go](https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go). For an example using GoCV with Caffe take a look at [https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go](https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go).
+For a complete example using GoCV with Tensorflow take a look at [https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go](https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go). 
+For an example using GoCV with Caffe take a look at [https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go](https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go).
 
-### Recognizing Faces With The Intel CV SDK PVL
+### Recognizing Faces With The Intel Computer Vision SDK Beta R3
 
-We now offer complete support for the Intel Computer Vision (CV) SDK, by adding the Photography Vision Library (PVL) FaceRecognizer. The FaceRecognizer is a fast and simple interface to this very common feature needed for many CV applications. You can just load in a PVL FaceDetector and a FaceRecognizer like this:
+We now offer complete support for the Intel Computer Vision SDK Beta R3. Of special note, we added the Photography Vision Library (PVL) FaceRecognizer algorithm. The FaceRecognizer is an efficient and simple interface to this very common feature needed for many CV applications. You can just load in a PVL FaceDetector and a FaceRecognizer like this:
 
 ```go
 fd := pvl.NewFaceDetector()
@@ -105,6 +106,12 @@ for {
 }
 ```
 
+There are other cool capabilities of the Intel CV SDK such as hardware acceleration that are automatically supported when you use GoCV with it.
+
+### And That's Not All
+
+We've also had many excellent contributions this release, with improvements to core, more imgproc filters, more feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!
+
 ### Keep Sight of What We're Doing
 
-We're continuously making improvements to GoCV, with a very active community forming around Golang for computer vision applications. Please follow us on Twitter at [@GoCVio](https://twitter.com/GoCVio) for the latest and greatest news about the project.
+We're continuously making improvements to GoCV thanks to the very active community forming around Golang for computer vision applications. Please follow us on Twitter at [@GoCVio](https://twitter.com/GoCVio) for the latest and greatest news about the project.
