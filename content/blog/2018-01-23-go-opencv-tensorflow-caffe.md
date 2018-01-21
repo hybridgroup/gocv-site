@@ -106,12 +106,14 @@ for {
 }
 ```
 
-There are other cool capabilities of the Intel CV SDK such as hardware acceleration that are automatically supported when you use GoCV with it.
+The complete example using GoCV with the Intel CV SDK FaceRecognizer is at [https://github.com/hybridgroup/gocv/blob/master/cmd/pvl/facerecognizer/main.go](https://github.com/hybridgroup/gocv/blob/master/cmd/pvl/facerecognizer/main.go).
 
-### And There's More
+There are other cool capabilities of the Intel CV SDK such as hardware acceleration that are automatically supported when you use it with GoCV.
 
-We've also had many excellent contributions this release, with updates to OpenCV 3.4, improvements to core, more imgproc filters, new feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!
+### And There's Even More
 
-### Keep Sight of What We're Doing
+We've had many other excellent contributions this release, with updates to the new OpenCV 3.4, improvements to GoCV  core, more imgproc filters, new feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!
 
-We're continuously making improvements to GoCV thanks to the very active community forming around Golang for computer vision applications. Please follow us on Twitter at [@GoCVio](https://twitter.com/GoCVio) for the latest and greatest news about the project.
+### Keep Sight of What We're Up To
+
+There are many improvements being made to GoCV, thanks to the very active community forming around Golang for computer vision applications. Please follow us on Twitter at [@GoCVio](https://twitter.com/GoCVio) for the latest and greatest news about the project.
