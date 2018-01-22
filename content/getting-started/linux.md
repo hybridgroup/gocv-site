@@ -29,7 +29,7 @@ First, you need to update the system, and install any required packages:
 
 #### Download source
 
-Next, download the OpenCV 3.3 and OpenCV Contrib source code:
+Next, download the OpenCV 3.4 and OpenCV Contrib source code:
 
 		make download
 

@@ -25,15 +25,15 @@ Add the `C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bi
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### Download OpenCV 3.3 and OpenCV Contrib Modules
+#### Download OpenCV 3.4 and OpenCV Contrib Modules
 
-Download the source code for the latest OpenCV release from [https://github.com/opencv/opencv/archive/3.3.1.zip](https://github.com/opencv/opencv/archive/3.3.1.zip) and extract it to the directory `C:\opencv\opencv-3.3.1`
+Download the source code for the latest OpenCV release from [https://github.com/opencv/opencv/archive/3.4.0.zip](https://github.com/opencv/opencv/archive/3.4.0.zip) and extract it to the directory `C:\opencv\opencv-3.4.0`
 
-Download the source code for the latest OpenCV Contrib release from [https://github.com/opencv/opencv_contrib/archive/3.3.1.zip](https://github.com/opencv/opencv_contrib/archive/3.3.1.zip) and extract it to the directory `C:\opencv\opencv_contrib-3.3.1`
+Download the source code for the latest OpenCV Contrib release from [https://github.com/opencv/opencv_contrib/archive/3.4.0.zip](https://github.com/opencv/opencv_contrib/archive/3.4.0.zip) and extract it to the directory `C:\opencv\opencv_contrib-3.4.0`
 
 Create the directory `C:\opencv\build` as the build directory.
 
-Now launch the `cmake-gui` program, and set the "Where is the source code" to `C:\opencv\opencv-3.3.1`, and the "Where to build the binaries" to `C:\opencv\build`.
+Now launch the `cmake-gui` program, and set the "Where is the source code" to `C:\opencv\opencv-3.4.0`, and the "Where to build the binaries" to `C:\opencv\build`.
 
 Click on "Configure" and select "MinGW MakeFile" from the window, then click on the  "Next" button.
 
@@ -46,7 +46,7 @@ Now, scroll down the list and change the following settings as follows:
 - `BUILD_PERF_TESTS` should be unchecked (aka disabled).
 - `ENABLE_PRECOMPILED_HEADERS` should be unchecked.
 - `ENABLE_CXX11` should be checked.
-- `OPENCV_EXTRA_MODULES_PATH` should be set to `C:\opencv\opencv_contrib-3.3.1\modules`
+- `OPENCV_EXTRA_MODULES_PATH` should be set to `C:\opencv\opencv_contrib-3.4.0\modules`
 
 Click on the "Configure" button again, and wait for the configuration step.
 
@@ -69,16 +69,15 @@ The build should start. It will probably take a very long time. When it is finis
 
 Last, add `C:\opencv\build\install\x64\mingw\bin` to your System Path.
 
-You should now have OpenCV 3.3 installed on your Windows 10 machine.
+You should now have OpenCV 3.4 installed on your Windows 10 machine.
 
 ### How to build/run code
 
 In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.
 
-One time per session, you must run these commands:
+One time per session, you must run the script:
 
-		set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-		set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core340 -lopencv_face340 -lopencv_videoio340 -lopencv_imgproc340 -lopencv_highgui340 -lopencv_imgcodecs340 -lopencv_objdetect340 -lopencv_features2d340 -lopencv_video340 -lopencv_dnn340 -lopencv_xfeatures2d340
+		env.cmd
 
 Now you should be able to build or run any of the command examples:
 
@@ -89,6 +88,6 @@ The version program should output the following:
 		gocv version: 0.8.0
 		opencv lib version: 3.4.0
 
-If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`CGO_CPPFLAGS` and `CGO_LDFLAGS` must have been set as described above):
+If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.cmd` must have been run as described above):
 
         go install gocv.io/x/gocv

@@ -13,7 +13,7 @@ Install the GoCV package:
 
         go get -u -d gocv.io/x/gocv
 
-Now, install OpenCV 3.3 using Homebrew:
+Now, install OpenCV 3.4 using Homebrew:
 
 		brew install opencv
 
