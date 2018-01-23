@@ -29,8 +29,9 @@ You can use make to install OpenCV 3.3 with the handy Makefile included with thi
       <guid>https://gocv.io/getting-started/osx/</guid>
       <description>This page has information on how to install and use GoCV on OS X.
 Installing Install the GoCV package:
- go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.3 using Homebrew:
- brew install opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.</description>
+ go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
+ brew install opencv  If you already have an earlier version of OpenCV installed, you should probably upgrade it to the latest version, instead of installing:
+ brew upgrade opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</description>
     </item>
     
     <item>

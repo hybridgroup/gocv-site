@@ -32,16 +32,13 @@ You can use make to install OpenCV 3.3 with the handy Makefile included with thi
     </item>
     
     <item>
-      <title>Putting Eyes on the IoT - The Video</title>
-      <link>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</link>
+      <title>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV</title>
+      <link>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</guid>
-      <description>The video from &amp;ldquo;Putting Eyes on the IoT: Advanced Computer Vision Using Golang&amp;rdquo;, the talk about GoCV during the Intel Global IoT Devfest, has just been posted online.
-Check it at at:
-https://www.youtube.com/watch?v=eR8T8rvlNuk
-Even if you are a newcomer to Go programming or computer vision, the talk is intended so you can get something useful out of it.
-Also, provides useful information about not just OpenCV but also the Intel Computer Vision SDK, which has not had a lot of tutorial content yet overall, let along in Golang.</description>
+      <guid>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</guid>
+      <description>We are pleased to present to you the new GoCV (https://gocv.io) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
+The new version adds support for the OpenCV Deep Neural Network (DNN) module, which means you can now use Caffe (http://caffe.berkeleyvision.org/) and Tensorflow (https://www.tensorflow.org/) models from your GoCV code.</description>
     </item>
     
     <item>
@@ -62,20 +59,22 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image/color&amp;quot; &a
       <guid>https://gocv.io/getting-started/osx/</guid>
       <description>This page has information on how to install and use GoCV on OS X.
 Installing Install the GoCV package:
- go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.3 using Homebrew:
- brew install opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.</description>
+ go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
+ brew install opencv  If you already have an earlier version of OpenCV installed, you should probably upgrade it to the latest version, instead of installing:
+ brew upgrade opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</description>
     </item>
     
     <item>
-      <title>Introducing the GoCV Blog</title>
-      <link>https://gocv.io/blog/2017-12-14-gocv-the-blog/</link>
+      <title>Putting Eyes on the IoT - The Video</title>
+      <link>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://gocv.io/blog/2017-12-14-gocv-the-blog/</guid>
-      <description>Perhaps you have been wondering &amp;ldquo;where is the blog for this project?&amp;rdquo;. Well, wonder no more, here it is!
-We have a Twitter account too We also now have an &amp;ldquo;official&amp;rdquo; Twitter account at @GoCVio please follow us.
-What we will cover Updates to GoCV or to OpenCV itself, cool things built with GoCV, events we attend, and the like.
-We want to hear from you! Are you using GoCV for something?</description>
+      <guid>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</guid>
+      <description>The video from &amp;ldquo;Putting Eyes on the IoT: Advanced Computer Vision Using Golang&amp;rdquo;, the talk about GoCV during the Intel Global IoT Devfest, has just been posted online.
+Check it at at:
+https://www.youtube.com/watch?v=eR8T8rvlNuk
+Even if you are a newcomer to Go programming or computer vision, the talk is intended so you can get something useful out of it.
+Also, provides useful information about not just OpenCV but also the Intel Computer Vision SDK, which has not had a lot of tutorial content yet overall, let along in Golang.</description>
     </item>
     
     <item>
@@ -91,17 +90,28 @@ MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourcef
     </item>
     
     <item>
+      <title>Introducing the GoCV Blog</title>
+      <link>https://gocv.io/blog/2017-12-14-gocv-the-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2017-12-14-gocv-the-blog/</guid>
+      <description>Perhaps you have been wondering &amp;ldquo;where is the blog for this project?&amp;rdquo;. Well, wonder no more, here it is!
+We have a Twitter account too We also now have an &amp;ldquo;official&amp;rdquo; Twitter account at @GoCVio please follow us.
+What we will cover Updates to GoCV or to OpenCV itself, cool things built with GoCV, events we attend, and the like.
+We want to hear from you! Are you using GoCV for something?</description>
+    </item>
+    
+    <item>
       <title>More Examples</title>
       <link>https://gocv.io/writing-code/more-examples/</link>
       <pubDate>Mon, 09 Oct 2017 18:04:54 +0200</pubDate>
       
       <guid>https://gocv.io/writing-code/more-examples/</guid>
       <description>GoCV comes with various useful command line utilities, that are also examples of how to use the package.
+Caffe Classifier Capture video from a connected webcam, then use the Caffe deep learning framework to classify whatever is in front of the camera.
 Captest Tests to verify you can capture video from a connected webcam.
 https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go
-Capwindow Capture video from a connected webcam and display the video in a Window.
-https://github.com/hybridgroup/gocv/blob/master/cmd/capwindow/main.go
-Counter Capture video from a pre-recorded file, and then count the number of detected objects that cross a user-definable vertical or horizontal line.</description>
+Capwindow Capture video from a connected webcam and display the video in a Window.</description>
     </item>
     
   </channel>

@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV</title>
+      <link>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</guid>
+      <description>We are pleased to present to you the new GoCV (https://gocv.io) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
+The new version adds support for the OpenCV Deep Neural Network (DNN) module, which means you can now use Caffe (http://caffe.berkeleyvision.org/) and Tensorflow (https://www.tensorflow.org/) models from your GoCV code.</description>
+    </item>
+    
+    <item>
       <title>Putting Eyes on the IoT - The Video</title>
       <link>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

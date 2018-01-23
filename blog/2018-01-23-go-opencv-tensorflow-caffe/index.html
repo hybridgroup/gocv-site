@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Windows :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1516696212" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/getting-started/windows/">
+  <body class="" data-url="/blog/2018-01-23-go-opencv-tensorflow-caffe/">
     <nav id="sidebar" class="">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -145,7 +145,7 @@
  
   
     
-      <li data-nav-id="/getting-started/windows/" title="Windows" class="dd-item active">
+      <li data-nav-id="/getting-started/windows/" title="Windows" class="dd-item ">
         <a href="/getting-started/windows/">
         Windows
         
@@ -261,7 +261,7 @@
   
     
     <li data-nav-id="/blog/" title="Blog" class="dd-item 
-        
+        parent
         
         
         ">
@@ -285,7 +285,7 @@
  
   
     
-      <li data-nav-id="/blog/2018-01-23-go-opencv-tensorflow-caffe/" title="Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV" class="dd-item ">
+      <li data-nav-id="/blog/2018-01-23-go-opencv-tensorflow-caffe/" title="Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV" class="dd-item active">
         <a href="/blog/2018-01-23-go-opencv-tensorflow-caffe/">
         Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV
         
@@ -405,7 +405,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/getting-started/windows.md" target="blank">
+                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/blog/2018-01-23-go-opencv-tensorflow-caffe.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       Edit this page
                     </a>
@@ -434,7 +434,7 @@
             
           
           
-            <a href='/'>Home</a> > <a href='/getting-started/'>Getting Started</a> > Windows
+            <a href='/'>Home</a> > <a href='/blog/'>Blog</a> > Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV
           
          
           
@@ -452,13 +452,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installing">Installing</a>
-<ul>
-<li><a href="#mingw-w64">MinGW-W64</a></li>
-<li><a href="#cmake">CMake</a></li>
-<li><a href="#download-opencv-3-4-and-opencv-contrib-modules">Download OpenCV 3.4 and OpenCV Contrib Modules</a></li>
-</ul></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
+<li><a href="#we-re-going-deep">We&rsquo;re Going Deep</a></li>
+<li><a href="#recognizing-faces-with-the-intel-computer-vision-sdk-beta-r3">Recognizing Faces With The Intel Computer Vision SDK Beta R3</a></li>
+<li><a href="#and-there-s-even-more">And There&rsquo;s Even More</a></li>
+<li><a href="#keep-sight-of-what-we-re-up-to">Keep Sight of What We&rsquo;re Up To</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -474,7 +471,7 @@
         
         <div id="body-inner">
           
-            <h1>Windows</h1>
+            <h1>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV</h1>
           
 
         
@@ -482,103 +479,116 @@
 
 
 
-<p>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.</p>
+<p>We are pleased to present to you the new GoCV (<a href="https://gocv.io">https://gocv.io</a>) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.</p>
 
-<h3 id="installing">Installing</h3>
+<p>The new version adds support for the <a href="https://docs.opencv.org/3.4.0/d6/d0f/group__dnn.html">OpenCV Deep Neural Network (DNN) module</a>, which means you can now use Caffe (<a href="http://caffe.berkeleyvision.org/">http://caffe.berkeleyvision.org/</a>) and Tensorflow (<a href="https://www.tensorflow.org/">https://www.tensorflow.org/</a>) models from your GoCV code. GoCV also now has complete support for the latest <a href="https://software.intel.com/en-us/cvsdk-devguide-advanced-face-capabilities-in-intels-opencv">Intel Computer Vision SDK Beta R3</a> including face recognition.</p>
 
-<p>Install the GoCV package:</p>
+<p>There is lots more, check out the full changelog at <a href="https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#080">https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#080</a> for complete details, or read on for the highlights.</p>
 
-<pre><code>    go get -u -d gocv.io/x/gocv
+<h3 id="we-re-going-deep">We&rsquo;re Going Deep</h3>
+
+<p>The availability of useful trained deep neural networks for fast image classification based on Caffe and Tensorflow adds a new level of possibility to computer vision applications. GoCV can now load Caffe and Tensorflow models, and then use them as part of your Golang application. Check out this example code which in less than 40 lines of Go code uses the Tensorflow &ldquo;Inception&rdquo; model for image recognition on an incoming video camera feed:</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;image&quot;
+
+    &quot;gocv.io/x/gocv&quot;
+)
+
+func main() {
+    webcam, _ := gocv.VideoCaptureDevice(0)
+    img := gocv.NewMat()
+    net := gocv.ReadNetFromTensorflow(&quot;/path/to/tensorflow_inception_graph.pb&quot;)
+
+    for {
+        // read image from camera
+        webcam.Read(img)
+
+        // convert to a 224x244 image blob that can be processed by Tensorflow
+        blob := gocv.BlobFromImage(img, 1.0, image.Pt(224, 244), gocv.NewScalar(0, 0, 0, 0), true, false)
+        defer blob.Close()
+
+        // feed the blob into the classifier
+        net.SetInput(blob, &quot;input&quot;)
+
+        // run a forward pass thru the network
+        prob := net.Forward(&quot;softmax2&quot;)
+        defer prob.Close()
+
+        // reshape the results into a 1x1000 matrix
+        probMat := prob.Reshape(1, 1)
+        defer probMat.Close()
+
+        // determine the most probable classification, and display it
+        _, maxVal, _, maxLoc := gocv.MinMaxLoc(probMat)
+        fmt.Printf(&quot;maxLoc: %v, maxVal: %v\n&quot;, maxLoc, maxVal)
+
+        gocv.WaitKey(1)
+    }
+}
 </code></pre>
 
-<p>In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.</p>
+<p>For a complete example using GoCV with Tensorflow take a look at <a href="https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go</a>.
+For an example using GoCV with Caffe take a look at <a href="https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go</a>.</p>
 
-<h4 id="mingw-w64">MinGW-W64</h4>
+<h3 id="recognizing-faces-with-the-intel-computer-vision-sdk-beta-r3">Recognizing Faces With The Intel Computer Vision SDK Beta R3</h3>
 
-<p>Download and run the MinGW-W64 compiler installer from <a href="https://sourceforge.net/projects/mingw-w64/?source=typ_redirect">https://sourceforge.net/projects/mingw-w64/?source=typ_redirect</a>. Choose the options for &ldquo;posix&rdquo; threads, and for &ldquo;seh&rdquo; exceptions handling, then install to the default location <code>c:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2</code>.</p>
+<p>We now offer complete support for the Intel Computer Vision SDK Beta R3. Of special note, we added the Photography Vision Library (PVL) FaceRecognizer algorithm. The FaceRecognizer is an efficient and simple interface to this very common feature needed for many CV applications. You can just load in a PVL FaceDetector and a FaceRecognizer like this:</p>
 
-<p>Add the <code>C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bin</code> path to your System Path.</p>
-
-<h4 id="cmake">CMake</h4>
-
-<p>Download and install CMake <a href="https://cmake.org/download/">https://cmake.org/download/</a> to the default location. CMake installer will add CMake to your system path.</p>
-
-<h4 id="download-opencv-3-4-and-opencv-contrib-modules">Download OpenCV 3.4 and OpenCV Contrib Modules</h4>
-
-<p>Download the source code for the latest OpenCV release from <a href="https://github.com/opencv/opencv/archive/3.4.0.zip">https://github.com/opencv/opencv/archive/3.4.0.zip</a> and extract it to the directory <code>C:\opencv\opencv-3.4.0</code></p>
-
-<p>Download the source code for the latest OpenCV Contrib release from <a href="https://github.com/opencv/opencv_contrib/archive/3.4.0.zip">https://github.com/opencv/opencv_contrib/archive/3.4.0.zip</a> and extract it to the directory <code>C:\opencv\opencv_contrib-3.4.0</code></p>
-
-<p>Create the directory <code>C:\opencv\build</code> as the build directory.</p>
-
-<p>Now launch the <code>cmake-gui</code> program, and set the &ldquo;Where is the source code&rdquo; to <code>C:\opencv\opencv-3.4.0</code>, and the &ldquo;Where to build the binaries&rdquo; to <code>C:\opencv\build</code>.</p>
-
-<p>Click on &ldquo;Configure&rdquo; and select &ldquo;MinGW MakeFile&rdquo; from the window, then click on the  &ldquo;Next&rdquo; button.</p>
-
-<p>Click on the &ldquo;Configure&rdquo; button and wait for the configuration step.</p>
-
-<p>Now, scroll down the list and change the following settings as follows:</p>
-
-<ul>
-<li><code>BUILD_DOCS</code> should be unchecked (aka disabled).</li>
-<li><code>BUILD_TESTS</code> should be unchecked (aka disabled).</li>
-<li><code>BUILD_PERF_TESTS</code> should be unchecked (aka disabled).</li>
-<li><code>ENABLE_PRECOMPILED_HEADERS</code> should be unchecked.</li>
-<li><code>ENABLE_CXX11</code> should be checked.</li>
-<li><code>OPENCV_EXTRA_MODULES_PATH</code> should be set to <code>C:\opencv\opencv_contrib-3.4.0\modules</code></li>
-</ul>
-
-<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
-
-<p>Some new configuration options will have appeared. Scroll down the list and change the following settings as follows:</p>
-
-<ul>
-<li><code>BUILD_opencv_saliency</code> should be unchecked (aka disabled). OpenCV Contrib&rsquo;s &ldquo;Saliency&rdquo; module is unable to build on Windows with this toolchain at this time.</li>
-</ul>
-
-<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
-
-<p>Once it is complete, click on the &ldquo;Generate&rdquo; button, and wait for it to generate your make files.</p>
-
-<p>Now run the following commands:</p>
-
-<pre><code>    cd C:\opencv\build
-    mingw32-make
+<pre><code class="language-go">fd := pvl.NewFaceDetector()
+fr := pvl.LoadFaceRecognizer(&quot;/path/to/db.xml&quot;)
 </code></pre>
 
-<p>The build should start. It will probably take a very long time. When it is finished run:</p>
+<p>And then use them to detect and recognize faces from the video camera:</p>
 
-<pre><code>    mingw32-make install
+<pre><code class="language-go">for {
+    webcam.Read(img)
+    gocv.CvtColor(img, imgGray, gocv.ColorBGRToGray)
+
+    // detect faces
+    faces := fd.DetectFaceRect(imgGray)
+    if len(faces) &gt; 0 {
+        // try to recognize the face
+        personIDs, _ = fr.Recognize(imgGray, faces)
+
+        // set the color of the box based on if the face is recognized
+        color := blue
+        msg := &quot;Unknown&quot;
+        if len(personIDs) &gt; 0 &amp;&amp; personIDs[0] != pvl.UnknownFace {
+            color = green
+            msg = strconv.Itoa(personIDs[0])
+        }
+
+        // draw a rectangle the face on the original image,
+        // along with text identifing if recognized
+        rect := faces[0].Rectangle()
+        gocv.Rectangle(img, rect, color, 3)
+
+        size := gocv.GetTextSize(msg, gocv.FontHersheyPlain, 1.2, 2)
+        pt := image.Pt(rect.Min.X+(rect.Min.X/2)-(size.X/2), rect.Min.Y-2)
+        gocv.PutText(img, msg, pt, gocv.FontHersheyPlain, 1.2, color, 2)
+    }
+
+    // show the image in the window, and wait 1 millisecond
+    window.IMShow(img)
+    window.WaitKey(1)
+}
 </code></pre>
 
-<p>Last, add <code>C:\opencv\build\install\x64\mingw\bin</code> to your System Path.</p>
+<p>The complete example using GoCV with the Intel CV SDK FaceRecognizer is at <a href="https://github.com/hybridgroup/gocv/blob/master/cmd/pvl/facerecognizer/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/pvl/facerecognizer/main.go</a>.</p>
 
-<p>You should now have OpenCV 3.4 installed on your Windows 10 machine.</p>
+<p>There are other cool capabilities of the Intel CV SDK such as hardware acceleration that are automatically supported when you use it with GoCV.</p>
 
-<h3 id="how-to-build-run-code">How to build/run code</h3>
+<h3 id="and-there-s-even-more">And There&rsquo;s Even More</h3>
 
-<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</p>
+<p>We&rsquo;ve had many other excellent contributions this release, with updates to the new OpenCV 3.4, improvements to GoCV  core, more imgproc filters, new feature detection algorithms, many bugfixes, and documentation enhancements, including how to maximize compilation speed when including GoCV in your own applications. Thank you so very much to our contributors, especially all of our first-timers!</p>
 
-<p>One time per session, you must run the script:</p>
+<h3 id="keep-sight-of-what-we-re-up-to">Keep Sight of What We&rsquo;re Up To</h3>
 
-<pre><code>    env.cmd
-</code></pre>
-
-<p>Now you should be able to build or run any of the command examples:</p>
-
-<pre><code>    go run .\cmd\version\main.go
-</code></pre>
-
-<p>The version program should output the following:</p>
-
-<pre><code>    gocv version: 0.8.0
-    opencv lib version: 3.4.0
-</code></pre>
-
-<p>If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (<code>env.cmd</code> must have been run as described above):</p>
-
-<pre><code>    go install gocv.io/x/gocv
-</code></pre>
+<p>There are many improvements being made to GoCV, thanks to the very active community forming around Golang for computer vision applications. Please follow us on Twitter at <a href="https://twitter.com/GoCVio">@GoCVio</a> for the latest and greatest news about the project.</p>
 
 
 <footer class=" footline" >
@@ -634,78 +644,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -829,6 +767,75 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -836,10 +843,10 @@
 
 
         
-            <a class="nav nav-prev" href="/getting-started/osx/" title="OS X"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/writing-code/" title="Writing Code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/blog/2017-12-14-putting-eyes-on-the-iot-video/" title="Putting Eyes on the IoT - The Video" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

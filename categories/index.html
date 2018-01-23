@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Windows :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>Categories :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1516696212" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/getting-started/windows/">
+  <body class="" data-url="/categories/">
     <nav id="sidebar" class="">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -145,7 +145,7 @@
  
   
     
-      <li data-nav-id="/getting-started/windows/" title="Windows" class="dd-item active">
+      <li data-nav-id="/getting-started/windows/" title="Windows" class="dd-item ">
         <a href="/getting-started/windows/">
         Windows
         
@@ -401,17 +401,6 @@
               <div class="sticky-spacer">
                 <div id="top-bar">
                 
-                  
-                  
-                  
-                  <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/getting-started/windows.md" target="blank">
-                      <i class="fa fa-code-fork"></i>
-                      Edit this page
-                    </a>
-                  </div>
-                  
-                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -426,19 +415,7 @@
                     
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/getting-started/'>Getting Started</a> > Windows
-          
-         
-          
-         
+            Categories
           
            
                   </span>
@@ -446,23 +423,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#installing">Installing</a>
-<ul>
-<li><a href="#mingw-w64">MinGW-W64</a></li>
-<li><a href="#cmake">CMake</a></li>
-<li><a href="#download-opencv-3-4-and-opencv-contrib-modules">Download OpenCV 3.4 and OpenCV Contrib Modules</a></li>
-</ul></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -474,7 +435,7 @@
         
         <div id="body-inner">
           
-            <h1>Windows</h1>
+            <h1>Categories</h1>
           
 
         
@@ -482,109 +443,9 @@
 
 
 
-<p>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.</p>
-
-<h3 id="installing">Installing</h3>
-
-<p>Install the GoCV package:</p>
-
-<pre><code>    go get -u -d gocv.io/x/gocv
-</code></pre>
-
-<p>In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.</p>
-
-<h4 id="mingw-w64">MinGW-W64</h4>
-
-<p>Download and run the MinGW-W64 compiler installer from <a href="https://sourceforge.net/projects/mingw-w64/?source=typ_redirect">https://sourceforge.net/projects/mingw-w64/?source=typ_redirect</a>. Choose the options for &ldquo;posix&rdquo; threads, and for &ldquo;seh&rdquo; exceptions handling, then install to the default location <code>c:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2</code>.</p>
-
-<p>Add the <code>C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bin</code> path to your System Path.</p>
-
-<h4 id="cmake">CMake</h4>
-
-<p>Download and install CMake <a href="https://cmake.org/download/">https://cmake.org/download/</a> to the default location. CMake installer will add CMake to your system path.</p>
-
-<h4 id="download-opencv-3-4-and-opencv-contrib-modules">Download OpenCV 3.4 and OpenCV Contrib Modules</h4>
-
-<p>Download the source code for the latest OpenCV release from <a href="https://github.com/opencv/opencv/archive/3.4.0.zip">https://github.com/opencv/opencv/archive/3.4.0.zip</a> and extract it to the directory <code>C:\opencv\opencv-3.4.0</code></p>
-
-<p>Download the source code for the latest OpenCV Contrib release from <a href="https://github.com/opencv/opencv_contrib/archive/3.4.0.zip">https://github.com/opencv/opencv_contrib/archive/3.4.0.zip</a> and extract it to the directory <code>C:\opencv\opencv_contrib-3.4.0</code></p>
-
-<p>Create the directory <code>C:\opencv\build</code> as the build directory.</p>
-
-<p>Now launch the <code>cmake-gui</code> program, and set the &ldquo;Where is the source code&rdquo; to <code>C:\opencv\opencv-3.4.0</code>, and the &ldquo;Where to build the binaries&rdquo; to <code>C:\opencv\build</code>.</p>
-
-<p>Click on &ldquo;Configure&rdquo; and select &ldquo;MinGW MakeFile&rdquo; from the window, then click on the  &ldquo;Next&rdquo; button.</p>
-
-<p>Click on the &ldquo;Configure&rdquo; button and wait for the configuration step.</p>
-
-<p>Now, scroll down the list and change the following settings as follows:</p>
-
-<ul>
-<li><code>BUILD_DOCS</code> should be unchecked (aka disabled).</li>
-<li><code>BUILD_TESTS</code> should be unchecked (aka disabled).</li>
-<li><code>BUILD_PERF_TESTS</code> should be unchecked (aka disabled).</li>
-<li><code>ENABLE_PRECOMPILED_HEADERS</code> should be unchecked.</li>
-<li><code>ENABLE_CXX11</code> should be checked.</li>
-<li><code>OPENCV_EXTRA_MODULES_PATH</code> should be set to <code>C:\opencv\opencv_contrib-3.4.0\modules</code></li>
-</ul>
-
-<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
-
-<p>Some new configuration options will have appeared. Scroll down the list and change the following settings as follows:</p>
-
-<ul>
-<li><code>BUILD_opencv_saliency</code> should be unchecked (aka disabled). OpenCV Contrib&rsquo;s &ldquo;Saliency&rdquo; module is unable to build on Windows with this toolchain at this time.</li>
-</ul>
-
-<p>Click on the &ldquo;Configure&rdquo; button again, and wait for the configuration step.</p>
-
-<p>Once it is complete, click on the &ldquo;Generate&rdquo; button, and wait for it to generate your make files.</p>
-
-<p>Now run the following commands:</p>
-
-<pre><code>    cd C:\opencv\build
-    mingw32-make
-</code></pre>
-
-<p>The build should start. It will probably take a very long time. When it is finished run:</p>
-
-<pre><code>    mingw32-make install
-</code></pre>
-
-<p>Last, add <code>C:\opencv\build\install\x64\mingw\bin</code> to your System Path.</p>
-
-<p>You should now have OpenCV 3.4 installed on your Windows 10 machine.</p>
-
-<h3 id="how-to-build-run-code">How to build/run code</h3>
-
-<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</p>
-
-<p>One time per session, you must run the script:</p>
-
-<pre><code>    env.cmd
-</code></pre>
-
-<p>Now you should be able to build or run any of the command examples:</p>
-
-<pre><code>    go run .\cmd\version\main.go
-</code></pre>
-
-<p>The version program should output the following:</p>
-
-<pre><code>    gocv version: 0.8.0
-    opencv lib version: 3.4.0
-</code></pre>
-
-<p>If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (<code>env.cmd</code> must have been run as described above):</p>
-
-<pre><code>    go install gocv.io/x/gocv
-</code></pre>
-
-
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -634,7 +495,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -648,8 +508,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -678,23 +551,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -702,9 +558,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -836,10 +689,8 @@
 
 
         
-            <a class="nav nav-prev" href="/getting-started/osx/" title="OS X"> <i class="fa fa-chevron-left"></i></a>
         
-        
-            <a class="nav nav-next" href="/writing-code/" title="Writing Code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/computer-vision/" title="Computer Vision" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -869,4 +720,3 @@
 
   </body>
 </html>
-
