@@ -17,6 +17,10 @@ Now, install OpenCV 3.4 using Homebrew:
 
 		brew install opencv
 
+If you already have an earlier version of OpenCV installed, you should probably upgrade it to the latest version, instead of installing:
+
+		brew upgrade opencv
+
 ### How to build/run code
 
 In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.3, the following instructions should work.
