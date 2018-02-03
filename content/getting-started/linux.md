@@ -17,7 +17,7 @@ Install the GoCV package:
 
 Change directories into the newly installed package directory:
 
-        cd $GOPATH/src/gocv.io/x/gocv
+        cd $GOROOT/src/gocv.io/x/gocv
 
 Now you can run the needed installation steps listed below.
 
