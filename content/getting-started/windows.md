@@ -13,7 +13,7 @@ Install the GoCV package:
 
         go get -u -d gocv.io/x/gocv
 
-In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.
+In order to use GoCV on Windows you must build and install OpenCV 3.4. First download and install MinGW-W64 and CMake, as follows.
 
 #### MinGW-W64
 
