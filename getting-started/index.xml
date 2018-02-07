@@ -18,7 +18,7 @@
       
       <guid>https://gocv.io/getting-started/linux/</guid>
       <description>This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
-You can use make to install OpenCV 3.3 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
+You can use make to install OpenCV 3.4 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@ You can use make to install OpenCV 3.3 with the handy Makefile included with thi
       <description>This page has information on how to install and use GoCV on OS X.
 Installing Install the GoCV package:
  go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
- brew install opencv  If you already have an earlier version of OpenCV installed, you should probably upgrade it to the latest version, instead of installing:
+ brew install opencv  If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:
  brew upgrade opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</description>
     </item>
     
@@ -42,7 +42,7 @@ Installing Install the GoCV package:
       <guid>https://gocv.io/getting-started/windows/</guid>
       <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
 Installing Install the GoCV package:
- go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.3. First download and install MinGW-W64 and CMake, as follows.
+ go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.4. First download and install MinGW-W64 and CMake, as follows.
 MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect. Choose the options for &amp;ldquo;posix&amp;rdquo; threads, and for &amp;ldquo;seh&amp;rdquo; exceptions handling, then install to the default location c:\Program Files\mingw-w64\x86_64-7.</description>
     </item>
     
