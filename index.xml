@@ -52,12 +52,12 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image/color&amp;quot; &a
     </item>
     
     <item>
-      <title>OS X</title>
-      <link>https://gocv.io/getting-started/osx/</link>
+      <title>macOS</title>
+      <link>https://gocv.io/getting-started/macos/</link>
       <pubDate>Mon, 09 Oct 2017 11:41:50 +0200</pubDate>
       
-      <guid>https://gocv.io/getting-started/osx/</guid>
-      <description>This page has information on how to install and use GoCV on OS X.
+      <guid>https://gocv.io/getting-started/macos/</guid>
+      <description>This page has information on how to install and use GoCV on macOS.
 Installing Install the GoCV package:
  go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
  brew install opencv  If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:

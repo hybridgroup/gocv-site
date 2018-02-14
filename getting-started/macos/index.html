@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Face Detect :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1518622383" rel="stylesheet">
@@ -42,7 +42,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/writing-code/face-detect/">
+  <body class="" data-url="/getting-started/macos/">
     <nav id="sidebar" class="">
 
 
@@ -92,7 +92,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        
+        parent
         
         
         ">
@@ -135,7 +135,7 @@
  
   
     
-      <li data-nav-id="/getting-started/macos/" title="macOS" class="dd-item ">
+      <li data-nav-id="/getting-started/macos/" title="macOS" class="dd-item active">
         <a href="/getting-started/macos/">
         macOS
         
@@ -181,7 +181,7 @@
   
     
     <li data-nav-id="/writing-code/" title="Writing Code" class="dd-item 
-        parent
+        
         
         
         ">
@@ -224,7 +224,7 @@
  
   
     
-      <li data-nav-id="/writing-code/face-detect/" title="Face Detect" class="dd-item active">
+      <li data-nav-id="/writing-code/face-detect/" title="Face Detect" class="dd-item ">
         <a href="/writing-code/face-detect/">
         Face Detect
         
@@ -414,7 +414,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/writing-code/face-detect.md" target="blank">
+                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/getting-started/macos.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       Edit this page
                     </a>
@@ -443,7 +443,7 @@
             
           
           
-            <a href='/'>Home</a> > <a href='/writing-code/'>Writing Code</a> > Face Detect
+            <a href='/'>Home</a> > <a href='/getting-started/'>Getting Started</a> > macOS
           
          
           
@@ -455,7 +455,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#how-to-build-run-code">How to build/run code</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -467,77 +478,63 @@
         
         <div id="body-inner">
           
-            <h1>Face Detect</h1>
+            <h1>macOS</h1>
           
 
         
 
 
-<p><img src="https://raw.githubusercontent.com/hybridgroup/gocv/master/images/face-detect.jpg" alt="GoCV" /></p>
 
-<p>This is a more complete example that opens a video capture device using device &ldquo;0&rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:</p>
 
-<pre><code class="language-go">package main
+<p>This page has information on how to install and use GoCV on macOS.</p>
 
-import (
-	&quot;fmt&quot;
-	&quot;image/color&quot;
+<h3 id="installing">Installing</h3>
 
-	&quot;gocv.io/x/gocv&quot;
-)
+<p>Install the GoCV package:</p>
 
-func main() {
-	deviceID := 0
+<pre><code>    go get -u -d gocv.io/x/gocv
+</code></pre>
 
-	// open webcam
-	webcam, err := gocv.VideoCaptureDevice(int(deviceID))
-	if err != nil {
-		fmt.Printf(&quot;error opening video capture device: %v\n&quot;, deviceID)
-		return
-	}	
-	defer webcam.Close()
+<p>Now, install OpenCV 3.4 using Homebrew:</p>
 
-	// open display window
-	window := gocv.NewWindow(&quot;Face Detect&quot;)
-	defer window.Close()
+<pre><code>    brew install opencv
+</code></pre>
 
-	// prepare image matrix
-	img := gocv.NewMat()
-	defer img.Close()
+<p>If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:</p>
 
-	// color for the rect when faces detected
-	blue := color.RGBA{0, 0, 255, 0}
+<pre><code>    brew upgrade opencv
+</code></pre>
 
-	// load classifier to recognize faces
-	classifier := gocv.NewCascadeClassifier()
-	defer classifier.Close()
-	
-	classifier.Load(&quot;data/haarcascade_frontalface_default.xml&quot;)
+<h3 id="how-to-build-run-code">How to build/run code</h3>
 
-	fmt.Printf(&quot;start reading camera device: %v\n&quot;, deviceID)
-	for {
-		if ok := webcam.Read(img); !ok {
-			fmt.Printf(&quot;cannot read device %d\n&quot;, deviceID)
-			return
-		}
-		if img.Empty() {
-			continue
-		}
+<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.4, the following instructions should work.</p>
 
-		// detect faces
-		rects := classifier.DetectMultiScale(img)
-		fmt.Printf(&quot;found %d faces\n&quot;, len(rects))
+<p>First, you need to change the current directory to the location of the GoCV repo:</p>
 
-		// draw a rectangle around each face on the original image
-		for _, r := range rects {
-			gocv.Rectangle(img, r, blue, 3)
-		}
+<pre><code>    cd $GOPATH/src/gocv.io/x/gocv
+</code></pre>
 
-		// show the image in the window, and wait 1 millisecond
-		window.IMShow(img)
-		window.WaitKey(1)
-	}
-}
+<p>One time per session, you must run the script:</p>
+
+<pre><code>    source ./env.sh
+</code></pre>
+
+<p>Now you should be able to build or run any of the command examples:</p>
+
+<pre><code>    go run ./cmd/version/main.go
+</code></pre>
+
+<p>The version program should output the following:</p>
+
+<pre><code>    gocv version: 0.9.0
+    opencv lib version: 3.4.0
+</code></pre>
+
+<p>You might want to copy the <code>env.sh</code> script into your own projects, to make it easier to setup these vars when building your own code.</p>
+
+<p>If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (<code>env.sh</code> must have been executed as described above):</p>
+
+<pre><code>    go install gocv.io/x/gocv
 </code></pre>
 
 
@@ -594,70 +591,6 @@ func main() {
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -789,6 +722,70 @@ func main() {
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -796,10 +793,10 @@ func main() {
 
 
         
-            <a class="nav nav-prev" href="/writing-code/hello-video/" title="Hello Video"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/getting-started/linux/" title="Linux"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/writing-code/more-examples/" title="More Examples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/getting-started/windows/" title="Windows" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
