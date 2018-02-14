@@ -8,5 +8,5 @@ weight: 5
 
 # Getting Started
 
-To use GoCV, you must install OpenCV 3.4 on your system. We have instructions for Ubuntu, OS X, and Windows.
+To use GoCV, you must install OpenCV 3.4 on your system. We have instructions for Ubuntu, macOS, and Windows.
 
