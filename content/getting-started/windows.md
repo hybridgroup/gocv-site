@@ -85,7 +85,7 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-		gocv version: 0.8.0
+		gocv version: 0.9.0
 		opencv lib version: 3.4.0
 
 If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.cmd` must have been run as described above):
