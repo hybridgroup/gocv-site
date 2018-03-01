@@ -41,11 +41,18 @@ func main() {
 	// color for the rect when faces detected
 	blue := color.RGBA{0, 0, 255, 0}
 
-	// load classifier to recognize faces
+	// create the classifier to recognize faces
 	classifier := gocv.NewCascadeClassifier()
 	defer classifier.Close()
 	
-	classifier.Load("data/haarcascade_frontalface_default.xml")
+	// load the pretrained classifier model
+	// this example assumes, you run it from the gocv root folder
+	// (if you don't, you may have to adapt, like giving it an absolute path to the xml file)
+	xmlFile := "data/haarcascade_frontalface_default.xml"
+	if ! classifier.Load(xmlFile) {
+		fmt.Printf("could not load cascade file from: %v\n(please check the path again!)\n", xmlFile)
+		return
+	}
 
 	fmt.Printf("start reading camera device: %v\n", deviceID)
 	for {
