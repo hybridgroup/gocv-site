@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36" />
+    <meta name="generator" content="Hugo 0.37" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>Face Detect :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1518622383" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1518622383" rel="stylesheet">
-    <link href="/css/hybrid.css?1518622383" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1518622383" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1518622383" rel="stylesheet">
-    <link href="/css/auto-complete.css?1518622383" rel="stylesheet">
-    <link href="/css/theme.css?1518622383" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1518622383" rel="stylesheet">
+    <link href="/css/nucleus.css?1520265895" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520265895" rel="stylesheet">
+    <link href="/css/hybrid.css?1520265895" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520265895" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520265895" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520265895" rel="stylesheet">
+    <link href="/css/theme.css?1520265895" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520265895" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1518622383"></script>
+    <script src="/js/jquery-2.x.min.js?1520265895"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -480,63 +480,83 @@
 <pre><code class="language-go">package main
 
 import (
-	&quot;fmt&quot;
-	&quot;image/color&quot;
+    &quot;fmt&quot;
+    &quot;image&quot;
+    &quot;image/color&quot;
+    &quot;os&quot;
+    &quot;strconv&quot;
 
-	&quot;gocv.io/x/gocv&quot;
+    &quot;gocv.io/x/gocv&quot;
 )
 
 func main() {
-	deviceID := 0
+    if len(os.Args) &lt; 3 {
+        fmt.Println(&quot;How to run:\n\tfacedetect [camera ID] [classifier XML file]&quot;)
+        return
+    }
 
-	// open webcam
-	webcam, err := gocv.VideoCaptureDevice(int(deviceID))
-	if err != nil {
-		fmt.Printf(&quot;error opening video capture device: %v\n&quot;, deviceID)
-		return
-	}	
-	defer webcam.Close()
+    // parse args
+    deviceID, _ := strconv.Atoi(os.Args[1])
+    xmlFile := os.Args[2]
 
-	// open display window
-	window := gocv.NewWindow(&quot;Face Detect&quot;)
-	defer window.Close()
+    // open webcam
+    webcam, err := gocv.VideoCaptureDevice(int(deviceID))
+    if err != nil {
+        fmt.Printf(&quot;error opening video capture device: %v\n&quot;, deviceID)
+        return
+    }
+    defer webcam.Close()
 
-	// prepare image matrix
-	img := gocv.NewMat()
-	defer img.Close()
+    // open display window
+    window := gocv.NewWindow(&quot;Face Detect&quot;)
+    defer window.Close()
 
-	// color for the rect when faces detected
-	blue := color.RGBA{0, 0, 255, 0}
+    // prepare image matrix
+    img := gocv.NewMat()
+    defer img.Close()
 
-	// load classifier to recognize faces
-	classifier := gocv.NewCascadeClassifier()
-	defer classifier.Close()
-	
-	classifier.Load(&quot;data/haarcascade_frontalface_default.xml&quot;)
+    // color for the rect when faces detected
+    blue := color.RGBA{0, 0, 255, 0}
 
-	fmt.Printf(&quot;start reading camera device: %v\n&quot;, deviceID)
-	for {
-		if ok := webcam.Read(img); !ok {
-			fmt.Printf(&quot;cannot read device %d\n&quot;, deviceID)
-			return
-		}
-		if img.Empty() {
-			continue
-		}
+    // load classifier to recognize faces
+    classifier := gocv.NewCascadeClassifier()
+    defer classifier.Close()
 
-		// detect faces
-		rects := classifier.DetectMultiScale(img)
-		fmt.Printf(&quot;found %d faces\n&quot;, len(rects))
+    if !classifier.Load(xmlFile) {
+        fmt.Printf(&quot;Error reading cascade file: %v\n&quot;, xmlFile)
+        return
+    }
 
-		// draw a rectangle around each face on the original image
-		for _, r := range rects {
-			gocv.Rectangle(img, r, blue, 3)
-		}
+    fmt.Printf(&quot;start reading camera device: %v\n&quot;, deviceID)
+    for {
+        if ok := webcam.Read(img); !ok {
+            fmt.Printf(&quot;cannot read device %d\n&quot;, deviceID)
+            return
+        }
+        if img.Empty() {
+            continue
+        }
 
-		// show the image in the window, and wait 1 millisecond
-		window.IMShow(img)
-		window.WaitKey(1)
-	}
+        // detect faces
+        rects := classifier.DetectMultiScale(img)
+        fmt.Printf(&quot;found %d faces\n&quot;, len(rects))
+
+        // draw a rectangle around each face on the original image,
+        // along with text identifing as &quot;Human&quot;
+        for _, r := range rects {
+            gocv.Rectangle(img, r, blue, 3)
+
+            size := gocv.GetTextSize(&quot;Human&quot;, gocv.FontHersheyPlain, 1.2, 2)
+            pt := image.Pt(r.Min.X+(r.Min.X/2)-(size.X/2), r.Min.Y-2)
+            gocv.PutText(img, &quot;Human&quot;, pt, gocv.FontHersheyPlain, 1.2, blue, 2)
+        }
+
+        // show the image in the window, and wait 1 millisecond
+        window.IMShow(img)
+        if window.WaitKey(1) &gt;= 0 {
+            break
+        }
+    }
 }
 </code></pre>
 
@@ -808,20 +828,20 @@ func main() {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1518622383"></script>
-    <script src="/js/perfect-scrollbar.min.js?1518622383"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1518622383"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1518622383"></script>
-    <script src="/js/featherlight.min.js?1518622383"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1518622383"></script>
-    <script src="/js/highlight.pack.js?1518622383"></script>
+    <script src="/js/clipboard.min.js?1520265895"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520265895"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520265895"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1520265895"></script>
+    <script src="/js/featherlight.min.js?1520265895"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520265895"></script>
+    <script src="/js/highlight.pack.js?1520265895"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1518622383"></script>
-    <script src="/js/learn.js?1518622383"></script>
-    <script src="/js/hugo-learn.js?1518622383"></script>
+    <script src="/js/modernizr.custom.71422.js?1520265895"></script>
+    <script src="/js/learn.js?1520265895"></script>
+    <script src="/js/hugo-learn.js?1520265895"></script>
 
-    <link href="/mermaid/mermaid.css?1518622383" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1518622383"></script>
+    <link href="/mermaid/mermaid.css?1520265895" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520265895"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

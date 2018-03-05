@@ -28,7 +28,7 @@ package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam,
       
       <guid>https://gocv.io/writing-code/face-detect/</guid>
       <description>This is a more complete example that opens a video capture device using device &amp;ldquo;0&amp;rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;gocv.</description>
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strconv&amp;quot; &amp;quot;gocv.</description>
     </item>
     
     <item>
