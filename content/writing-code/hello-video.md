@@ -16,11 +16,11 @@ import (
 
 func main() {
 	webcam, _ := gocv.VideoCaptureDevice(0)
-	window := gocv.NewWindow("Hello")	
+	window := gocv.NewWindow("Hello")
 	img := gocv.NewMat()
 
 	for {
-		webcam.Read(img)
+		webcam.Read(&img)
 		window.IMShow(img)
 		window.WaitKey(1)
 	}
