@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.37" />
+    <meta name="generator" content="Hugo 0.37.1" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>More Examples :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1520265895" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1520265895" rel="stylesheet">
-    <link href="/css/hybrid.css?1520265895" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1520265895" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1520265895" rel="stylesheet">
-    <link href="/css/auto-complete.css?1520265895" rel="stylesheet">
-    <link href="/css/theme.css?1520265895" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1520265895" rel="stylesheet">
+    <link href="/css/nucleus.css?1522073321" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522073321" rel="stylesheet">
+    <link href="/css/hybrid.css?1522073321" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522073321" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522073321" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522073321" rel="stylesheet">
+    <link href="/css/theme.css?1522073321" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522073321" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1520265895"></script>
+    <script src="/js/jquery-2.x.min.js?1522073321"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -294,6 +294,25 @@
  
   
     
+      <li data-nav-id="/blog/2018-03-26-this-one-goes-to-0.11/" title="This One Goes to 0.11" class="dd-item ">
+        <a href="/blog/2018-03-26-this-one-goes-to-0.11/">
+        This One Goes to 0.11
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/blog/2018-01-23-go-opencv-tensorflow-caffe/" title="Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV" class="dd-item ">
         <a href="/blog/2018-01-23-go-opencv-tensorflow-caffe/">
         Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV
@@ -465,12 +484,17 @@
 <li><a href="#counter">Counter</a></li>
 <li><a href="#faceblur">Faceblur</a></li>
 <li><a href="#facedetect">Facedetect</a></li>
+<li><a href="#find-circles">Find-circles</a></li>
+<li><a href="#hand-gestures">Hand-gestures</a></li>
 <li><a href="#mjpeg-streamer">MJPEG-Streamer</a></li>
 <li><a href="#motion-detect">Motion-detect</a></li>
+<li><a href="#pose">Pose</a></li>
 <li><a href="#saveimage">Saveimage</a></li>
 <li><a href="#savevideo">Savevideo</a></li>
 <li><a href="#showimage">Showimage</a></li>
+<li><a href="#ssd-facedetect">SSD Facedetect</a></li>
 <li><a href="#tf-classifier">TF Classifier</a></li>
+<li><a href="#tracking">Tracking</a></li>
 <li><a href="#version">Version</a></li>
 </ul></li>
 </ul>
@@ -500,6 +524,8 @@
 
 <p>Capture video from a connected webcam, then use the Caffe deep learning framework to classify whatever is in front of the camera.</p>
 
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go</a></p>
+
 <h2 id="captest">Captest</h2>
 
 <p>Tests to verify you can capture video from a connected webcam.</p>
@@ -526,9 +552,21 @@
 
 <h2 id="facedetect">Facedetect</h2>
 
-<p>Captures video from a connected camera, then uses the CascadeClassifier to detect faces, and draw a rectangle around each of them, before displaying them within a Window</p>
+<p>Captures video from a connected camera, then uses the CascadeClassifier to detect faces, and draw a rectangle around each of them, before displaying them within a Window.</p>
 
 <p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/facedetect/main.go</a></p>
+
+<h2 id="find-circles">Find-circles</h2>
+
+<p>Find circles in an image using the Hough transform.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/find-circles/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/find-circles/main.go</a></p>
+
+<h2 id="hand-gestures">Hand-gestures</h2>
+
+<p>Count the number of fingers being held up in front of the camera by looking for convexity defects.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/hand-gestures/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/hand-gestures/main.go</a></p>
 
 <h2 id="mjpeg-streamer">MJPEG-Streamer</h2>
 
@@ -541,6 +579,12 @@
 <p>Opens a video capture device, then processes it looking for motion, human or otherwise.</p>
 
 <p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/motion-detect/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/motion-detect/main.go</a></p>
+
+<h2 id="pose">Pose</h2>
+
+<p>Advanced Deep Neural Network example does pose detection on an image.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/pose/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/pose/main.go</a></p>
 
 <h2 id="saveimage">Saveimage</h2>
 
@@ -560,9 +604,23 @@
 
 <p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/showimage/main.go</a></p>
 
+<h2 id="ssd-facedetect">SSD Facedetect</h2>
+
+<p>Advanced Deep Neural Network example that uses SSD classifier to detect faces from a connected camera.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/ssd-facedetect/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/ssd-facedetect/main.go</a></p>
+
 <h2 id="tf-classifier">TF Classifier</h2>
 
 <p>Capture video from a connected webcam, then use the Tensorflow machine learning framework to classify whatever is in front of the camera.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/tf-classifier/main.go</a></p>
+
+<h2 id="tracking">Tracking</h2>
+
+<p>Example of using Tracker from OpenCV Contrib to track any region of interest selected by the user using the TrackerMOSSE algorithm using the connected camera.</p>
+
+<p><a href="https://github.com/hybridgroup/gocv/blob/master/cmd/tracking/main.go">https://github.com/hybridgroup/gocv/blob/master/cmd/tracking/main.go</a></p>
 
 <h2 id="version">Version</h2>
 
@@ -816,6 +874,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -838,20 +912,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1520265895"></script>
-    <script src="/js/perfect-scrollbar.min.js?1520265895"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1520265895"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1520265895"></script>
-    <script src="/js/featherlight.min.js?1520265895"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1520265895"></script>
-    <script src="/js/highlight.pack.js?1520265895"></script>
+    <script src="/js/clipboard.min.js?1522073321"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522073321"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522073321"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1522073321"></script>
+    <script src="/js/featherlight.min.js?1522073321"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522073321"></script>
+    <script src="/js/highlight.pack.js?1522073321"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1520265895"></script>
-    <script src="/js/learn.js?1520265895"></script>
-    <script src="/js/hugo-learn.js?1520265895"></script>
+    <script src="/js/modernizr.custom.71422.js?1522073321"></script>
+    <script src="/js/learn.js?1522073321"></script>
+    <script src="/js/hugo-learn.js?1522073321"></script>
 
-    <link href="/mermaid/mermaid.css?1520265895" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1520265895"></script>
+    <link href="/mermaid/mermaid.css?1522073321" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522073321"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

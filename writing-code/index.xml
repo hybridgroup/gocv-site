@@ -11,5 +11,39 @@
 	<atom:link href="https://gocv.io/writing-code/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Hello Video</title>
+      <link>https://gocv.io/writing-code/hello-video/</link>
+      <pubDate>Sun, 25 Mar 2018 18:00:37 +0200</pubDate>
+      
+      <guid>https://gocv.io/writing-code/hello-video/</guid>
+      <description>This example opens a video capture device using device &amp;ldquo;0&amp;rdquo;, reads frames, and shows the video in a GUI window:
+package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;) img := gocv.NewMat() for { webcam.Read(&amp;amp;img) window.IMShow(img) window.WaitKey(1) } }  </description>
+    </item>
+    
+    <item>
+      <title>Face Detect</title>
+      <link>https://gocv.io/writing-code/face-detect/</link>
+      <pubDate>Sun, 25 Mar 2018 18:02:15 +0200</pubDate>
+      
+      <guid>https://gocv.io/writing-code/face-detect/</guid>
+      <description>This is a more complete example that opens a video capture device using device &amp;ldquo;0&amp;rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strconv&amp;quot; &amp;quot;gocv.</description>
+    </item>
+    
+    <item>
+      <title>More Examples</title>
+      <link>https://gocv.io/writing-code/more-examples/</link>
+      <pubDate>Sun, 25 Mar 2018 18:04:54 +0200</pubDate>
+      
+      <guid>https://gocv.io/writing-code/more-examples/</guid>
+      <description>GoCV comes with various useful command line utilities, that are also examples of how to use the package.
+Caffe Classifier Capture video from a connected webcam, then use the Caffe deep learning framework to classify whatever is in front of the camera.
+https://github.com/hybridgroup/gocv/blob/master/cmd/caffe-classifier/main.go
+Captest Tests to verify you can capture video from a connected webcam.
+https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go
+Capwindow Capture video from a connected webcam and display the video in a Window.</description>
+    </item>
+    
   </channel>
 </rss>
