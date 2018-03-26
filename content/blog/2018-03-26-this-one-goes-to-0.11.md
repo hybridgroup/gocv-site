@@ -44,7 +44,7 @@ The important difference is in this line:
 		webcam.Read(&img)
 ```
 
-We are now passing a pointer to `img` by using the `&` operator e.g. `&img`. 
+We are now passing a pointer to `img` by using the `&` operator e.g. `&img`. This is because the `Read()` function is going to modify the data in `img`.
 
 This is now the case for any GoCV functions that modify the destination `Mat`. For example:
 
@@ -54,15 +54,13 @@ gocv.Threshold(imgDelta, &imgThresh, 25, 255, gocv.ThresholdBinary)
 
 Most Go programmers will recognize passing a pointer to a struct as the idiomatic way to pass a struct "by reference", and to expect that the data can and will be changed within the function being called.
 
-So why did we not just create a new `Mat` to return to the caller similar to how the Python API for OpenCV operates?
+This approach results in more efficient code execution because of not needing to perform additional CGo heap allocations of the additional C++ `cv::Mat` structures and data using OpenCV. We reuse the same memory due to how the GoCV `Mat` wraps around the C++ `cv::Mat*`.
 
-This results in less efficient code execution because of needing to perform additional CGo heap allocations of the additional C++ `cv::Mat` structures and data using OpenCV vs. being able to reuse the same memory due to the C++ `cv::Mat*` that the GoCV `Mat` wraps around. 
-
-We want GoCV code to be as fast as executing the equivalent C++ but also able to use the concurrency of Go. More about this in a upcoming blog post...
+That is why we did not just create a new `Mat` to return to the caller similar to how the Python API for OpenCV operates. We want GoCV code to be as fast as executing the equivalent C++ but also able to use the concurrency of Go. More about this in a upcoming blog post...
 
 ### A Whole Lot More In This Release
 
-Every release we are fortunate to have contributions from both project newcomers and existing project collaborators. This release includes many improvements to GoCV core, yet even more imgproc filters, a whole set of new Trackers for object tracking, many bugfixes, and the ongoing important work of documentation and samples. Thank you to everyone!
+In the new 0.11 release we are again fortunate to have contributions from both project newcomers and existing project collaborators. This includes many improvements to GoCV core, yet even more imgproc filters, a whole set of new Trackers for object tracking from OpenCV Contrib (thanks [@berak](https://github.com/berak)), many bugfixes, and the ongoing important work of documentation and samples. Thank you to everyone!
 
 ### Keep Track of What We're Up To
 
