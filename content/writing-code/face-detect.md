@@ -1,6 +1,6 @@
 ---
 title: "Face Detect"
-date: 2018-03-26T18:02:15+02:00
+date: 2018-03-25T18:02:15+02:00
 draft: false
 weight: 2
 ---
@@ -75,7 +75,7 @@ func main() {
         fmt.Printf("found %d faces\n", len(rects))
 
         // draw a rectangle around each face on the original image,
-        // along with text identifing as "Human"
+        // along with text identifying as "Human"
         for _, r := range rects {
             gocv.Rectangle(&img, r, blue, 3)
 
