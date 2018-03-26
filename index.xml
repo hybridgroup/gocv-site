@@ -6,20 +6,10 @@
     <description>Recent content in Home on GoCV - Golang Computer Vision Using OpenCV 3</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Oct 2017 18:00:37 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 09 Oct 2017 11:41:45 +0200</lastBuildDate>
     
 	<atom:link href="https://gocv.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Hello Video</title>
-      <link>https://gocv.io/writing-code/hello-video/</link>
-      <pubDate>Mon, 09 Oct 2017 18:00:37 +0200</pubDate>
-      
-      <guid>https://gocv.io/writing-code/hello-video/</guid>
-      <description>This example opens a video capture device using device &amp;ldquo;0&amp;rdquo;, reads frames, and shows the video in a GUI window:
-package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam, _ := gocv.VideoCaptureDevice(0) window := gocv.NewWindow(&amp;quot;Hello&amp;quot;)	img := gocv.NewMat() for { webcam.Read(img) window.IMShow(img) window.WaitKey(1) } }  </description>
-    </item>
     
     <item>
       <title>Linux</title>
@@ -29,6 +19,29 @@ package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam,
       <guid>https://gocv.io/getting-started/linux/</guid>
       <description>This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
 You can use make to install OpenCV 3.4.1 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
+    </item>
+    
+    <item>
+      <title>This One Goes to 0.11</title>
+      <link>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</guid>
+      <description>It is with great pleasure that we release to you our latest GoCV (https://gocv.io) version 0.11.0 This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
+We of course have lots of new functionality and features, as always largely due to our amazing contributors. Thank you to everyone who has added code, documentation, or feedback to the project in preparation for this release.</description>
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://gocv.io/getting-started/macos/</link>
+      <pubDate>Mon, 26 Mar 2018 11:41:50 +0200</pubDate>
+      
+      <guid>https://gocv.io/getting-started/macos/</guid>
+      <description>This page has information on how to install and use GoCV on macOS.
+Installing Install the GoCV package:
+ go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
+ brew install opencv  If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:
+ brew upgrade opencv  You can avoid many problems with GoCV on macos just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.</description>
     </item>
     
     <item>
@@ -42,26 +55,16 @@ The new version adds support for the OpenCV Deep Neural Network (DNN) module, wh
     </item>
     
     <item>
-      <title>Face Detect</title>
-      <link>https://gocv.io/writing-code/face-detect/</link>
-      <pubDate>Mon, 09 Oct 2017 18:02:15 +0200</pubDate>
+      <title>Windows</title>
+      <link>https://gocv.io/getting-started/windows/</link>
+      <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
       
-      <guid>https://gocv.io/writing-code/face-detect/</guid>
-      <description>This is a more complete example that opens a video capture device using device &amp;ldquo;0&amp;rdquo;. It also uses the CascadeClassifier class to load an external data file containing the classifier data. The program grabs each frame from the video, then uses the classifier to detect faces. If any faces are found, it draws a green rectangle around each one, then displays the video in an output window:
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image&amp;quot; &amp;quot;image/color&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strconv&amp;quot; &amp;quot;gocv.</description>
-    </item>
-    
-    <item>
-      <title>macOS</title>
-      <link>https://gocv.io/getting-started/macos/</link>
-      <pubDate>Mon, 09 Oct 2017 11:41:50 +0200</pubDate>
-      
-      <guid>https://gocv.io/getting-started/macos/</guid>
-      <description>This page has information on how to install and use GoCV on macOS.
+      <guid>https://gocv.io/getting-started/windows/</guid>
+      <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
 Installing Install the GoCV package:
- go get -u -d gocv.io/x/gocv  Now, install OpenCV 3.4 using Homebrew:
- brew install opencv  If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:
- brew upgrade opencv  How to build/run code In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.</description>
+ go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.4.1. First download and install MinGW-W64 and CMake, as follows.
+MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect.
+The latest version of the MinGW-W64 toolchain is 7.</description>
     </item>
     
     <item>
@@ -78,18 +81,6 @@ Also, provides useful information about not just OpenCV but also the Intel Compu
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://gocv.io/getting-started/windows/</link>
-      <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
-      
-      <guid>https://gocv.io/getting-started/windows/</guid>
-      <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
-Installing Install the GoCV package:
- go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.4.1. First download and install MinGW-W64 and CMake, as follows.
-MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect. Choose the options for &amp;ldquo;posix&amp;rdquo; threads, and for &amp;ldquo;seh&amp;rdquo; exceptions handling, then install to the default location c:\Program Files\mingw-w64\x86_64-7.</description>
-    </item>
-    
-    <item>
       <title>Introducing the GoCV Blog</title>
       <link>https://gocv.io/blog/2017-12-14-gocv-the-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -99,19 +90,6 @@ MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourcef
 We have a Twitter account too We also now have an &amp;ldquo;official&amp;rdquo; Twitter account at @GoCVio please follow us.
 What we will cover Updates to GoCV or to OpenCV itself, cool things built with GoCV, events we attend, and the like.
 We want to hear from you! Are you using GoCV for something?</description>
-    </item>
-    
-    <item>
-      <title>More Examples</title>
-      <link>https://gocv.io/writing-code/more-examples/</link>
-      <pubDate>Mon, 09 Oct 2017 18:04:54 +0200</pubDate>
-      
-      <guid>https://gocv.io/writing-code/more-examples/</guid>
-      <description>GoCV comes with various useful command line utilities, that are also examples of how to use the package.
-Caffe Classifier Capture video from a connected webcam, then use the Caffe deep learning framework to classify whatever is in front of the camera.
-Captest Tests to verify you can capture video from a connected webcam.
-https://github.com/hybridgroup/gocv/blob/master/cmd/captest/main.go
-Capwindow Capture video from a connected webcam and display the video in a Window.</description>
     </item>
     
   </channel>
