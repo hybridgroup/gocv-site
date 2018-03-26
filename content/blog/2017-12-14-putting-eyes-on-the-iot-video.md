@@ -1,7 +1,7 @@
 ---
 title: "Putting Eyes on the IoT - The Video"
 draft: false
-weight: 2
+weight: 3
 ---
 
 The video from "Putting Eyes on the IoT: Advanced Computer Vision Using Golang", the talk about GoCV during the Intel Global IoT Devfest, has just been posted online.

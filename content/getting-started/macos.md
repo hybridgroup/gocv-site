@@ -1,6 +1,6 @@
 ---
 title: "macOS"
-date: 2017-10-09T11:41:50+02:00
+date: 2018-03-26T11:41:50+02:00
 draft: false
 weight: 2
 ---
@@ -21,6 +21,8 @@ If you already have an earlier version of OpenCV installed, you should upgrade i
 
 		brew upgrade opencv
 
+You can avoid many problems with GoCV on macos just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.
+
 ### How to build/run code
 
 In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.4, the following instructions should work.
@@ -39,7 +41,7 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-		gocv version: 0.10.0
+		gocv version: 0.11.0
 		opencv lib version: 3.4.1
 
 You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.

@@ -1,6 +1,6 @@
 ---
 title: "More Examples"
-date: 2017-10-09T18:04:54+02:00
+date: 2018-03-26T18:04:54+02:00
 draft: false
 ---
 

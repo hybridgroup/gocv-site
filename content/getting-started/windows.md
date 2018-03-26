@@ -17,9 +17,13 @@ In order to use GoCV on Windows you must build and install OpenCV 3.4.1. First d
 
 #### MinGW-W64
 
-Download and run the MinGW-W64 compiler installer from [https://sourceforge.net/projects/mingw-w64/?source=typ_redirect](https://sourceforge.net/projects/mingw-w64/?source=typ_redirect). Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `c:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2`.
+Download and run the MinGW-W64 compiler installer from [https://sourceforge.net/projects/mingw-w64/?source=typ_redirect](https://sourceforge.net/projects/mingw-w64/?source=typ_redirect).
 
-Add the `C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
+The latest version of the MinGW-W64 toolchain is `7.3.0`, but any version from `7.X` on should work.
+
+Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `c:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2`.
+
+Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
 
 #### CMake 
 
@@ -85,7 +89,7 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-		gocv version: 0.10.0
+		gocv version: 0.11.0
 		opencv lib version: 3.4.1
 
 If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.cmd` must have been run as described above):

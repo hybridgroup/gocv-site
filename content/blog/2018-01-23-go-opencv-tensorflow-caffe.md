@@ -1,7 +1,7 @@
 ---
 title: "Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV"
 draft: false
-weight: 1
+weight: 2
 ---
 
 We are pleased to present to you the new GoCV ([https://gocv.io](https://gocv.io)) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
