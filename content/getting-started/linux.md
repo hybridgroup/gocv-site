@@ -43,7 +43,7 @@ Build and install everything. This will take quite a while:
 
 After the installation is complete, you can remove the extra files and folders:
 
-		make cleanup
+		make clean
 
 ### How to build/run code
 
