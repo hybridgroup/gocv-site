@@ -13,11 +13,11 @@ You can use `make` to install OpenCV 3.4.1 with the handy `Makefile` included wi
 
 Install the GoCV package:
 
-        go get -u -d gocv.io/x/gocv
+    go get -u -d gocv.io/x/gocv
 
 Change directories into the newly installed package directory:
 
-        cd $GOPATH/src/gocv.io/x/gocv
+    cd $GOPATH/src/gocv.io/x/gocv
 
 Now you can run the needed installation steps listed below.
 
@@ -25,45 +25,46 @@ Now you can run the needed installation steps listed below.
 
 First, you need to update the system, and install any required packages:
 
-		make deps
+	make deps
 
 #### Download source
 
 Next, download the OpenCV 3.4.1 and OpenCV Contrib source code:
 
-		make download
+	make download
 
 #### Build
 
 Build and install everything. This will take quite a while:
 
-		make build
+	make build
 
 #### Cleanup extra files
 
 After the installation is complete, you can remove the extra files and folders:
 
-		make clean
+	make clean
 
 ### How to build/run code
 
-In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.
+Once you have installed OpenCV, you should be able to build or run any of the examples:
 
-One time per session, you must run the script:
-
-		source ./env.sh
-
-Now you should be able to build or run any of the examples:
-
-		go run ./cmd/version/main.go
+	go run ./cmd/version/main.go
 
 The version program should output the following:
 
-		gocv version: 0.12.0
-		opencv lib version: 3.4.1
+	gocv version: 0.13.0
+	opencv lib version: 3.4.1
 
-You might want to copy the `env.sh` script into your own projects, to make it easier to setup these vars when building your own code.
+### Custom environment
 
-If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.sh` must have been executed as described above):
+By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.
 
-        go install gocv.io/x/gocv
+For example:
+
+	export CGO_CPPFLAGS="-I/usr/local/include"
+	export CGO_LDFLAGS="-L/usr/local/lib -lopencv_core -lopencv_face -lopencv_videoio -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_objdetect -lopencv_features2d -lopencv_video -lopencv_dnn -lopencv_xfeatures2d"
+
+Please note that you will need to run these 2 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
+
+	go run -tags customenv ./cmd/version/main.go

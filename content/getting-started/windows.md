@@ -11,7 +11,7 @@ This page has information on how to install and use GoCV on Microsoft Windows 10
 
 Install the GoCV package:
 
-        go get -u -d gocv.io/x/gocv
+    go get -u -d gocv.io/x/gocv
 
 In order to use GoCV on Windows you must build and install OpenCV 3.4.1. First download and install MinGW-W64 and CMake, as follows.
 
@@ -64,12 +64,12 @@ Once it is complete, click on the "Generate" button, and wait for it to generate
 
 Now run the following commands:
 
-		cd C:\opencv\build
-		mingw32-make
+	cd C:\opencv\build
+	mingw32-make
 
 The build should start. It will probably take a very long time. When it is finished run:
 
-		mingw32-make install
+	mingw32-make install
 
 Last, add `C:\opencv\build\install\x64\mingw\bin` to your System Path.
 
@@ -77,21 +77,26 @@ You should now have OpenCV 3.4.1 installed on your Windows 10 machine.
 
 ### How to build/run code
 
-In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation.
+Once you have installed OpenCV, you should be able to build or run any of the command examples:
 
-One time per session, you must run the script:
-
-		env.cmd
-
-Now you should be able to build or run any of the command examples:
-
-		go run .\cmd\version\main.go
+	go run .\cmd\version\main.go
 
 The version program should output the following:
 
-		gocv version: 0.12.0
-		opencv lib version: 3.4.1
+	gocv version: 0.13.0
+	opencv lib version: 3.4.1
 
-If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (`env.cmd` must have been run as described above):
+### Custom Environment
 
-        go install gocv.io/x/gocv
+By default, OpenCV is expected to be in `C:\opencv\build\install\include`. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.
+
+Due to the way OpenCV produces DLLs, including the version in the name, using this method is required if you're using a different version of OpenCV.
+
+For example:
+
+	set CGO_CPPFLAGS=-IC:\opencv\build\install\include
+	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core341 -lopencv_face341 -lopencv_videoio341 -lopencv_imgproc341 -lopencv_highgui341 -lopencv_imgcodecs341 -lopencv_objdetect341 -lopencv_features2d341 -lopencv_video341 -lopencv_dnn341 -lopencv_xfeatures2d341 -lopencv_plot341 -lopencv_tracking341 -lopencv_img_hash341
+
+Please note that you will need to run these 2 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
+
+	go run -tags customenv .\cmd\version\main.go
