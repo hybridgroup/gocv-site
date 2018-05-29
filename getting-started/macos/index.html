@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="generator" content="Hugo 0.41" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1527187679" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527187679" rel="stylesheet">
-    <link href="/css/hybrid.css?1527187679" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527187679" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527187679" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527187679" rel="stylesheet">
-    <link href="/css/theme.css?1527187679" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527187679" rel="stylesheet">
+    <link href="/css/nucleus.css?1527594133" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1527594133" rel="stylesheet">
+    <link href="/css/hybrid.css?1527594133" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1527594133" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1527594133" rel="stylesheet">
+    <link href="/css/auto-complete.css?1527594133" rel="stylesheet">
+    <link href="/css/theme.css?1527594133" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1527594133" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527187679"></script>
+    <script src="/js/jquery-2.x.min.js?1527594133"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -482,6 +482,7 @@
 <ul>
 <li><a href="#installing">Installing</a></li>
 <li><a href="#how-to-build-run-code">How to build/run code</a></li>
+<li><a href="#custom-environment">Custom Environment</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -511,51 +512,48 @@
 
 <p>Install the GoCV package:</p>
 
-<pre><code>    go get -u -d gocv.io/x/gocv
+<pre><code>go get -u -d gocv.io/x/gocv
 </code></pre>
 
 <p>Now, install OpenCV 3.4 using Homebrew:</p>
 
-<pre><code>    brew install opencv
+<pre><code>brew install opencv
 </code></pre>
 
-<p>If you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:</p>
+<p>Note that if you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:</p>
 
-<pre><code>    brew upgrade opencv
+<pre><code>brew upgrade opencv
 </code></pre>
 
-<p>You can avoid many problems with GoCV on macos just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.</p>
+<p>You can avoid many problems with GoCV on macOS just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.</p>
 
 <h3 id="how-to-build-run-code">How to build/run code</h3>
 
-<p>In order to build/run Go code that uses this package, you will need to specify the location for the include and lib files in your GoCV installation. If you have used Homebrew to install OpenCV 3.4, the following instructions should work.</p>
+<p>Once you have installed OpenCV, you should be able to build or run any of the command examples:</p>
 
-<p>First, you need to change the current directory to the location of the GoCV repo:</p>
-
-<pre><code>    cd $GOPATH/src/gocv.io/x/gocv
-</code></pre>
-
-<p>One time per session, you must run the script:</p>
-
-<pre><code>    source ./env.sh
-</code></pre>
-
-<p>Now you should be able to build or run any of the command examples:</p>
-
-<pre><code>    go run ./cmd/version/main.go
+<pre><code>go run ./cmd/version/main.go
 </code></pre>
 
 <p>The version program should output the following:</p>
 
-<pre><code>    gocv version: 0.12.0
-    opencv lib version: 3.4.1
+<pre><code>gocv version: 0.13.0
+opencv lib version: 3.4.1
 </code></pre>
 
-<p>You might want to copy the <code>env.sh</code> script into your own projects, to make it easier to setup these vars when building your own code.</p>
+<h3 id="custom-environment">Custom Environment</h3>
 
-<p>If you are not modifying gocv source, compile gocv to a static library, to significantly decrease your build times (<code>env.sh</code> must have been executed as described above):</p>
+<p>By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying <code>-tags customenv</code> when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.</p>
 
-<pre><code>    go install gocv.io/x/gocv
+<p>For example:</p>
+
+<pre><code>export CGO_CXXFLAGS=&quot;--std=c++11&quot;
+export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/3.4.1_5/include&quot;
+export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.1_5/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
+</code></pre>
+
+<p>Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:</p>
+
+<pre><code>go run -tags customenv ./cmd/version/main.go
 </code></pre>
 
 
@@ -842,20 +840,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527187679"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527187679"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527187679"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1527187679"></script>
-    <script src="/js/featherlight.min.js?1527187679"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527187679"></script>
-    <script src="/js/highlight.pack.js?1527187679"></script>
+    <script src="/js/clipboard.min.js?1527594133"></script>
+    <script src="/js/perfect-scrollbar.min.js?1527594133"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1527594133"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1527594133"></script>
+    <script src="/js/featherlight.min.js?1527594133"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1527594133"></script>
+    <script src="/js/highlight.pack.js?1527594133"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527187679"></script>
-    <script src="/js/learn.js?1527187679"></script>
-    <script src="/js/hugo-learn.js?1527187679"></script>
+    <script src="/js/modernizr.custom.71422.js?1527594133"></script>
+    <script src="/js/learn.js?1527594133"></script>
+    <script src="/js/hugo-learn.js?1527594133"></script>
 
-    <link href="/mermaid/mermaid.css?1527187679" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527187679"></script>
+    <link href="/mermaid/mermaid.css?1527594133" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1527594133"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
