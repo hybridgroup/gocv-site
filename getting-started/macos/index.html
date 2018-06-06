@@ -13,17 +13,17 @@
     <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1527594133" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527594133" rel="stylesheet">
-    <link href="/css/hybrid.css?1527594133" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527594133" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527594133" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527594133" rel="stylesheet">
-    <link href="/css/theme.css?1527594133" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527594133" rel="stylesheet">
+    <link href="/css/nucleus.css?1528285415" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1528285415" rel="stylesheet">
+    <link href="/css/hybrid.css?1528285415" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528285415" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528285415" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528285415" rel="stylesheet">
+    <link href="/css/theme.css?1528285415" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1528285415" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527594133"></script>
+    <script src="/js/jquery-2.x.min.js?1528285415"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -482,6 +482,7 @@
 <ul>
 <li><a href="#installing">Installing</a></li>
 <li><a href="#how-to-build-run-code">How to build/run code</a></li>
+<li><a href="#cache-builds">Cache builds</a></li>
 <li><a href="#custom-environment">Custom Environment</a></li>
 </ul></li>
 </ul></li>
@@ -538,6 +539,13 @@
 
 <pre><code>gocv version: 0.13.0
 opencv lib version: 3.4.1
+</code></pre>
+
+<h3 id="cache-builds">Cache builds</h3>
+
+<p>If you are running a version of Go older than v1.10 and not modifying GoCV source, precompile the GoCV package to significantly decrease your build times:</p>
+
+<pre><code>go install gocv.io/x/gocv
 </code></pre>
 
 <h3 id="custom-environment">Custom Environment</h3>
@@ -840,20 +848,20 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.1_5/lib -lopencv_stitchi
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527594133"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527594133"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527594133"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1527594133"></script>
-    <script src="/js/featherlight.min.js?1527594133"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527594133"></script>
-    <script src="/js/highlight.pack.js?1527594133"></script>
+    <script src="/js/clipboard.min.js?1528285415"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528285415"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528285415"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1528285415"></script>
+    <script src="/js/featherlight.min.js?1528285415"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528285415"></script>
+    <script src="/js/highlight.pack.js?1528285415"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527594133"></script>
-    <script src="/js/learn.js?1527594133"></script>
-    <script src="/js/hugo-learn.js?1527594133"></script>
+    <script src="/js/modernizr.custom.71422.js?1528285415"></script>
+    <script src="/js/learn.js?1528285415"></script>
+    <script src="/js/hugo-learn.js?1528285415"></script>
 
-    <link href="/mermaid/mermaid.css?1527594133" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527594133"></script>
+    <link href="/mermaid/mermaid.css?1528285415" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528285415"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

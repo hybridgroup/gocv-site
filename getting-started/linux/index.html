@@ -13,17 +13,17 @@
     <title>Linux :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1527594133" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527594133" rel="stylesheet">
-    <link href="/css/hybrid.css?1527594133" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527594133" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527594133" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527594133" rel="stylesheet">
-    <link href="/css/theme.css?1527594133" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527594133" rel="stylesheet">
+    <link href="/css/nucleus.css?1528285415" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1528285415" rel="stylesheet">
+    <link href="/css/hybrid.css?1528285415" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528285415" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528285415" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528285415" rel="stylesheet">
+    <link href="/css/theme.css?1528285415" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1528285415" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527594133"></script>
+    <script src="/js/jquery-2.x.min.js?1528285415"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -482,13 +482,21 @@
 <ul>
 <li><a href="#installing">Installing</a>
 <ul>
+<li><a href="#quick-install">Quick Install</a></li>
+<li><a href="#complete-install">Complete Install</a>
+<ul>
 <li><a href="#install-required-packages">Install required packages</a></li>
+</ul></li>
 <li><a href="#download-source">Download source</a></li>
 <li><a href="#build">Build</a></li>
+<li><a href="#install">Install</a></li>
+</ul></li>
+<li><a href="#verifying-the-installation">Verifying the installation</a>
+<ul>
 <li><a href="#cleanup-extra-files">Cleanup extra files</a></li>
 </ul></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
-<li><a href="#custom-environment">Custom environment</a></li>
+<li><a href="#cache-builds">Cache builds</a></li>
+<li><a href="#custom-environment">Custom Environment</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -530,7 +538,26 @@
 
 <p>Now you can run the needed installation steps listed below.</p>
 
-<h4 id="install-required-packages">Install required packages</h4>
+<h4 id="quick-install">Quick Install</h4>
+
+<p>The following commands should do everything to download and install OpenCV 3.4.1 on Linux:</p>
+
+<pre><code>make install
+</code></pre>
+
+<p>If it works correctly, at the end of the entire process, the following message should be displayed:</p>
+
+<pre><code>gocv version: 0.13.0
+opencv lib version: 3.4.1
+</code></pre>
+
+<p>That&rsquo;s it, now you are ready to use GoCV.</p>
+
+<h4 id="complete-install">Complete Install</h4>
+
+<p>Here are details for each of the steps that are performed during the &ldquo;Quick Install&rdquo;. If you have already run <code>make install</code> as described above, you do not need to run any of these commands.</p>
+
+<h5 id="install-required-packages">Install required packages</h5>
 
 <p>First, you need to update the system, and install any required packages:</p>
 
@@ -539,28 +566,35 @@
 
 <h4 id="download-source">Download source</h4>
 
-<p>Next, download the OpenCV 3.4.1 and OpenCV Contrib source code:</p>
+<p>Now, download the OpenCV 3.4.1 and OpenCV Contrib source code:</p>
 
 <pre><code>make download
 </code></pre>
 
 <h4 id="build">Build</h4>
 
-<p>Build and install everything. This will take quite a while:</p>
+<p>Build everything. This will take quite a while:</p>
 
 <pre><code>make build
 </code></pre>
 
-<h4 id="cleanup-extra-files">Cleanup extra files</h4>
+<h4 id="install">Install</h4>
 
-<p>After the installation is complete, you can remove the extra files and folders:</p>
+<p>Once the code is buikt, you are ready to install:</p>
 
-<pre><code>make clean
+<pre><code>make sudo_install
 </code></pre>
 
-<h3 id="how-to-build-run-code">How to build/run code</h3>
+<h3 id="verifying-the-installation">Verifying the installation</h3>
 
-<p>Once you have installed OpenCV, you should be able to build or run any of the examples:</p>
+<p>To verify your installation you can run one of the included examples.</p>
+
+<p>First, change the current directory to the location of the GoCV repo:</p>
+
+<pre><code>cd $GOPATH/src/gocv.io/x/gocv
+</code></pre>
+
+<p>Now you should be able to build or run any of the examples:</p>
 
 <pre><code>go run ./cmd/version/main.go
 </code></pre>
@@ -571,7 +605,21 @@
 opencv lib version: 3.4.1
 </code></pre>
 
-<h3 id="custom-environment">Custom environment</h3>
+<h4 id="cleanup-extra-files">Cleanup extra files</h4>
+
+<p>After the installation is complete, you can remove the extra files and folders:</p>
+
+<pre><code>make clean
+</code></pre>
+
+<h3 id="cache-builds">Cache builds</h3>
+
+<p>If you are running a version of Go older than v1.10 and not modifying GoCV source, precompile the GoCV package to significantly decrease your build times:</p>
+
+<pre><code>go install gocv.io/x/gocv
+</code></pre>
+
+<h3 id="custom-environment">Custom Environment</h3>
 
 <p>By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying <code>-tags customenv</code> when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.</p>
 
@@ -867,20 +915,20 @@ export CGO_LDFLAGS=&quot;-L/usr/local/lib -lopencv_core -lopencv_face -lopencv_v
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527594133"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527594133"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527594133"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1527594133"></script>
-    <script src="/js/featherlight.min.js?1527594133"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527594133"></script>
-    <script src="/js/highlight.pack.js?1527594133"></script>
+    <script src="/js/clipboard.min.js?1528285415"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528285415"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528285415"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1528285415"></script>
+    <script src="/js/featherlight.min.js?1528285415"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528285415"></script>
+    <script src="/js/highlight.pack.js?1528285415"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527594133"></script>
-    <script src="/js/learn.js?1527594133"></script>
-    <script src="/js/hugo-learn.js?1527594133"></script>
+    <script src="/js/modernizr.custom.71422.js?1528285415"></script>
+    <script src="/js/learn.js?1528285415"></script>
+    <script src="/js/hugo-learn.js?1528285415"></script>
 
-    <link href="/mermaid/mermaid.css?1527594133" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527594133"></script>
+    <link href="/mermaid/mermaid.css?1528285415" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528285415"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
