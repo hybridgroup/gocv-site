@@ -34,6 +34,12 @@ The version program should output the following:
 	gocv version: 0.13.0
 	opencv lib version: 3.4.1
 
+### Cache builds
+
+If you are running a version of Go older than v1.10 and not modifying GoCV source, precompile the GoCV package to significantly decrease your build times:
+
+	go install gocv.io/x/gocv
+
 ### Custom Environment
 
 By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.

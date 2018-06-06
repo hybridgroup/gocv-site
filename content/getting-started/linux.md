@@ -21,7 +21,24 @@ Change directories into the newly installed package directory:
 
 Now you can run the needed installation steps listed below.
 
-#### Install required packages
+#### Quick Install
+
+The following commands should do everything to download and install OpenCV 3.4.1 on Linux:
+
+	make install
+
+If it works correctly, at the end of the entire process, the following message should be displayed:
+
+	gocv version: 0.13.0
+	opencv lib version: 3.4.1
+
+That's it, now you are ready to use GoCV.
+
+#### Complete Install
+
+Here are details for each of the steps that are performed during the "Quick Install". If you have already run `make install` as described above, you do not need to run any of these commands.
+
+##### Install required packages
 
 First, you need to update the system, and install any required packages:
 
@@ -29,25 +46,31 @@ First, you need to update the system, and install any required packages:
 
 #### Download source
 
-Next, download the OpenCV 3.4.1 and OpenCV Contrib source code:
+Now, download the OpenCV 3.4.1 and OpenCV Contrib source code:
 
 	make download
 
 #### Build
 
-Build and install everything. This will take quite a while:
+Build everything. This will take quite a while:
 
 	make build
 
-#### Cleanup extra files
+#### Install
 
-After the installation is complete, you can remove the extra files and folders:
+Once the code is buikt, you are ready to install:
 
-	make clean
+	make sudo_install
 
-### How to build/run code
+### Verifying the installation
 
-Once you have installed OpenCV, you should be able to build or run any of the examples:
+To verify your installation you can run one of the included examples.
+
+First, change the current directory to the location of the GoCV repo:
+
+	cd $GOPATH/src/gocv.io/x/gocv
+
+Now you should be able to build or run any of the examples:
 
 	go run ./cmd/version/main.go
 
@@ -56,7 +79,19 @@ The version program should output the following:
 	gocv version: 0.13.0
 	opencv lib version: 3.4.1
 
-### Custom environment
+#### Cleanup extra files
+
+After the installation is complete, you can remove the extra files and folders:
+
+	make clean
+
+### Cache builds
+
+If you are running a version of Go older than v1.10 and not modifying GoCV source, precompile the GoCV package to significantly decrease your build times:
+
+	go install gocv.io/x/gocv
+
+### Custom Environment
 
 By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.
 
