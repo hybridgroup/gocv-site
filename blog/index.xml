@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gocv.io/blog/2018-07-05-going-deeper-into-dnn/</guid>
-      <description>We have just released GoCV (https://gocv.io) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts or our contributors and team, this is one of our most significant updates yet.
+      <description>We have just released GoCV (https://gocv.io) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts of our contributors and team this is one of our most significant updates yet.
 This new GoCV version has been timed to land in parallel with the just shipped OpenCV 3.4.2 release, which features some substantial new functionality for using Deep Neural Networks (DNN) for computer vision. The new GoCV also supports the Intel OpenVINO Inference Engine for DNN hardware acceleration on CPU&amp;rsquo;s, GPU&amp;rsquo;s, and VPU&amp;rsquo;s too.</description>
     </item>
     
