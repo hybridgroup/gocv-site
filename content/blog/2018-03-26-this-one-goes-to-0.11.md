@@ -4,7 +4,7 @@ draft: false
 weight: 1
 ---
 
-It is with great pleasure that we release to you our latest GoCV ([https://gocv.io](https://gocv.io)) version 0.11.0 This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
+It is with great pleasure that we release to you our latest GoCV ([https://gocv.io](https://gocv.io)) version 0.11.0. This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
 
 We of course have lots of new functionality and features, as always largely due to our amazing contributors. Thank you to everyone who has added code, documentation, or feedback to the project in preparation for this release.
 
