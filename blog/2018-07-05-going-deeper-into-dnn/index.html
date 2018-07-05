@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>Going Deeper Into DNN For Computer Vision :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1530803500" rel="stylesheet">
@@ -42,7 +42,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/getting-started/macos/">
+  <body class="" data-url="/blog/2018-07-05-going-deeper-into-dnn/">
     <nav id="sidebar" class="">
 
 
@@ -92,7 +92,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -135,7 +135,7 @@
  
   
     
-      <li data-nav-id="/getting-started/macos/" title="macOS" class="dd-item active">
+      <li data-nav-id="/getting-started/macos/" title="macOS" class="dd-item ">
         <a href="/getting-started/macos/">
         macOS
         
@@ -270,7 +270,7 @@
   
     
     <li data-nav-id="/blog/" title="Blog" class="dd-item 
-        
+        parent
         
         
         ">
@@ -294,7 +294,7 @@
  
   
     
-      <li data-nav-id="/blog/2018-07-05-going-deeper-into-dnn/" title="Going Deeper Into DNN For Computer Vision" class="dd-item ">
+      <li data-nav-id="/blog/2018-07-05-going-deeper-into-dnn/" title="Going Deeper Into DNN For Computer Vision" class="dd-item active">
         <a href="/blog/2018-07-05-going-deeper-into-dnn/">
         Going Deeper Into DNN For Computer Vision
         
@@ -452,7 +452,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/getting-started/macos.md" target="blank">
+                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/blog/2018-07-05-going-deeper-into-dnn.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       Edit this page
                     </a>
@@ -481,7 +481,7 @@
             
           
           
-            <a href='/'>Home</a> > <a href='/getting-started/'>Getting Started</a> > macOS
+            <a href='/'>Home</a> > <a href='/blog/'>Blog</a> > Going Deeper Into DNN For Computer Vision
           
          
           
@@ -499,10 +499,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#how-to-build-run-code">How to build/run code</a></li>
-<li><a href="#cache-builds">Cache builds</a></li>
-<li><a href="#custom-environment">Custom Environment</a></li>
+<li><a href="#into-the-nets">Into The Nets</a></li>
+<li><a href="#there-is-more">There Is More</a></li>
+<li><a href="#stay-in-touch">Stay In Touch</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -518,7 +517,7 @@
         
         <div id="body-inner">
           
-            <h1>macOS</h1>
+            <h1>Going Deeper Into DNN For Computer Vision</h1>
           
 
         
@@ -526,62 +525,53 @@
 
 
 
-<p>This page has information on how to install and use GoCV on macOS.</p>
+<p>We have just released GoCV (<a href="https://gocv.io">https://gocv.io</a>) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts or our contributors and team, this is one of our most significant updates yet.</p>
 
-<h3 id="installing">Installing</h3>
+<p>This new GoCV version has been timed to land in parallel with the just shipped OpenCV 3.4.2 release, which features some substantial new functionality for using Deep Neural Networks (DNN) for computer vision. The new GoCV also supports the <a href="https://software.intel.com/en-us/openvino-toolkit">Intel OpenVINO</a> Inference Engine for DNN hardware acceleration on CPU&rsquo;s, GPU&rsquo;s, and VPU&rsquo;s too.</p>
 
-<p>Install the GoCV package:</p>
+<h3 id="into-the-nets">Into The Nets</h3>
 
-<pre><code>go get -u -d gocv.io/x/gocv
+<p>The new GoCV release offers some big enhancements that are part of the updated OpenCV DNN module. Most importantly, using the new <code>gocv.ReadNet()</code> function you can open models from either [Caffe](), [Tensorflow](), [Torch](), or [DarkNet](), then use it to process visual information.</p>
+
+<p>This single line of code loads a Caffe SSD model and configuration file, and prepares it for processing:</p>
+
+<pre><code class="language-go">net := gocv.ReadNet(&quot;res10_300x300_ssd_iter_140000.caffemodel&quot;, &quot;res10_300x300_ssd_iter_140000.prototxt&quot;)
 </code></pre>
 
-<p>Now, install OpenCV 3.4.2 using Homebrew:</p>
+<p>Here is the same code, but loading a Tensorflow SSD model and configuration file instead:</p>
 
-<pre><code>brew install opencv
+<pre><code class="language-go">net := gocv.ReadNet(&quot;ssd_mobilenet_v1_coco.pb&quot;, &quot;ssd_mobilenet_v1_coco.pbtxt&quot;)
 </code></pre>
 
-<p>Note that if you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:</p>
+<p>If you are using Intel OpenVINO, which is a set of tools from Intel for DNN development that works with GoCV/OpenCV, just by adding 2 lines of code, you can also take advantage of hardware acceleration.</p>
 
-<pre><code>brew upgrade opencv
+<p>This code uses the OpenVINO backend with a connected GPU using 16-bit floating point values to process the Tensorflow model:</p>
+
+<pre><code class="language-go">net := gocv.ReadNet(&quot;ssd_mobilenet_v1_coco.pb&quot;, &quot;ssd_mobilenet_v1_coco.pbtxt&quot;)
+
+net.SetPreferableBackend(gocv.NetBackendOpenVINO)
+net.SetPreferableTarget(gocv.NetTargetFP16)
 </code></pre>
 
-<p>You can avoid many problems with GoCV on macOS just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.</p>
+<p>And then this code uses the OpenVINO backend with a connected <a href="https://www.movidius.com/">Intel Movidius</a> Video Processing Unit (VPU)]to process the same Tensorflow model:</p>
 
-<h3 id="how-to-build-run-code">How to build/run code</h3>
+<pre><code class="language-go">net := gocv.ReadNet(&quot;ssd_mobilenet_v1_coco.pb&quot;, &quot;ssd_mobilenet_v1_coco.pbtxt&quot;)
 
-<p>Once you have installed OpenCV, you should be able to build or run any of the command examples:</p>
-
-<pre><code>go run ./cmd/version/main.go
+net.SetPreferableBackend(gocv.NetBackendOpenVINO)
+net.SetPreferableTarget(gocv.NetTargetVPU)
 </code></pre>
 
-<p>The version program should output the following:</p>
+<p>The OpenVINO Inference Engine backend compiles the model for processing on the target device, and then you can just use it with the same GoCV code as you would use with the CPU or GPU.</p>
 
-<pre><code>gocv version: 0.14.0
-opencv lib version: 3.4.2
-</code></pre>
+<p>We have several new examples for object classification, object tracking, and other applications using DNNs that you can find in our Github repo.</p>
 
-<h3 id="cache-builds">Cache builds</h3>
+<h3 id="there-is-more">There Is More</h3>
 
-<p>If you are running a version of Go older than v1.10 and not modifying GoCV source, precompile the GoCV package to significantly decrease your build times:</p>
+<p>This release also includes many more contributions from project collaborators both experienced and new. Thank you everyone, we appreciate your efforts and support! Check out the full changelog at <a href="https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140">https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140</a> for complete details.</p>
 
-<pre><code>go install gocv.io/x/gocv
-</code></pre>
+<h3 id="stay-in-touch">Stay In Touch</h3>
 
-<h3 id="custom-environment">Custom Environment</h3>
-
-<p>By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying <code>-tags customenv</code> when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.</p>
-
-<p>For example:</p>
-
-<pre><code>export CGO_CXXFLAGS=&quot;--std=c++11&quot;
-export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/3.4.2/include&quot;
-export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
-</code></pre>
-
-<p>Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:</p>
-
-<pre><code>go run -tags customenv ./cmd/version/main.go
-</code></pre>
+<p>Stay informed of all our project activity by following us on Twitter at <a href="https://twitter.com/GoCVio">@GoCVio</a> for the latest news and updates.</p>
 
 
 <footer class=" footline" >
@@ -637,78 +627,6 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -829,6 +747,59 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -861,6 +832,22 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -871,10 +858,10 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching
 
 
         
-            <a class="nav nav-prev" href="/getting-started/linux/" title="Linux"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/getting-started/windows/" title="Windows" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/blog/2018-03-26-this-one-goes-to-0.11/" title="This One Goes to 0.11" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

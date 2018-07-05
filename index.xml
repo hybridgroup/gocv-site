@@ -32,12 +32,22 @@ You can use make to install OpenCV 3.4.2 with the handy Makefile included with t
     </item>
     
     <item>
+      <title>Going Deeper Into DNN For Computer Vision</title>
+      <link>https://gocv.io/blog/2018-07-05-going-deeper-into-dnn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-07-05-going-deeper-into-dnn/</guid>
+      <description>We have just released GoCV (https://gocv.io) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts or our contributors and team, this is one of our most significant updates yet.
+This new GoCV version has been timed to land in parallel with the just shipped OpenCV 3.4.2 release, which features some substantial new functionality for using Deep Neural Networks (DNN) for computer vision. The new GoCV also supports the Intel OpenVINO Inference Engine for DNN hardware acceleration on CPU&amp;rsquo;s, GPU&amp;rsquo;s, and VPU&amp;rsquo;s too.</description>
+    </item>
+    
+    <item>
       <title>This One Goes to 0.11</title>
       <link>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</guid>
-      <description>It is with great pleasure that we release to you our latest GoCV (https://gocv.io) version 0.11.0 This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
+      <description>It is with great pleasure that we release to you our latest GoCV (https://gocv.io) version 0.11.0. This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
 We of course have lots of new functionality and features, as always largely due to our amazing contributors. Thank you to everyone who has added code, documentation, or feedback to the project in preparation for this release.</description>
     </item>
     
