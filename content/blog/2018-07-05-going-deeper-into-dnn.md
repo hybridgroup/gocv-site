@@ -10,7 +10,7 @@ This new GoCV version has been timed to land in parallel with the just shipped O
 
 ### Into The Nets
 
-The new GoCV release offers some big enhancements that are part of the updated OpenCV DNN module. Most importantly, using the new `gocv.ReadNet()` function you can open models from either [Caffe](), [Tensorflow](), [Torch](), or [DarkNet](), then use it to process visual information.
+The new GoCV release offers some big enhancements that are part of the updated OpenCV DNN module. Most importantly, using the new `gocv.ReadNet()` function you can open models from either [Caffe](http://caffe.berkeleyvision.org), [Tensorflow](http://tensorflow.org), [Torch](http://torch.ch), or [DarkNet](https://pjreddie.com/darknet/yolo/), then use to process visual information.
 
 This single line of code loads a Caffe SSD model and configuration file, and prepares it for processing:
 
