@@ -4,7 +4,7 @@ draft: false
 weight: 1
 ---
 
-We have just released GoCV ([https://gocv.io](https://gocv.io)) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts or our contributors and team, this is one of our most significant updates yet.
+We have just released GoCV ([https://gocv.io](https://gocv.io)) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts of our contributors and team this is one of our most significant updates yet.
 
 This new GoCV version has been timed to land in parallel with the just shipped OpenCV 3.4.2 release, which features some substantial new functionality for using Deep Neural Networks (DNN) for computer vision. The new GoCV also supports the [Intel OpenVINO](https://software.intel.com/en-us/openvino-toolkit) Inference Engine for DNN hardware acceleration on CPU's, GPU's, and VPU's too.
 
@@ -45,7 +45,6 @@ net.SetPreferableTarget(gocv.NetTargetVPU)
 ```
 
 The OpenVINO Inference Engine backend compiles the model for processing on the target device, and then you can just use it with the same GoCV code as you would use with the CPU or GPU.
-
 
 We have several new examples for object classification, object tracking, and other applications using DNNs that you can find in our Github repo.
 
