@@ -13,7 +13,7 @@ Install the GoCV package:
 
     go get -u -d gocv.io/x/gocv
 
-In order to use GoCV on Windows you must build and install OpenCV 3.4.1. First download and install MinGW-W64 and CMake, as follows.
+In order to use GoCV on Windows you must build and install OpenCV 3.4.2. First download and install MinGW-W64 and CMake, as follows.
 
 #### MinGW-W64
 
@@ -25,66 +25,37 @@ Choose the options for "posix" threads, and for "seh" exceptions handling, then 
 
 Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
 
-#### CMake 
+#### CMake
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### Download OpenCV 3.4 and OpenCV Contrib Modules
+#### OpenCV 3.4.2 and OpenCV Contrib Modules
 
-Download the source code for the latest OpenCV release from [https://github.com/opencv/opencv/archive/3.4.1.zip](https://github.com/opencv/opencv/archive/3.4.1.zip) and extract it to the directory `C:\opencv\opencv-3.4.1`
+The following commands should do everything to download and install OpenCV 3.4.2 on Windows:
 
-Download the source code for the latest OpenCV Contrib release from [https://github.com/opencv/opencv_contrib/archive/3.4.1.zip](https://github.com/opencv/opencv_contrib/archive/3.4.1.zip) and extract it to the directory `C:\opencv\opencv_contrib-3.4.1`
+	cd %USERPROFILE%\go\src\gocv.io\x\gocv
+	.\win_build_opencv.cmd
 
-Create the directory `C:\opencv\build` as the build directory.
-
-Now launch the `cmake-gui` program, and set the "Where is the source code" to `C:\opencv\opencv-3.4.1`, and the "Where to build the binaries" to `C:\opencv\build`.
-
-Click on "Configure" and select "MinGW MakeFile" from the window, then click on the  "Next" button.
-
-Click on the "Configure" button and wait for the configuration step.
-
-Now, scroll down the list and change the following settings as follows:
-
-- `BUILD_DOCS` should be unchecked (aka disabled).
-- `BUILD_TESTS` should be unchecked (aka disabled).
-- `BUILD_PERF_TESTS` should be unchecked (aka disabled).
-- `ENABLE_PRECOMPILED_HEADERS` should be unchecked.
-- `ENABLE_CXX11` should be checked.
-- `OPENCV_EXTRA_MODULES_PATH` should be set to `C:\opencv\opencv_contrib-3.4.1\modules`
-
-Click on the "Configure" button again, and wait for the configuration step.
-
-Some new configuration options will have appeared. Scroll down the list and change the following settings as follows:
-
-- `BUILD_opencv_saliency` should be unchecked (aka disabled). OpenCV Contrib's "Saliency" module is unable to build on Windows with this toolchain at this time.
-
-Click on the "Configure" button again, and wait for the configuration step.
-
-Once it is complete, click on the "Generate" button, and wait for it to generate your make files. 
-
-Now run the following commands:
-
-	cd C:\opencv\build
-	mingw32-make
-
-The build should start. It will probably take a very long time. When it is finished run:
-
-	mingw32-make install
+It will probably take at least 1 hour to download and build.
 
 Last, add `C:\opencv\build\install\x64\mingw\bin` to your System Path.
 
-You should now have OpenCV 3.4.1 installed on your Windows 10 machine.
+### Verifying the installation
 
-### How to build/run code
+Change the current directory to the location of the GoCV repo:
 
-Once you have installed OpenCV, you should be able to build or run any of the command examples:
+	cd %USERPROFILE%\go\src\gocv.io\x\gocv
+
+Now you should be able to build or run any of the command examples:
 
 	go run .\cmd\version\main.go
 
 The version program should output the following:
 
-	gocv version: 0.13.0
-	opencv lib version: 3.4.1
+	gocv version: 0.14.0
+	opencv lib version: 3.4.2
+
+That's it, now you are ready to use GoCV.
 
 #### Cache builds
 
@@ -100,9 +71,10 @@ Due to the way OpenCV produces DLLs, including the version in the name, using th
 
 For example:
 
+	set CGO_CXXFLAGS="--std=c++11"
 	set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core341 -lopencv_face341 -lopencv_videoio341 -lopencv_imgproc341 -lopencv_highgui341 -lopencv_imgcodecs341 -lopencv_objdetect341 -lopencv_features2d341 -lopencv_video341 -lopencv_dnn341 -lopencv_xfeatures2d341 -lopencv_plot341 -lopencv_tracking341 -lopencv_img_hash341
+	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core342 -lopencv_face342 -lopencv_videoio342 -lopencv_imgproc342 -lopencv_highgui342 -lopencv_imgcodecs342 -lopencv_objdetect342 -lopencv_features2d342 -lopencv_video342 -lopencv_dnn342 -lopencv_xfeatures2d342 -lopencv_plot342 -lopencv_tracking342 -lopencv_img_hash342
 
-Please note that you will need to run these 2 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
+Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
 
 	go run -tags customenv .\cmd\version\main.go
