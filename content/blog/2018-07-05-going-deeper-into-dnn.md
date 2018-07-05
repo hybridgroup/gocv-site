@@ -51,7 +51,7 @@ We have several new examples for object classification, object tracking, and oth
 
 ### There Is More
 
-This release also includes many more contributions from project collaborators both experienced and new. Thank you everyone, we appreciate your efforts and support! Check out the full changelog at [https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140](https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140) for complete details.
+This release also includes many more contributions from project collaborators both experienced and new. Bugfixes, new conversions, improved installation scripts, including for Windows and more. Thank you everyone, we appreciate your efforts and support. Check out the full changelog at [https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140](https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0140) for complete details.
 
 ### Stay In Touch
 
