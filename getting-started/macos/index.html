@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.42.2" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1528441553" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1528441553" rel="stylesheet">
-    <link href="/css/hybrid.css?1528441553" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1528441553" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1528441553" rel="stylesheet">
-    <link href="/css/auto-complete.css?1528441553" rel="stylesheet">
-    <link href="/css/theme.css?1528441553" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1528441553" rel="stylesheet">
+    <link href="/css/nucleus.css?1530792857" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1530792857" rel="stylesheet">
+    <link href="/css/hybrid.css?1530792857" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1530792857" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1530792857" rel="stylesheet">
+    <link href="/css/auto-complete.css?1530792857" rel="stylesheet">
+    <link href="/css/theme.css?1530792857" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1530792857" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1528441553"></script>
+    <script src="/js/jquery-2.x.min.js?1530792857"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -516,7 +516,7 @@
 <pre><code>go get -u -d gocv.io/x/gocv
 </code></pre>
 
-<p>Now, install OpenCV 3.4 using Homebrew:</p>
+<p>Now, install OpenCV 3.4.2 using Homebrew:</p>
 
 <pre><code>brew install opencv
 </code></pre>
@@ -537,8 +537,8 @@
 
 <p>The version program should output the following:</p>
 
-<pre><code>gocv version: 0.13.0
-opencv lib version: 3.4.1
+<pre><code>gocv version: 0.14.0
+opencv lib version: 3.4.2
 </code></pre>
 
 <h3 id="cache-builds">Cache builds</h3>
@@ -555,8 +555,8 @@ opencv lib version: 3.4.1
 <p>For example:</p>
 
 <pre><code>export CGO_CXXFLAGS=&quot;--std=c++11&quot;
-export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/3.4.1_5/include&quot;
-export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.1_5/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
+export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/3.4.2/include&quot;
+export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.2/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
 </code></pre>
 
 <p>Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:</p>
@@ -848,20 +848,20 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.1_5/lib -lopencv_stitchi
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1528441553"></script>
-    <script src="/js/perfect-scrollbar.min.js?1528441553"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1528441553"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1528441553"></script>
-    <script src="/js/featherlight.min.js?1528441553"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1528441553"></script>
-    <script src="/js/highlight.pack.js?1528441553"></script>
+    <script src="/js/clipboard.min.js?1530792857"></script>
+    <script src="/js/perfect-scrollbar.min.js?1530792857"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1530792857"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1530792857"></script>
+    <script src="/js/featherlight.min.js?1530792857"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1530792857"></script>
+    <script src="/js/highlight.pack.js?1530792857"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1528441553"></script>
-    <script src="/js/learn.js?1528441553"></script>
-    <script src="/js/hugo-learn.js?1528441553"></script>
+    <script src="/js/modernizr.custom.71422.js?1530792857"></script>
+    <script src="/js/learn.js?1530792857"></script>
+    <script src="/js/hugo-learn.js?1530792857"></script>
 
-    <link href="/mermaid/mermaid.css?1528441553" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1528441553"></script>
+    <link href="/mermaid/mermaid.css?1530792857" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1530792857"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
