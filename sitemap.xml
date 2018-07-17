@@ -17,10 +17,6 @@
   </url>
   
   <url>
-    <loc>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</loc>
-  </url>
-  
-  <url>
     <loc>https://gocv.io/getting-started/macos/</loc>
     <lastmod>2018-03-26T11:41:50+02:00</lastmod>
   </url>
@@ -36,20 +32,8 @@
   </url>
   
   <url>
-    <loc>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</loc>
-  </url>
-  
-  <url>
     <loc>https://gocv.io/getting-started/windows/</loc>
     <lastmod>2017-10-09T11:41:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</loc>
-  </url>
-  
-  <url>
-    <loc>https://gocv.io/blog/2017-12-14-gocv-the-blog/</loc>
   </url>
   
   <url>
@@ -64,6 +48,22 @@
   
   <url>
     <loc>https://gocv.io/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gocv.io/blog/2017-12-14-putting-eyes-on-the-iot-video/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gocv.io/blog/2017-12-14-gocv-the-blog/</loc>
   </url>
   
   <url>

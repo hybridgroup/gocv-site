@@ -42,16 +42,6 @@ This new GoCV version has been timed to land in parallel with the just shipped O
     </item>
     
     <item>
-      <title>This One Goes to 0.11</title>
-      <link>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</guid>
-      <description>It is with great pleasure that we release to you our latest GoCV (https://gocv.io) version 0.11.0. This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
-We of course have lots of new functionality and features, as always largely due to our amazing contributors. Thank you to everyone who has added code, documentation, or feedback to the project in preparation for this release.</description>
-    </item>
-    
-    <item>
       <title>macOS</title>
       <link>https://gocv.io/getting-started/macos/</link>
       <pubDate>Mon, 26 Mar 2018 11:41:50 +0200</pubDate>
@@ -75,16 +65,6 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image&amp;quot; &amp;quo
     </item>
     
     <item>
-      <title>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV</title>
-      <link>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</guid>
-      <description>We are pleased to present to you the new GoCV (https://gocv.io) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
-The new version adds support for the OpenCV Deep Neural Network (DNN) module, which means you can now use Caffe (http://caffe.berkeleyvision.org/) and Tensorflow (https://www.tensorflow.org/) models from your GoCV code.</description>
-    </item>
-    
-    <item>
       <title>Windows</title>
       <link>https://gocv.io/getting-started/windows/</link>
       <pubDate>Mon, 09 Oct 2017 11:41:54 +0200</pubDate>
@@ -95,6 +75,26 @@ Installing Install the GoCV package:
 go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 3.4.2. First download and install MinGW-W64 and CMake, as follows.
 MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect.
 The latest version of the MinGW-W64 toolchain is 7.3.0, but any version from 7.</description>
+    </item>
+    
+    <item>
+      <title>This One Goes to 0.11</title>
+      <link>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-03-26-this-one-goes-to-0.11/</guid>
+      <description>It is with great pleasure that we release to you our latest GoCV (https://gocv.io) version 0.11.0. This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
+We of course have lots of new functionality and features, as always largely due to our amazing contributors. Thank you to everyone who has added code, documentation, or feedback to the project in preparation for this release.</description>
+    </item>
+    
+    <item>
+      <title>Go, OpenCV, Caffe, and Tensorflow: Putting It All Together With GoCV</title>
+      <link>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-01-23-go-opencv-tensorflow-caffe/</guid>
+      <description>We are pleased to present to you the new GoCV (https://gocv.io) version 0.8.0, which is our first release of 2018. This is a big update and adds a lot of powerful new functionality, along with bug fixes and more documentation, thanks to our wonderful contributors.
+The new version adds support for the OpenCV Deep Neural Network (DNN) module, which means you can now use Caffe (http://caffe.berkeleyvision.org/) and Tensorflow (https://www.tensorflow.org/) models from your GoCV code.</description>
     </item>
     
     <item>
