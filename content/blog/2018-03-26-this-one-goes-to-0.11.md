@@ -1,7 +1,7 @@
 ---
 title: "This One Goes to 0.11"
 draft: false
-weight: 1
+weight: 37
 ---
 
 It is with great pleasure that we release to you our latest GoCV ([https://gocv.io](https://gocv.io)) version 0.11.0. This is an important update, because it slightly changes the API from previous versions. By this we mean breaking changes, which we will explain below.
