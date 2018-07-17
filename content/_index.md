@@ -12,3 +12,6 @@ The GoCV package supports the latest releases of Go and OpenCV v3.4.2 on Linux, 
 GoCV also supports the [Intel OpenVINO](https://software.intel.com/en-us/openvino-toolkit) toolkit.
 
 Just looking for the code? Go to https://github.com/hybridgroup/gocv
+
+**We're excited to announce our first official online live training ["Getting Started with Computer Vision Using Go"](https://www.safaribooksonline.com/live-training/courses/getting-started-with-computer-vision-using-go/0636920196075) with Pearson/O'Reilly coming up on August 6, 2018 16:00-20:00 CEST.
+For more information, please go to to the [Safari books web site here](https://www.safaribooksonline.com/live-training/courses/getting-started-with-computer-vision-using-go/0636920196075).**
