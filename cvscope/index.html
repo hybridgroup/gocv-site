@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Writing Code :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>CVscope :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1533048627" rel="stylesheet">
@@ -42,7 +42,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/writing-code/">
+  <body class="" data-url="/cvscope/">
     <nav id="sidebar" class="">
 
 
@@ -181,8 +181,8 @@
   
     
     <li data-nav-id="/writing-code/" title="Writing Code" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/writing-code/">
@@ -397,8 +397,8 @@
   
     
     <li data-nav-id="/cvscope/" title="CVscope" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/cvscope/">
@@ -474,7 +474,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/writing-code/_index.md" target="blank">
+                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/cvscope/_index.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       Edit this page
                     </a>
@@ -489,6 +489,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -497,7 +499,7 @@
             
           
           
-            <a href='/'>Home</a> > Writing Code
+            <a href='/'>Home</a> > CVscope
           
          
           
@@ -505,14 +507,37 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#how-to-install">How to install</a></li>
+<li><a href="#how-to-run">How to run</a></li>
+<li><a href="#how-to-build">How to build</a>
+<ul>
+<li><a href="#macos-linux">macOS/Linux</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>CVscope</h1>
           
 
         
@@ -520,17 +545,86 @@
 
 
 
-<h1 id="writing-code-using-gocv">Writing Code Using GoCV</h1>
+<p><img src="../images/cvscope.png" alt="GoCV" /></p>
 
-<p>Here are some examples of how to use GoCV in your Go programs.</p>
+<p>CVscope is a CLI tool for visually exploring video image filters that are part of OpenCV (<a href="http://opencv.org">http://opencv.org</a>).</p>
+
+<p>CVscope itself is written in the Go programming language using GoCV (<a href="https://gocv.io">https://gocv.io</a>).</p>
+
+<p>You can find the code here:</p>
+
+<p><a href="https://github.com/hybridgroup/cvscope">https://github.com/hybridgroup/cvscope</a></p>
+
+<h3 id="how-to-install">How to install</h3>
+
+<p>In order to use CVscope you must first have installed OpenCV and GoCV. Please follow the instructions located at <a href="https://gocv.io/getting-started/">https://gocv.io/getting-started/</a> for your operating system.</p>
+
+<p>You can then install CVscope by running:</p>
+
+<pre><code>go get gocv.io/x/cvscope
+</code></pre>
+
+<h3 id="how-to-run">How to run</h3>
+
+<p>Running the main program without any parameters:</p>
+
+<pre><code>go run main.go
+</code></pre>
+
+<p>will display a list of the various valid CVscope commands:</p>
+
+<pre><code>CVscope is a command line tool for OpenCV that lets you visually explore various 
+filters and algorithms for computer vision.
+
+It can also generate Go code that them implements the needed commands using the GoCV
+programming library. CVscope is itself written using GoCV.
+
+Usage:
+cvscope [command]
+
+Available Commands:
+bilateral   Apply bilateral filter to video images
+blur        Blur video images
+dilate      Dilate video images
+...
+</code></pre>
+
+<p>Here is a CVscope command that opens a window using the default camera, and then displays the video using the <code>Blur</code> filter:</p>
+
+<pre><code>go run main.go blur
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/hybridgroup/cvscope/master/images/cvscope.png" alt="CVscope" /></p>
+
+<p>While the CVscope program is running you can change the values for <code>ksize X</code> and <code>ksize Y</code> by adjusting the sliders, and the video will display the current image filter settings in real-time.</p>
+
+<p>You can also generate the Go code that matches the current image filter settings. By pressing the <code>g</code> key, the code is output to the command line window where you started CVscope running. For example, when running the <code>blur</code> command, pressing <code>g</code> outputs the following:</p>
+
+<pre><code>===============================
+Go code for current filter:
+-------------------------------
+gocv.Blur(src, &amp;dest, image.Pt(12, 12))
+</code></pre>
+
+<h3 id="how-to-build">How to build</h3>
+
+<p>CVscope does not yet support cross platform builds, so you must build the program on the desired target operating system.</p>
+
+<h4 id="macos-linux">macOS/Linux</h4>
+
+<pre><code>go build -o cvscope main.go
+</code></pre>
+
+<h4 id="windows">Windows</h4>
+
+<pre><code>go build -o cvscope.exe main.go
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
       </div>
@@ -616,19 +710,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -647,90 +728,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -792,9 +789,6 @@
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -903,6 +897,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -921,10 +916,10 @@
 
 
         
-            <a class="nav nav-prev" href="/getting-started/windows/" title="Windows"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/2017-12-14-gocv-the-blog/" title="Introducing the GoCV Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/writing-code/hello-video/" title="Hello Video" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/computer-vision/" title="Computer Vision" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
