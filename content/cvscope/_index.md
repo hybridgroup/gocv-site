@@ -21,13 +21,13 @@ In order to use CVscope you must first have installed OpenCV and GoCV. Please fo
 
 You can then install CVscope by running:
 
-    go get gocv.io/x/cvscope
-    
+    go get -u gocv.io/x/cvscope
+
 ### How to run
 
 Running the main program without any parameters:
 
-    go run main.go
+    cvscope
 
 will display a list of the various valid CVscope commands:
 
@@ -48,7 +48,7 @@ will display a list of the various valid CVscope commands:
 
 Here is a CVscope command that opens a window using the default camera, and then displays the video using the `Blur` filter:
 
-    go run main.go blur
+    cvscope blur
 
 ![CVscope](https://raw.githubusercontent.com/hybridgroup/cvscope/master/images/cvscope.png)
 
@@ -60,15 +60,3 @@ You can also generate the Go code that matches the current image filter settings
     Go code for current filter:
     -------------------------------
     gocv.Blur(src, &dest, image.Pt(12, 12))
-
-### How to build
-
-CVscope does not yet support cross platform builds, so you must build the program on the desired target operating system.
-
-#### macOS/Linux
-
-    go build -o cvscope main.go
-
-#### Windows
-
-    go build -o cvscope.exe main.go
