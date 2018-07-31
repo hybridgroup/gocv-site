@@ -13,17 +13,17 @@
     <title>CVscope :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1533048627" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1533048627" rel="stylesheet">
-    <link href="/css/hybrid.css?1533048627" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1533048627" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1533048627" rel="stylesheet">
-    <link href="/css/auto-complete.css?1533048627" rel="stylesheet">
-    <link href="/css/theme.css?1533048627" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1533048627" rel="stylesheet">
+    <link href="/css/nucleus.css?1533049498" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1533049498" rel="stylesheet">
+    <link href="/css/hybrid.css?1533049498" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1533049498" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1533049498" rel="stylesheet">
+    <link href="/css/auto-complete.css?1533049498" rel="stylesheet">
+    <link href="/css/theme.css?1533049498" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1533049498" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1533048627"></script>
+    <script src="/js/jquery-2.x.min.js?1533049498"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -517,11 +517,6 @@
 <ul>
 <li><a href="#how-to-install">How to install</a></li>
 <li><a href="#how-to-run">How to run</a></li>
-<li><a href="#how-to-build">How to build</a>
-<ul>
-<li><a href="#macos-linux">macOS/Linux</a></li>
-<li><a href="#windows">Windows</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -561,14 +556,14 @@
 
 <p>You can then install CVscope by running:</p>
 
-<pre><code>go get gocv.io/x/cvscope
+<pre><code>go get -u gocv.io/x/cvscope
 </code></pre>
 
 <h3 id="how-to-run">How to run</h3>
 
 <p>Running the main program without any parameters:</p>
 
-<pre><code>go run main.go
+<pre><code>cvscope
 </code></pre>
 
 <p>will display a list of the various valid CVscope commands:</p>
@@ -591,7 +586,7 @@ dilate      Dilate video images
 
 <p>Here is a CVscope command that opens a window using the default camera, and then displays the video using the <code>Blur</code> filter:</p>
 
-<pre><code>go run main.go blur
+<pre><code>cvscope blur
 </code></pre>
 
 <p><img src="https://raw.githubusercontent.com/hybridgroup/cvscope/master/images/cvscope.png" alt="CVscope" /></p>
@@ -604,20 +599,6 @@ dilate      Dilate video images
 Go code for current filter:
 -------------------------------
 gocv.Blur(src, &amp;dest, image.Pt(12, 12))
-</code></pre>
-
-<h3 id="how-to-build">How to build</h3>
-
-<p>CVscope does not yet support cross platform builds, so you must build the program on the desired target operating system.</p>
-
-<h4 id="macos-linux">macOS/Linux</h4>
-
-<pre><code>go build -o cvscope main.go
-</code></pre>
-
-<h4 id="windows">Windows</h4>
-
-<pre><code>go build -o cvscope.exe main.go
 </code></pre>
 
 
@@ -928,20 +909,20 @@ gocv.Blur(src, &amp;dest, image.Pt(12, 12))
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1533048627"></script>
-    <script src="/js/perfect-scrollbar.min.js?1533048627"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1533048627"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1533048627"></script>
-    <script src="/js/featherlight.min.js?1533048627"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1533048627"></script>
-    <script src="/js/highlight.pack.js?1533048627"></script>
+    <script src="/js/clipboard.min.js?1533049498"></script>
+    <script src="/js/perfect-scrollbar.min.js?1533049498"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1533049498"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1533049498"></script>
+    <script src="/js/featherlight.min.js?1533049498"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1533049498"></script>
+    <script src="/js/highlight.pack.js?1533049498"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1533048627"></script>
-    <script src="/js/learn.js?1533048627"></script>
-    <script src="/js/hugo-learn.js?1533048627"></script>
+    <script src="/js/modernizr.custom.71422.js?1533049498"></script>
+    <script src="/js/learn.js?1533049498"></script>
+    <script src="/js/hugo-learn.js?1533049498"></script>
 
-    <link href="/mermaid/mermaid.css?1533048627" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1533048627"></script>
+    <link href="/mermaid/mermaid.css?1533049498" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1533049498"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
