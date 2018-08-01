@@ -50,7 +50,7 @@ Here is a CVscope command that opens a window using the default camera, and then
 
     cvscope blur
 
-![CVscope](https://raw.githubusercontent.com/hybridgroup/cvscope/master/images/cvscope.png)
+![CVscope](../images/cvscope.png)
 
 While the CVscope program is running you can change the values for `ksize X` and `ksize Y` by adjusting the sliders, and the video will display the current image filter settings in real-time.
 
