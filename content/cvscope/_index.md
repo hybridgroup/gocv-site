@@ -5,7 +5,7 @@ draft: false
 weight: 10
 ---
 
-![GoCV](../images/cvscope.png)
+![GoCV](../images/cvscope-gaussian.png)
 
 CVscope is a CLI tool for visually exploring video image filters that are part of OpenCV ([http://opencv.org](http://opencv.org)).
 
@@ -54,7 +54,7 @@ Here is a CVscope command that opens a window using the default camera, and then
 
 While the CVscope program is running you can change the values for `ksize X` and `ksize Y` by adjusting the sliders, and the video will display the current image filter settings in real-time.
 
-You can also generate the Go code that matches the current image filter settings. By pressing the `g` key, the code is output to the command line window where you started CVscope running. For example, when running the `blur` command, pressing `g` outputs the following:
+You can also generate the Go code that matches the current image filter settings. By pressing the `g` key, the code is output to the command line window where you started CVscope running. For example, when running the `cvscope blur` command, pressing `g` outputs the following:
 
     ===============================
     Go code for current filter:
