@@ -21,9 +21,11 @@ Download and run the MinGW-W64 compiler installer from [https://sourceforge.net/
 
 The latest version of the MinGW-W64 toolchain is `7.3.0`, but any version from `7.X` on should work.
 
-Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `c:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2`.
+Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2`.
 
 Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
+
+Note: if you have installed Git Bash on your path, the installation will fail because Git Bash's system tools will override MinGW-W64's tools. Uninstall Git Bash, follow the steps in this guide, then reinstall Git Bash (if desired).
 
 #### CMake
 
