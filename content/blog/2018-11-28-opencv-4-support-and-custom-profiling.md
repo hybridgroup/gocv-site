@@ -10,7 +10,7 @@ We also have some great new features from our amazing contributors. Thank you to
 
 You can take a look at the full changelog at [https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180](https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180) for the details, or read on to learn more.
 
-### OpenCV 4.0.0 and beyond
+### To OpenCV 4.0.0 And Beyond
 
 The hard-working OpenCV team has just shipped a huge update in version 4.0.0 and the new GoCV is intended to work only with this release and future releases in version 4.0. The future is here and now, dear friends.
 
