@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>OpenCV 4 Support And Custom Profiling</title>
+      <link>https://gocv.io/blog/2018-11-28-opencv-4-support-and-custom-profiling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gocv.io/blog/2018-11-28-opencv-4-support-and-custom-profiling/</guid>
+      <description>We&amp;rsquo;re proud to announce our latest release of GoCV (https://gocv.io) version 0.18.0. This is a big update, because we are now supporting the long awaited and just-released OpenCV version 4.0.
+We also have some great new features from our amazing contributors. Thank you to everyone who has helped with the project getting ready for the release.
+You can take a look at the full changelog at https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180 for the details, or read on to learn more.</description>
+    </item>
+    
+    <item>
       <title>Going Deeper Into DNN For Computer Vision</title>
       <link>https://gocv.io/blog/2018-07-05-going-deeper-into-dnn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

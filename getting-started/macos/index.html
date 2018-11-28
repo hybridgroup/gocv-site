@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.49" />
+    <meta name="generator" content="Hugo 0.51" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>macOS :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
-    <link href="/css/nucleus.css?1539088095" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1539088095" rel="stylesheet">
-    <link href="/css/hybrid.css?1539088095" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1539088095" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1539088095" rel="stylesheet">
-    <link href="/css/auto-complete.css?1539088095" rel="stylesheet">
-    <link href="/css/theme.css?1539088095" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1539088095" rel="stylesheet">
+    <link href="/css/nucleus.css?1543424801" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1543424801" rel="stylesheet">
+    <link href="/css/hybrid.css?1543424801" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1543424801" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1543424801" rel="stylesheet">
+    <link href="/css/auto-complete.css?1543424801" rel="stylesheet">
+    <link href="/css/theme.css?1543424801" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1543424801" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1539088095"></script>
+    <script src="/js/jquery-2.x.min.js?1543424801"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -294,6 +294,25 @@
  
   
     
+      <li data-nav-id="/blog/2018-11-28-opencv-4-support-and-custom-profiling/" title="OpenCV 4 Support And Custom Profiling" class="dd-item ">
+        <a href="/blog/2018-11-28-opencv-4-support-and-custom-profiling/">
+        OpenCV 4 Support And Custom Profiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/blog/2018-07-05-going-deeper-into-dnn/" title="Going Deeper Into DNN For Computer Vision" class="dd-item ">
         <a href="/blog/2018-07-05-going-deeper-into-dnn/">
         Going Deeper Into DNN For Computer Vision
@@ -553,17 +572,19 @@
 <pre><code>go get -u -d gocv.io/x/gocv
 </code></pre>
 
-<p>Now, install OpenCV 3.4.3 using Homebrew:</p>
+<p>You can install OpenCV 4.0.0 using Homebrew.</p>
 
-<pre><code>brew install opencv
+<p>If you already have an earlier version of OpenCV (3.4.x) installed, you should probably remove it before installing the new version:</p>
+
+<pre><code>brew uninstall opencv
 </code></pre>
 
-<p>Note that if you already have an earlier version of OpenCV installed, you should upgrade it to the latest version, instead of installing:</p>
+<p>You can then install OpenCV 4.0.0:</p>
 
-<pre><code>brew upgrade opencv
+<pre><code>brew install hybridgroup/tools/opencv
 </code></pre>
 
-<p>You can avoid many problems with GoCV on macOS just by making sure that you do not have multiple versions of OpenCV installed, and are using the latest version.</p>
+<p>This new Homebrew recipe will install only OpenCV 4.0.0 without all of the Python dependencies.</p>
 
 <h3 id="pkgconfig-installation">pkgconfig Installation</h3>
 
@@ -582,8 +603,8 @@ You can install it by using Homebrew:</p>
 
 <p>The version program should output the following:</p>
 
-<pre><code>gocv version: 0.17.0
-opencv lib version: 3.4.3
+<pre><code>gocv version: 0.18.0
+opencv lib version: 4.0.0
 </code></pre>
 
 <h3 id="cache-builds">Cache builds</h3>
@@ -600,8 +621,8 @@ opencv lib version: 3.4.3
 <p>For example:</p>
 
 <pre><code>export CGO_CXXFLAGS=&quot;--std=c++11&quot;
-export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/3.4.3/include&quot;
-export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.3/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
+export CGO_CPPFLAGS=&quot;-I/usr/local/Cellar/opencv/4.0.0/include&quot;
+export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/4.0.0/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core&quot;
 </code></pre>
 
 <p>Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:</p>
@@ -887,6 +908,22 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.3/lib -lopencv_stitching
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -925,20 +962,20 @@ export CGO_LDFLAGS=&quot;-L/usr/local/Cellar/opencv/3.4.3/lib -lopencv_stitching
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1539088095"></script>
-    <script src="/js/perfect-scrollbar.min.js?1539088095"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1539088095"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1539088095"></script>
-    <script src="/js/featherlight.min.js?1539088095"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1539088095"></script>
-    <script src="/js/highlight.pack.js?1539088095"></script>
+    <script src="/js/clipboard.min.js?1543424801"></script>
+    <script src="/js/perfect-scrollbar.min.js?1543424801"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1543424801"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1543424801"></script>
+    <script src="/js/featherlight.min.js?1543424801"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1543424801"></script>
+    <script src="/js/highlight.pack.js?1543424801"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1539088095"></script>
-    <script src="/js/learn.js?1539088095"></script>
-    <script src="/js/hugo-learn.js?1539088095"></script>
+    <script src="/js/modernizr.custom.71422.js?1543424801"></script>
+    <script src="/js/learn.js?1543424801"></script>
+    <script src="/js/hugo-learn.js?1543424801"></script>
 
-    <link href="/mermaid/mermaid.css?1539088095" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1539088095"></script>
+    <link href="/mermaid/mermaid.css?1543424801" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1543424801"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

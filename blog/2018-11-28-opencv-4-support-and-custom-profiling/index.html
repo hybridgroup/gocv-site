@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Introducing the GoCV Blog :: GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>OpenCV 4 Support And Custom Profiling :: GoCV - Golang Computer Vision Using OpenCV 3</title>
     
     
     <link href="/css/nucleus.css?1543424801" rel="stylesheet">
@@ -42,7 +42,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/blog/2017-12-14-gocv-the-blog/">
+  <body class="" data-url="/blog/2018-11-28-opencv-4-support-and-custom-profiling/">
     <nav id="sidebar" class="">
 
 
@@ -294,7 +294,7 @@
  
   
     
-      <li data-nav-id="/blog/2018-11-28-opencv-4-support-and-custom-profiling/" title="OpenCV 4 Support And Custom Profiling" class="dd-item ">
+      <li data-nav-id="/blog/2018-11-28-opencv-4-support-and-custom-profiling/" title="OpenCV 4 Support And Custom Profiling" class="dd-item active">
         <a href="/blog/2018-11-28-opencv-4-support-and-custom-profiling/">
         OpenCV 4 Support And Custom Profiling
         
@@ -389,7 +389,7 @@
  
   
     
-      <li data-nav-id="/blog/2017-12-14-gocv-the-blog/" title="Introducing the GoCV Blog" class="dd-item active">
+      <li data-nav-id="/blog/2017-12-14-gocv-the-blog/" title="Introducing the GoCV Blog" class="dd-item ">
         <a href="/blog/2017-12-14-gocv-the-blog/">
         Introducing the GoCV Blog
         
@@ -488,7 +488,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/blog/2017-12-14-gocv-the-blog.md" target="blank">
+                    <a class="github-link" href="https://github.com/hybridgroup/gocv-site/edit/master/content/blog/2018-11-28-opencv-4-support-and-custom-profiling.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       Edit this page
                     </a>
@@ -517,7 +517,7 @@
             
           
           
-            <a href='/'>Home</a> > <a href='/blog/'>Blog</a> > Introducing the GoCV Blog
+            <a href='/'>Home</a> > <a href='/blog/'>Blog</a> > OpenCV 4 Support And Custom Profiling
           
          
           
@@ -535,9 +535,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#we-have-a-twitter-account-too">We have a Twitter account too</a></li>
-<li><a href="#what-we-will-cover">What we will cover</a></li>
-<li><a href="#we-want-to-hear-from-you">We want to hear from you!</a></li>
+<li><a href="#opencv-4-0-0-and-beyond">OpenCV 4.0.0 and beyond</a></li>
+<li><a href="#matprofile-to-catch-the-memory-leaks">MatProfile To Catch The Memory Leaks</a></li>
+<li><a href="#stay-informed">Stay Informed</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -553,7 +553,7 @@
         
         <div id="body-inner">
           
-            <h1>Introducing the GoCV Blog</h1>
+            <h1>OpenCV 4 Support And Custom Profiling</h1>
           
 
         
@@ -561,19 +561,55 @@
 
 
 
-<p>Perhaps you have been wondering &ldquo;where is the blog for this project?&rdquo;. Well, wonder no more, here it is!</p>
+<p>We&rsquo;re proud to announce our latest release of GoCV (<a href="https://gocv.io">https://gocv.io</a>) version 0.18.0. This is a big update, because we are now supporting the long awaited and just-released OpenCV version 4.0.</p>
 
-<h3 id="we-have-a-twitter-account-too">We have a Twitter account too</h3>
+<p>We also have some great new features from our amazing contributors. Thank you to everyone who has helped with the project getting ready for the release.</p>
 
-<p>We also now have an &ldquo;official&rdquo; Twitter account at <a href="https://twitter.com/GoCVio">@GoCVio</a> please follow us.</p>
+<p>You can take a look at the full changelog at <a href="https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180">https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180</a> for the details, or read on to learn more.</p>
 
-<h3 id="what-we-will-cover">What we will cover</h3>
+<h3 id="opencv-4-0-0-and-beyond">OpenCV 4.0.0 and beyond</h3>
 
-<p>Updates to GoCV or to OpenCV itself, cool things built with GoCV, events we attend, and the like.</p>
+<p>The hard-working OpenCV team has just shipped a huge update in version 4.0.0 and the new GoCV is intended to work only with this release and future releases in version 4.0. The future is here and now, dear friends.</p>
 
-<h3 id="we-want-to-hear-from-you">We want to hear from you!</h3>
+<p>All of our installation information is now updated for OpenCV 4, and we also have made some improvements for you. In particular, for macOS developers, we now have a Homebrew forumla that will not only install OpenCV 4, but also provided a more stripped down installation by doing so without all of the extra Python dependencies.</p>
 
-<p>Are you using GoCV for something? We want to hear about it. Need help? We&rsquo;ve here for you.</p>
+<h3 id="matprofile-to-catch-the-memory-leaks">MatProfile To Catch The Memory Leaks</h3>
+
+<p><img src="../images/gocv-profile-example.png" alt="MatProfile" /></p>
+
+<p>Thanks to new contributor <a href="https://github.com/dougnd">@dougnd</a> we now have custom <a href="https://golang.org/pkg/runtime/pprof/">pprof</a> profiling for Mat creation.</p>
+
+<p>Since memory allocations for images and any other <code>Mat</code> in GoCV are done through C based code, the Go garbage collector will not clean all resources associated with a <code>Mat</code>. As a result, any <code>Mat</code> created <em>must</em> be closed to avoid memory leaks.</p>
+
+<p>In order to ease the detection and repair of this kind of resource leaks, the new <code>MatProfile</code> custom profiler has been added.</p>
+
+<p>To include the <code>MatProfile</code> custom profiler, you MUST build or run your application or tests using the <code>-tags matprofile</code> build tag. For example:</p>
+
+<pre><code>go run -tags matprofile cmd/version/main.go
+</code></pre>
+
+<p>You can then get the profile&rsquo;s count at any time using:</p>
+
+<pre><code class="language-go">gocv.MatProfile.Count()
+</code></pre>
+
+<p>You can also display the current entries (the stack traces) with:</p>
+
+<pre><code class="language-go">var b bytes.Buffer
+gocv.MatProfile.WriteTo(&amp;b, 1)
+fmt.Print(b.String())
+</code></pre>
+
+<p>If you are using GoCV from an http server, then you can use the <code>net/http/pprof</code> package, and see the <code>MatProfile</code> information from your web browser. The &ldquo;mjpeg-server&rdquo; sample application has been modified to support this. Just run it using <code>-tag matprofile</code> like this to include the custom profiler:</p>
+
+<pre><code>go run -tags matprofile ./cmd/mjpeg-streamer/main.go 0 0.0.0.0:8080
+</code></pre>
+
+<p>Once it is running, just navigate to <a href="http://localhost:8080/debug/pprof/">http://localhost:8080/debug/pprof/</a> and click on the &ldquo;gocv.io/x/gocv.Mat&rdquo; link under &ldquo;Types of profiles available&rdquo;. Very cool, thanks again to <a href="https://github.com/dougnd">@dougnd</a>.</p>
+
+<h3 id="stay-informed">Stay Informed</h3>
+
+<p>Want to stay up to date with all our project activity? Follow us on Twitter at <a href="https://twitter.com/GoCVio">@GoCVio</a> for the latest updates.</p>
 
 
 <footer class=" footline" >
@@ -771,6 +807,23 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -849,23 +902,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -874,9 +910,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -895,10 +928,10 @@
 
 
         
-            <a class="nav nav-prev" href="/blog/2017-12-14-putting-eyes-on-the-iot-video/" title="Putting Eyes on the IoT - The Video"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/blog/" title="Blog"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/cvscope/" title="CVscope" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/blog/2018-07-05-going-deeper-into-dnn/" title="Going Deeper Into DNN For Computer Vision" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
