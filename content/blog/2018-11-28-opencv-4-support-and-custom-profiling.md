@@ -4,9 +4,9 @@ draft: false
 weight: 1
 ---
 
-We're proud to announce our latest GoCV ([https://gocv.io](https://gocv.io)) version 0.18.0. This is a big update, because we are now supporting the long awaited and just-released OpenCV version 4.0.
+We're proud to announce our latest release of GoCV ([https://gocv.io](https://gocv.io)) version 0.18.0. This is a big update, because we are now supporting the long awaited and just-released OpenCV version 4.0.
 
-As always we also have new features too from our amazing contributors. Thank you to everyone who has helped with the project getting ready for the release.
+We also have some great new features from our amazing contributors. Thank you to everyone who has helped with the project getting ready for the release.
 
 You can take a look at the full changelog at [https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180](https://github.com/hybridgroup/gocv/blob/master/CHANGELOG.md#0180) for the details, or read on to learn more.
 
