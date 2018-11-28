@@ -7,7 +7,7 @@ weight: 1
 
 This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
 
-You can use `make` to install OpenCV 3.4.3 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
+You can use `make` to install OpenCV 4.0.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
 
 ### Installing
 
@@ -23,14 +23,14 @@ Now you can run the needed installation steps listed below.
 
 #### Quick Install
 
-The following commands should do everything to download and install OpenCV 3.4.3 on Linux:
+The following commands should do everything to download and install OpenCV 4.0.0 on Linux:
 
 	make install
 
 If it works correctly, at the end of the entire process, the following message should be displayed:
 
-	gocv version: 0.17.0
-	opencv lib version: 3.4.3
+	gocv version: 0.18.0
+	opencv lib version: 4.0.0
 
 That's it, now you are ready to use GoCV.
 
@@ -46,7 +46,7 @@ First, you need to update the system, and install any required packages:
 
 #### Download source
 
-Now, download the OpenCV 3.4.3 and OpenCV Contrib source code:
+Now, download the OpenCV 4.0.0 and OpenCV Contrib source code:
 
 	make download
 
@@ -76,8 +76,8 @@ Now you should be able to build or run any of the examples:
 
 The version program should output the following:
 
-	gocv version: 0.17.0
-	opencv lib version: 3.4.3
+	gocv version: 0.18.0
+	opencv lib version: 4.0.0
 
 #### Cleanup extra files
 

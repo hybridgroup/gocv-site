@@ -1,7 +1,7 @@
 ---
 title: "Going Deeper Into DNN For Computer Vision"
 draft: false
-weight: 1
+weight: 36
 ---
 
 We have just released GoCV ([https://gocv.io](https://gocv.io)) version 0.14.0, our Go programming language package for computer vision using OpenCV. Thanks to the efforts of our contributors and team this is one of our most significant updates yet.
