@@ -16,6 +16,8 @@ The hard-working OpenCV team has just shipped a huge update in version 4.0.0 and
 
 All of our installation information is now updated for OpenCV 4, and we also have made some improvements for you. In particular, for macOS developers, we now have a Homebrew forumla that will not only install OpenCV 4, but also provided a more stripped down installation by doing so without all of the extra Python dependencies.
 
+The new GoCV release also supports the 2018 R4 release of the [Intel OpenVINO toolkit](https://software.intel.com/en-us/openvino-toolkit) which has also been recently released.
+
 ### MatProfile To Catch The Memory Leaks
 
 ![MatProfile](../../images/gocv-profile-example.png)
