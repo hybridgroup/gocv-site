@@ -26,7 +26,7 @@ Since memory allocations for images and any other `Mat` in GoCV are done through
 
 In order to ease the detection and repair of this kind of resource leaks, the new `MatProfile` custom profiler has been added.
 
-To include the MatProfile custom profiler, you MUST build or run your application or tests using the `-tags matprofile` build tag. For example:
+To include the `MatProfile` custom profiler, you MUST build or run your application or tests using the `-tags matprofile` build tag. For example:
 
 	go run -tags matprofile cmd/version/main.go
 
