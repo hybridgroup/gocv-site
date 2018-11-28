@@ -14,7 +14,7 @@ You can take a look at the full changelog at [https://github.com/hybridgroup/goc
 
 The hard-working OpenCV team has just shipped a huge update in version 4.0.0 and the new GoCV is intended to work only with this release and future releases in version 4.0. The future is here and now, dear friends.
 
-All of our installation information is now updated for OpenCV 4, and we also have made some improvements for you. In particular, for macOS developers, we now have a Homebrew forumla that will not only install OpenCV 4, but also provided a more stipped down installation by doing so without all of the extra Python dependencies.
+All of our installation information is now updated for OpenCV 4, and we also have made some improvements for you. In particular, for macOS developers, we now have a Homebrew forumla that will not only install OpenCV 4, but also provided a more stripped down installation by doing so without all of the extra Python dependencies.
 
 ### MatProfile To Catch The Memory Leaks
 
