@@ -18,7 +18,7 @@ All of our installation information is now updated for OpenCV 4, and we also hav
 
 ### MatProfile To Catch The Memory Leaks
 
-![MatProfile](../images/gocv-profile-example.png)
+![MatProfile](../../images/gocv-profile-example.png)
 
 Thanks to new contributor [@dougnd](https://github.com/dougnd) we now have custom [pprof](https://golang.org/pkg/runtime/pprof/) profiling for Mat creation.
 
