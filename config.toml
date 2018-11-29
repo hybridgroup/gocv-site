@@ -1,6 +1,6 @@
 baseURL = "https://gocv.io/"
 languageCode = "en-us"
-title = "GoCV - Golang Computer Vision Using OpenCV 3"
+title = "GoCV - Golang Computer Vision Using OpenCV 4"
 theme = "learn"
 
 [params]
