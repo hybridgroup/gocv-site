@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Getting Started on GoCV - Golang Computer Vision Using OpenCV 3</title>
+    <title>Getting Started on GoCV - Golang Computer Vision Using OpenCV 4</title>
     <link>https://gocv.io/getting-started/</link>
-    <description>Recent content in Getting Started on GoCV - Golang Computer Vision Using OpenCV 3</description>
+    <description>Recent content in Getting Started on GoCV - Golang Computer Vision Using OpenCV 4</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Oct 2017 11:40:54 +0200</lastBuildDate>
