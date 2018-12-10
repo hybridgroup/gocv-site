@@ -30,6 +30,12 @@ pkg-config is used to determine the correct flags for compiling and linking Open
 You can install it by using Homebrew:
     
     brew install pkgconfig
+
+### glog Installation
+glog is the C++ version of Google's logging module which is required of gocv.
+You can install it by using Homebrew:
+    
+    brew install glog
 	
 ### How to build/run code
 
