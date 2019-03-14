@@ -27,6 +27,8 @@ If you prefer, there is also an alternative Homebrew recipe will install only Op
 
 	brew install hybridgroup/tools/opencv
 
+NOTE: Do not install both of these. Choose one.
+
 ### pkgconfig Installation
 pkg-config is used to determine the correct flags for compiling and linking OpenCV.
 You can install it by using Homebrew:
