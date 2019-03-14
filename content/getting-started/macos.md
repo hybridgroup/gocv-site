@@ -13,17 +13,19 @@ Install the GoCV package:
 
     go get -u -d gocv.io/x/gocv
 
-You can install OpenCV 4.0.0 using Homebrew.
+You can install OpenCV 4.0.1 using Homebrew.
 
 If you already have an earlier version of OpenCV (3.4.x) installed, you should probably remove it before installing the new version:
 
 	brew uninstall opencv
 
-You can then install OpenCV 4.0.0:
+You can then install OpenCV 4.0.1:
+
+	brew install opencv
+
+If you prefer, there is also an alternative Homebrew recipe will install only OpenCV 4.0.1 without all of the Python dependencies:
 
 	brew install hybridgroup/tools/opencv
-
-This new Homebrew recipe will install only OpenCV 4.0.0 without all of the Python dependencies.
 
 ### pkgconfig Installation
 pkg-config is used to determine the correct flags for compiling and linking OpenCV.
@@ -39,8 +41,8 @@ Once you have installed OpenCV, you should be able to build or run any of the co
 
 The version program should output the following:
 
-	gocv version: 0.18.0
-	opencv lib version: 4.0.0
+	gocv version: 0.19.0
+	opencv lib version: 4.0.1
 
 ### Cache builds
 
@@ -55,8 +57,8 @@ By default, pkg-config is used to determine the correct flags for compiling and 
 For example:
 
 	export CGO_CXXFLAGS="--std=c++11"
-	export CGO_CPPFLAGS="-I/usr/local/Cellar/opencv/4.0.0/include"
-	export CGO_LDFLAGS="-L/usr/local/Cellar/opencv/4.0.0/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core"
+	export CGO_CPPFLAGS="-I/usr/local/Cellar/opencv/4.0.1/include"
+	export CGO_LDFLAGS="-L/usr/local/Cellar/opencv/4.0.1/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core"
 
 Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
 
