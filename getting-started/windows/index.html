@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.52" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta name="description" content="">
 
 
@@ -13,17 +13,17 @@
     <title>Windows :: GoCV - Golang Computer Vision Using OpenCV 4</title>
     
     
-    <link href="/css/nucleus.css?1543490362" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1543490362" rel="stylesheet">
-    <link href="/css/hybrid.css?1543490362" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1543490362" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1543490362" rel="stylesheet">
-    <link href="/css/auto-complete.css?1543490362" rel="stylesheet">
-    <link href="/css/theme.css?1543490362" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1543490362" rel="stylesheet">
+    <link href="/css/nucleus.css?1552548785" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1552548785" rel="stylesheet">
+    <link href="/css/hybrid.css?1552548785" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1552548785" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1552548785" rel="stylesheet">
+    <link href="/css/auto-complete.css?1552548785" rel="stylesheet">
+    <link href="/css/theme.css?1552548785" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1552548785" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1543490362"></script>
+    <script src="/js/jquery-2.x.min.js?1552548785"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -539,7 +539,7 @@
 <ul>
 <li><a href="#mingw-w64">MinGW-W64</a></li>
 <li><a href="#cmake">CMake</a></li>
-<li><a href="#opencv-4-0-0-and-opencv-contrib-modules">OpenCV 4.0.0 and OpenCV Contrib Modules</a></li>
+<li><a href="#opencv-4-0-1-and-opencv-contrib-modules">OpenCV 4.0.1 and OpenCV Contrib Modules</a></li>
 </ul></li>
 <li><a href="#verifying-the-installation">Verifying the installation</a>
 <ul>
@@ -578,7 +578,7 @@
 <pre><code>go get -u -d gocv.io/x/gocv
 </code></pre>
 
-<p>In order to use GoCV on Windows you must build and install OpenCV 4.0.0. First download and install MinGW-W64 and CMake, as follows.</p>
+<p>In order to use GoCV on Windows you must build and install OpenCV 4.0.1. First download and install MinGW-W64 and CMake, as follows.</p>
 
 <h4 id="mingw-w64">MinGW-W64</h4>
 
@@ -594,9 +594,9 @@
 
 <p>Download and install CMake <a href="https://cmake.org/download/">https://cmake.org/download/</a> to the default location. CMake installer will add CMake to your system path.</p>
 
-<h4 id="opencv-4-0-0-and-opencv-contrib-modules">OpenCV 4.0.0 and OpenCV Contrib Modules</h4>
+<h4 id="opencv-4-0-1-and-opencv-contrib-modules">OpenCV 4.0.1 and OpenCV Contrib Modules</h4>
 
-<p>The following commands should do everything to download and install OpenCV 4.0.0 on Windows:</p>
+<p>The following commands should do everything to download and install OpenCV 4.0.1 on Windows:</p>
 
 <pre><code>chdir %GOPATH%\src\gocv.io\x\gocv
 win_build_opencv.cmd
@@ -620,8 +620,8 @@ win_build_opencv.cmd
 
 <p>The version program should output the following:</p>
 
-<pre><code>gocv version: 0.18.0
-opencv lib version: 4.0.0
+<pre><code>gocv version: 0.19.0
+opencv lib version: 4.0.1
 </code></pre>
 
 <p>That&rsquo;s it, now you are ready to use GoCV.</p>
@@ -643,7 +643,7 @@ opencv lib version: 4.0.0
 
 <pre><code>set CGO_CXXFLAGS=&quot;--std=c++11&quot;
 set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core400 -lopencv_face400 -lopencv_videoio400 -lopencv_imgproc400 -lopencv_highgui400 -lopencv_imgcodecs400 -lopencv_objdetect400 -lopencv_features2d400 -lopencv_video400 -lopencv_dnn400 -lopencv_xfeatures2d400 -lopencv_plot400 -lopencv_tracking400 -lopencv_img_hash400
+set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core401 -lopencv_face401 -lopencv_videoio401 -lopencv_imgproc401 -lopencv_highgui401 -lopencv_imgcodecs401 -lopencv_objdetect401 -lopencv_features2d401 -lopencv_video401 -lopencv_dnn401 -lopencv_xfeatures2d401 -lopencv_plot401 -lopencv_tracking401 -lopencv_img_hash401
 </code></pre>
 
 <p>Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:</p>
@@ -983,20 +983,20 @@ set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core400 -lopenc
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1543490362"></script>
-    <script src="/js/perfect-scrollbar.min.js?1543490362"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1543490362"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1543490362"></script>
-    <script src="/js/featherlight.min.js?1543490362"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1543490362"></script>
-    <script src="/js/highlight.pack.js?1543490362"></script>
+    <script src="/js/clipboard.min.js?1552548785"></script>
+    <script src="/js/perfect-scrollbar.min.js?1552548785"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1552548785"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1552548785"></script>
+    <script src="/js/featherlight.min.js?1552548785"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1552548785"></script>
+    <script src="/js/highlight.pack.js?1552548785"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1543490362"></script>
-    <script src="/js/learn.js?1543490362"></script>
-    <script src="/js/hugo-learn.js?1543490362"></script>
+    <script src="/js/modernizr.custom.71422.js?1552548785"></script>
+    <script src="/js/learn.js?1552548785"></script>
+    <script src="/js/hugo-learn.js?1552548785"></script>
 
-    <link href="/mermaid/mermaid.css?1543490362" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1543490362"></script>
+    <link href="/mermaid/mermaid.css?1552548785" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1552548785"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

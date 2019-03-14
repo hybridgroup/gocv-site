@@ -28,7 +28,7 @@ package main import ( &amp;quot;gocv.io/x/gocv&amp;quot; ) func main() { webcam,
       
       <guid>https://gocv.io/getting-started/linux/</guid>
       <description>This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
-You can use make to install OpenCV 4.0.0 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
+You can use make to install OpenCV 4.0.1 with the handy Makefile included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the Makefile is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.</description>
     </item>
     
     <item>
@@ -50,10 +50,10 @@ You can take a look at the full changelog at https://github.com/hybridgroup/gocv
       <guid>https://gocv.io/getting-started/macos/</guid>
       <description>This page has information on how to install and use GoCV on macOS.
 Installing Install the GoCV package:
-go get -u -d gocv.io/x/gocv  You can install OpenCV 4.0.0 using Homebrew.
+go get -u -d gocv.io/x/gocv  You can install OpenCV 4.0.1 using Homebrew.
 If you already have an earlier version of OpenCV (3.4.x) installed, you should probably remove it before installing the new version:
-brew uninstall opencv  You can then install OpenCV 4.0.0:
-brew install hybridgroup/tools/opencv  This new Homebrew recipe will install only OpenCV 4.</description>
+brew uninstall opencv  You can then install OpenCV 4.0.1:
+brew install opencv  If you prefer, there is also an alternative Homebrew recipe will install only OpenCV 4.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;image&amp;quot; &amp;quo
       <guid>https://gocv.io/getting-started/windows/</guid>
       <description>This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
 Installing Install the GoCV package:
-go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 4.0.0. First download and install MinGW-W64 and CMake, as follows.
+go get -u -d gocv.io/x/gocv  In order to use GoCV on Windows you must build and install OpenCV 4.0.1. First download and install MinGW-W64 and CMake, as follows.
 MinGW-W64 Download and run the MinGW-W64 compiler installer from https://sourceforge.net/projects/mingw-w64/?source=typ_redirect.
 The latest version of the MinGW-W64 toolchain is 7.3.0, but any version from 7.</description>
     </item>
