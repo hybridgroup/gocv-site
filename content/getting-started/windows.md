@@ -13,7 +13,7 @@ Install the GoCV package:
 
     go get -u -d gocv.io/x/gocv
 
-In order to use GoCV on Windows you must build and install OpenCV 4.1.0. First download and install MinGW-W64 and CMake, as follows.
+In order to use GoCV on Windows you must build and install OpenCV 4.1.2. First download and install MinGW-W64 and CMake, as follows.
 
 #### MinGW-W64
 
@@ -29,9 +29,9 @@ Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bi
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### OpenCV 4.1.0 and OpenCV Contrib Modules
+#### OpenCV 4.1.2 and OpenCV Contrib Modules
 
-The following commands should do everything to download and install OpenCV 4.1.0 on Windows:
+The following commands should do everything to download and install OpenCV 4.1.2 on Windows:
 
 	chdir %GOPATH%\src\gocv.io\x\gocv
 	win_build_opencv.cmd
@@ -52,8 +52,8 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-	gocv version: 0.20.0
-	opencv lib version: 4.1.0
+	gocv version: 0.21.0
+	opencv lib version: 4.1.2
 
 That's it, now you are ready to use GoCV.
 
@@ -73,7 +73,7 @@ For example:
 
 	set CGO_CXXFLAGS="--std=c++11"
 	set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core410 -lopencv_face410 -lopencv_videoio410 -lopencv_imgproc410 -lopencv_highgui410 -lopencv_imgcodecs410 -lopencv_objdetect410 -lopencv_features2d410 -lopencv_video410 -lopencv_dnn410 -lopencv_xfeatures2d410 -lopencv_plot410 -lopencv_tracking410 -lopencv_img_hash410
+	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core412 -lopencv_face412 -lopencv_videoio412 -lopencv_imgproc412 -lopencv_highgui412 -lopencv_imgcodecs412 -lopencv_objdetect412 -lopencv_features2d412 -lopencv_video412 -lopencv_dnn412 -lopencv_xfeatures2d412 -lopencv_plot412 -lopencv_tracking412 -lopencv_img_hash412
 
 Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
 
