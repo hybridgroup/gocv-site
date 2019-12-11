@@ -33,6 +33,7 @@ You can install it by using Homebrew:
 
 Once you have installed OpenCV, you should be able to build or run any of the command examples:
 
+	cd $GOPATH/src/gocv.io/x/gocv
 	go run ./cmd/version/main.go
 
 The version program should output the following:
