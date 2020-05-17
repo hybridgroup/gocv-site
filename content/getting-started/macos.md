@@ -17,13 +17,14 @@ You can install OpenCV 4.3.0 using Homebrew.
 
 If you already have an earlier version of OpenCV installed, you should update:
 
-	brew update opencv
+	brew upgrade opencv
 
 If this is your first time install OpenCV 4.3.0:
 
 	brew install opencv
 
 ### pkgconfig Installation
+
 pkg-config is used to determine the correct flags for compiling and linking OpenCV.
 You can install it by using Homebrew:
     
