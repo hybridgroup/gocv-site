@@ -21,9 +21,9 @@ Download and run the MinGW-W64 compiler installer from [https://sourceforge.net/
 
 The latest version of the MinGW-W64 toolchain is `7.3.0`, but any version from `7.X` on should work.
 
-Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `c:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2`.
+Choose the options for "posix" threads, and for "seh" exceptions handling, then install to the default location `c:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev0`.
 
-Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
+Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin` path to your System Path.
 
 #### CMake
 
