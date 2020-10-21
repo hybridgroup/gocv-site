@@ -13,7 +13,7 @@ Install the GoCV package:
 
     go get -u -d gocv.io/x/gocv
 
-In order to use GoCV on Windows you must build and install OpenCV 4.4.0. First download and install MinGW-W64 and CMake, as follows.
+In order to use GoCV on Windows you must build and install OpenCV 4.5.0. First download and install MinGW-W64 and CMake, as follows.
 
 #### MinGW-W64
 
@@ -29,9 +29,9 @@ Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bi
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### OpenCV 4.4.0 and OpenCV Contrib Modules
+#### OpenCV 4.5.0 and OpenCV Contrib Modules
 
-The following commands should do everything to download and install OpenCV 4.4.0 on Windows:
+The following commands should do everything to download and install OpenCV 4.5.0 on Windows:
 
 	chdir %GOPATH%\src\gocv.io\x\gocv
 	win_build_opencv.cmd
@@ -52,8 +52,8 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-	gocv version: 0.24.0
-	opencv lib version: 4.4.0
+	gocv version: 0.25.0
+	opencv lib version: 4.5.0
 
 That's it, now you are ready to use GoCV.
 
