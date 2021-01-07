@@ -14,8 +14,8 @@ url = "https://github.com/hybridgroup/gocv"
 weight = 10
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-book'></i> Godoc"
-url = "https://godoc.org/gocv.io/x/gocv"
+name = "<i class='fa fa-book'></i> Docs"
+url = "https://pkg.go.dev/gocv.io/x/gocv"
 weight = 20
 
 [[menu.shortcuts]] 
