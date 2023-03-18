@@ -4,3 +4,23 @@
   from = "https://docker.gocv.io/*"
   to = "https://registry.hub.docker.com/:splat"
   status = 307
+
+[[redirects]]
+  from = "https://c.gocv.io/*"
+  to = "https://ghcr.io/:splat"
+  status = 307
+
+[[redirects]]
+  from = "https://cr.gocv.io/v2/library/gocv/*"
+  to = "https://ghcr.io/v2/library/hybridgroup/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://cr.gocv.io/v2/gocv/*"
+  to = "https://ghcr.io/v2/hybridgroup/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://cr.gocv.io/*"
+  to = "https://ghcr.io/:splat"
+  status = 200
