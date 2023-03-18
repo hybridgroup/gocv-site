@@ -1,0 +1,6 @@
+# netlify.toml
+
+[[redirects]]
+  from = "https://docker.gocv.io/*"
+  to = "https://registry.hub.docker.com/:splat"
+  status = 307
