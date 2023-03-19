@@ -14,13 +14,17 @@
   from = "https://cr.gocv.io/v2/library/gocv/*"
   to = "https://ghcr.io/v2/library/hybridgroup/:splat"
   status = 200
+  headers = {WWW-Authenticate = "Bearer realm=\"https://ghcr.io/token\",service=\"ghcr.io\",scope=\"repository:hybridgroup/opencv:pull\""}
 
 [[redirects]]
   from = "https://cr.gocv.io/v2/gocv/*"
   to = "https://ghcr.io/v2/hybridgroup/:splat"
   status = 200
+  headers = {WWW-Authenticate = "Bearer realm=\"https://ghcr.io/token\",service=\"ghcr.io\",scope=\"repository:hybridgroup/opencv:pull\""}
 
 [[redirects]]
   from = "https://cr.gocv.io/*"
   to = "https://ghcr.io/:splat"
   status = 200
+  headers = {WWW-Authenticate = "Bearer realm=\"https://ghcr.io/token\",service=\"ghcr.io\",scope=\"repository:hybridgroup/opencv:pull\""}
+
