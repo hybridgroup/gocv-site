@@ -38,8 +38,8 @@ Once you have installed OpenCV, you should be able to build or run any of the co
 
 The version program should output the following:
 
-	gocv version: 0.33.0
-	opencv lib version: 4.7.0
+	gocv version: 0.34.0
+	opencv lib version: 4.8.0
 
 ### Cache builds
 
