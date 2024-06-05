@@ -13,7 +13,7 @@ Install the GoCV package:
 
     go get -u -d gocv.io/x/gocv
 
-In order to use GoCV on Windows you must build and install OpenCV 4.9.0. First download and install MinGW-W64 and CMake, as follows.
+In order to use GoCV on Windows you must build and install OpenCV 4.10.0. First download and install MinGW-W64 and CMake, as follows.
 
 #### MinGW-W64
 
@@ -29,9 +29,9 @@ Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bi
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### OpenCV 4.9.0 and OpenCV Contrib Modules
+#### OpenCV 4.10.0 and OpenCV Contrib Modules
 
-The following commands should do everything to download and install OpenCV 4.9.0 on Windows:
+The following commands should do everything to download and install OpenCV 4.10.0 on Windows:
 
 	chdir %GOPATH%\src\gocv.io\x\gocv
 	win_build_opencv.cmd
@@ -52,8 +52,8 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-	gocv version: 0.36.0
-	opencv lib version: 4.9.0
+	gocv version: 0.37.0
+	opencv lib version: 4.10.0
 
 That's it, now you are ready to use GoCV.
 
@@ -67,7 +67,7 @@ For example:
 
 	set CGO_CXXFLAGS=--std=c++11
 	set CGO_CPPFLAGS=-IC:\opencv\build\install\include
-	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core455 -lopencv_face455 -lopencv_videoio455 -lopencv_imgproc455 -lopencv_highgui455 -lopencv_imgcodecs455 -lopencv_objdetect455 -lopencv_features2d455 -lopencv_video455 -lopencv_dnn455 -lopencv_xfeatures2d455 -lopencv_plot455 -lopencv_tracking455 -lopencv_img_hash455 -lopencv_calib3d455
+	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core4100 -lopencv_face4100 -lopencv_videoio4100 -lopencv_imgproc4100 -lopencv_highgui4100 -lopencv_imgcodecs4100 -lopencv_objdetect4100 -lopencv_features2d4100 -lopencv_video4100 -lopencv_dnn4100 -lopencv_xfeatures2d4100 -lopencv_plot4100 -lopencv_tracking4100 -lopencv_img_hash4100 -lopencv_calib3d4100
 
 Please note that you will need to run these 3 lines of code one time in your current session in order to build or run the code, in order to setup the needed ENV variables. Once you have done so, you can execute code that uses GoCV with your custom environment like this:
 
