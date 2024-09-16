@@ -29,7 +29,7 @@ The following commands should do everything to download and install OpenCV 4.10.
 
 If it works correctly, at the end of the entire process, the following message should be displayed:
 
-	gocv version: 0.37.0
+	gocv version: 0.38.0
 	opencv lib version: 4.10.0
 
 That's it, now you are ready to use GoCV.
@@ -76,7 +76,7 @@ Now you should be able to build or run any of the examples:
 
 The version program should output the following:
 
-	gocv version: 0.37.0
+	gocv version: 0.38.0
 	opencv lib version: 4.10.0
 
 #### Cleanup extra files
