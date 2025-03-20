@@ -1,7 +1,7 @@
 ---
-title: "Home"
+title: "The gopher can see you now."
+linkTItle: "Home"
 ---
-# The gopher can see you now.
 
 [![GoCV](images/gocvlogo.jpg)](https://gocv.io/)
 
