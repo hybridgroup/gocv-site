@@ -1,4 +1,10 @@
 # netlify.toml
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[build.environment]
+HUGO_VERSION = "0.128.0"
 
 [[redirects]]
   from = "https://docker.gocv.io/*"
