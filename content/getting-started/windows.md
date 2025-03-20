@@ -52,7 +52,7 @@ Now you should be able to build or run any of the command examples:
 
 The version program should output the following:
 
-	gocv version: 0.40.0
+	gocv version: 0.41.0
 	opencv lib version: 4.11.0
 
 That's it, now you are ready to use GoCV.
