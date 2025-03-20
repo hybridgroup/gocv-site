@@ -38,7 +38,7 @@ Once you have installed OpenCV, you should be able to build or run any of the co
 
 The version program should output the following:
 
-	gocv version: 0.40.0
+	gocv version: 0.41.0
 	opencv lib version: 4.11.0
 
 ### Custom Environment
