@@ -1,15 +1,16 @@
 baseURL = "https://gocv.io/"
 languageCode = "en-us"
 title = "GoCV - Golang Computer Vision Using OpenCV 4"
-theme = "learn"
+theme = "hugo-theme-relearn"
 
 [params]
   # Disable search function. It will hide search bar
   disableSearch = true
   editURL = "https://github.com/hybridgroup/gocv-site/edit/master/content/"
+  themeVariant = 'learn'
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github repo"
+name = "<i class='fab fa-github'></i> Github repo"
 url = "https://github.com/hybridgroup/gocv"
 weight = 10
 
