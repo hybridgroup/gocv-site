@@ -7,7 +7,7 @@ weight: 3
 
 This page has information on how to install and use GoCV on Microsoft Windows 10, 64-bit.
 
-### Installing
+## Installing
 
 Install the GoCV package:
 
@@ -15,7 +15,7 @@ Install the GoCV package:
 
 In order to use GoCV on Windows you must build and install OpenCV 4.11.0. First download and install MinGW-W64 and CMake, as follows.
 
-#### MinGW-W64
+### MinGW-W64
 
 Download and run the MinGW-W64 compiler installer from [https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0//).
 
@@ -25,11 +25,11 @@ Choose the options for "posix" threads, and for "seh" exceptions handling, then 
 
 Add the `C:\Program Files\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev2\mingw64\bin` path to your System Path.
 
-#### CMake
+### CMake
 
 Download and install CMake [https://cmake.org/download/](https://cmake.org/download/) to the default location. CMake installer will add CMake to your system path.
 
-#### OpenCV 4.11.0 and OpenCV Contrib Modules
+### OpenCV 4.11.0 and OpenCV Contrib Modules
 
 The following commands should do everything to download and install OpenCV 4.11.0 on Windows:
 

@@ -7,7 +7,7 @@ weight: 2
 
 This page has information on how to install and use GoCV on macOS.
 
-### Installing
+## Installing
 
 Install the GoCV package:
 
@@ -23,14 +23,14 @@ If this is your first time installing OpenCV 4.11.0:
 
 	brew install opencv
 
-### pkgconfig Installation
+## pkgconfig Installation
 
 pkg-config is used to determine the correct flags for compiling and linking OpenCV.
 You can install it by using Homebrew:
     
     brew install pkgconfig
 	
-### How to build/run code
+## How to build/run code
 
 Once you have installed OpenCV, you should be able to build or run any of the command examples:
 
@@ -41,7 +41,7 @@ The version program should output the following:
 	gocv version: 0.41.0
 	opencv lib version: 4.11.0
 
-### Custom Environment
+## Custom Environment
 
 By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.
 

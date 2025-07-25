@@ -9,7 +9,7 @@ This page has information on how to install and use GoCV on Ubuntu, as well as o
 
 You can use `make` to install OpenCV 4.11.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
 
-### Installing
+## Installing
 
 Install the GoCV package:
 
@@ -21,7 +21,7 @@ Change directories into the newly installed package directory:
 
 Now you can run the needed installation steps listed below.
 
-#### Quick Install
+## Quick Install
 
 The following commands should do everything to download and install OpenCV 4.11.0 on Linux:
 
@@ -34,29 +34,29 @@ If it works correctly, at the end of the entire process, the following message s
 
 That's it, now you are ready to use GoCV.
 
-#### Complete Install
+## Complete Install
 
 Here are details for each of the steps that are performed during the "Quick Install". If you have already run `make install` as described above, you do not need to run any of these commands.
 
-##### Install required packages
+#### Install required packages
 
 First, you need to update the system, and install any required packages:
 
 	make deps
 
-#### Download source
+### Download source
 
 Now, download the OpenCV 4.11.0 and OpenCV Contrib source code:
 
 	make download
 
-#### Build
+### Build
 
 Build everything. This will take quite a while:
 
 	make build
 
-#### Install
+### Install
 
 Once the code is built, you are ready to install:
 
@@ -79,13 +79,13 @@ The version program should output the following:
 	gocv version: 0.41.0
 	opencv lib version: 4.11.0
 
-#### Cleanup extra files
+### Cleanup extra files
 
 After the installation is complete, you can remove the extra files and folders:
 
 	make clean
 
-### Custom Environment
+## Custom Environment
 
 By default, pkg-config is used to determine the correct flags for compiling and linking OpenCV. This behavior can be disabled by supplying `-tags customenv` when building/running your application. When building with this tag you will need to supply the CGO environment variables yourself.
 
@@ -98,6 +98,27 @@ Please note that you will need to run these 2 lines of code one time in your cur
 
 	go run -tags customenv ./cmd/version/main.go
 
-### Alpine 3.7 Docker image
+## Raspbian
 
-There is a Docker image with Alpine 3.7 that has been created by project contributor [@denismakogon](https://github.com/denismakogon). You can find it located at [https://github.com/denismakogon/gocv-alpine](https://github.com/denismakogon/gocv-alpine).
+We have a special installation for the Raspberry Pi that includes some hardware optimizations. You use `make` to install OpenCV 4.12.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
+
+### Quick Install
+
+First, change directories to where you want to install GoCV, and then use git to clone the repository to your local machine like this:
+
+    cd $HOME/folder/with/your/src/
+    git clone https://github.com/hybridgroup/gocv.git
+
+Make sure to change `$HOME/folder/with/your/src/` to where you actually want to save the code.
+
+The following make command should do everything to download and install OpenCV 4.12.0 on Raspbian:
+
+    cd $HOME/folder/with/your/src/gocv
+    make install_raspi
+
+If it works correctly, at the end of the entire process, the following message should be displayed:
+
+    gocv version: 0.41.0
+    opencv lib version: 4.12.0
+
+That's it, now you are ready to use GoCV.
