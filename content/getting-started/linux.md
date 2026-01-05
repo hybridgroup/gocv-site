@@ -7,30 +7,30 @@ weight: 1
 
 This page has information on how to install and use GoCV on Ubuntu, as well as other Linux distros.
 
-You can use `make` to install OpenCV 4.12.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
+You can use `make` to install OpenCV 4.13.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
 
 ## Installing
 
-Install the GoCV package:
+Clone the GoCV repo:
 
-    go get -u -d gocv.io/x/gocv
+	git clone https://github.com/hybridgroup/gocv.git
 
 Change directories into the newly installed package directory:
 
-    cd $GOPATH/src/gocv.io/x/gocv
+	cd .\gocv
 
 Now you can run the needed installation steps listed below.
 
 ## Quick Install
 
-The following commands should do everything to download and install OpenCV 4.12.0 on Linux:
+The following commands should do everything to download and install OpenCV 4.13.0 on Linux:
 
 	make install
 
 If it works correctly, at the end of the entire process, the following message should be displayed:
 
-	gocv version: 0.42.0
-	opencv lib version: 4.12.0
+	gocv version: 0.43.0
+	opencv lib version: 4.13.0
 
 That's it, now you are ready to use GoCV.
 
@@ -46,7 +46,7 @@ First, you need to update the system, and install any required packages:
 
 ### Download source
 
-Now, download the OpenCV 4.12.0 and OpenCV Contrib source code:
+Now, download the OpenCV 4.13.0 and OpenCV Contrib source code:
 
 	make download
 
@@ -68,7 +68,7 @@ To verify your installation you can run one of the included examples.
 
 First, change the current directory to the location of the GoCV repo:
 
-	cd $GOPATH/src/gocv.io/x/gocv
+	cd ./gocv
 
 Now you should be able to build or run any of the examples:
 
@@ -76,8 +76,8 @@ Now you should be able to build or run any of the examples:
 
 The version program should output the following:
 
-	gocv version: 0.42.0
-	opencv lib version: 4.12.0
+	gocv version: 0.43.0
+	opencv lib version: 4.13.0
 
 ### Cleanup extra files
 
@@ -100,7 +100,7 @@ Please note that you will need to run these 2 lines of code one time in your cur
 
 ## Raspbian
 
-We have a special installation for the Raspberry Pi that includes some hardware optimizations. You use `make` to install OpenCV 4.12.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
+We have a special installation for the Raspberry Pi that includes some hardware optimizations. You use `make` to install OpenCV 4.13.0 with the handy `Makefile` included with this repo. If you already have installed OpenCV, you do not need to do so again. The installation performed by the `Makefile` is minimal, so it may remove OpenCV options such as Python or Java wrappers if you have already installed OpenCV some other way.
 
 ### Quick Install
 
@@ -111,14 +111,14 @@ First, change directories to where you want to install GoCV, and then use git to
 
 Make sure to change `$HOME/folder/with/your/src/` to where you actually want to save the code.
 
-The following make command should do everything to download and install OpenCV 4.12.0 on Raspbian:
+The following make command should do everything to download and install OpenCV 4.13.0 on Raspbian:
 
     cd $HOME/folder/with/your/src/gocv
     make install_raspi
 
 If it works correctly, at the end of the entire process, the following message should be displayed:
 
-    gocv version: 0.42.0
-    opencv lib version: 4.12.0
+    gocv version: 0.43.0
+    opencv lib version: 4.13.0
 
 That's it, now you are ready to use GoCV.
