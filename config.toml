@@ -6,7 +6,7 @@ theme = "hugo-theme-relearn"
 [params]
   # Disable search function. It will hide search bar
   disableSearch = true
-  editURL = "https://github.com/hybridgroup/gocv-site/edit/master/content/"
+  editURL = "https://github.com/hybridgroup/gocv-site/edit/release/content/"
   themeVariant = 'learn'
 
 [[menu.shortcuts]] 
